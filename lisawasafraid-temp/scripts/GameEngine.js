@@ -10,7 +10,7 @@ GameEngineClass = Class.extend(
 	stage: null,
 	seq: null,
 	
-	game_unit: 100,
+	game_unit: 50,
 	play_stage: false,
 	seq_fading_in: true,
 	seq_fading_out: false,

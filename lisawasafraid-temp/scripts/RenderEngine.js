@@ -13,7 +13,7 @@ RenderEngineClass = Class.extend(
 	ready: false,
 	loadCnt: 0,
 	
-	render_unit: 100,
+	render_unit: 50,
 	
 	storyOpacity: 0.7,
 	
