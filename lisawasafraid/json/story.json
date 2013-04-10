@@ -661,7 +661,7 @@
                         "tic-tac-toe with life,",
                         "and she was winning..."
                     ],
-                    "room": 5
+                    "room": 4
                 }
             ],
             "object": "tic-tac-toe.png"
@@ -761,7 +761,7 @@
                 {
                     "text": [
                         "Then someone turned",
-                        "the lamp off..."
+                        "off the lamp..."
                     ],
                     "room": 4
                 }
