@@ -69,7 +69,7 @@ GameEngineClass = Class.extend(
 			var img = new Image();
 			img.onload = function() {  
 										gEngine.nrImgLoaded++;
-										if(gEngine.nrImgLoaded == gEngine.rooms.length + gEngine.objects.length)
+										if(gEngine.nrImgLoaded == gEngine.rooms.length)
 										{
 											console.log('all images loaded');
 											gEngine.fullyLoaded = true;
