@@ -51,6 +51,7 @@ GameEngineClass = Class.extend(
 			return;
 		}
 		var response = oRequest.responseText;
+		console.log(response);
 		var parsed = JSON.parse(response);
 		return parsed;
 	},
