@@ -1,0 +1,831 @@
+{
+    "stages": [
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Chapter 1:",
+                        "Click me"
+                    ],
+                    "room": 1
+                },
+                {
+                    "text": [
+                        "Lisa was afraid."
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "It was getting dark",
+                        "and she was too small",
+                        "to reach the light switch."
+                    ],
+                    "room": 5
+                },
+                {
+                    "text": [
+                        "From another spacetime,",
+                        "someone found the lamp in one",
+                        "of the rooms, and clicked it..."
+                    ],
+                    "room": 4
+                }
+            ],
+            "object": "desk-lamp.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Lisa was only five years old,",
+                        "but it was not the dark",
+                        "that she was afraid of."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "She was afraid that",
+                        "her life might just be",
+                        "someone's dream."
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "Evanescent,",
+                        "like a snowflake..."
+                    ],
+                    "room": 5
+                }
+            ],
+            "object": "snow-flake.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Buy she didn't",
+                        "know who was",
+                        "the Dreamer."
+                    ],
+                    "room": 1
+                },
+                {
+                    "text": [
+                        "Would he know that",
+                        "he is dreaming the world?"
+                    ],
+                    "room": 5
+                },
+                {
+                    "text": [
+                        "Could he hear Lisa's thoughts,",
+                        "or was he oblivious?"
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "When she would grow up,",
+                        "Lisa would find him",
+                        "somewhere in the world..."
+                    ],
+                    "room": 5
+                }
+            ],
+            "object": "earth-usa.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Lisa thought that keeping",
+                        "the lights on would prevent",
+                        "the Dreamer from waking up."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "She knew that",
+                        "this was irrational."
+                    ],
+                    "room": 1
+                },
+                {
+                    "text": [
+                        "Her brain was probably",
+                        "tricking her..."
+                    ],
+                    "room": 4
+                }
+            ],
+            "object": "brain.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Lisa's weird thoughts might",
+                        "have been the effect of the",
+                        "peculiar house she lived in."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "When her parents were away,",
+                        "things floated through rooms",
+                        "chaotically."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "She even had",
+                        "trouble finding",
+                        "her socks..."
+                    ],
+                    "room": 2
+                }
+            ],
+            "object": "sock.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Chapter 2:",
+                        "The flower pot"
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "As Lisa grew up,",
+                        "she forgot",
+                        "about the Dreamer."
+                    ],
+                    "room": 3
+                },
+                {
+                    "text": [
+                        "She learned to read.",
+                        "She loved reading",
+                        "books..."
+                    ],
+                    "room": 6
+                }
+            ],
+            "object": "bookmark.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "She loved",
+                        "to write stories."
+                    ],
+                    "room": 1
+                },
+                {
+                    "text": [
+                        "She used the fountain",
+                        "pen her parents got her",
+                        "for her 11th birthday..."
+                    ],
+                    "room": 5
+                }
+            ],
+            "object": "pen.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "And she played the guitar.",
+                        "She wanted to be, someday,",
+                        "in a shoegaze pop band..."
+                    ],
+                    "room": 4
+                }
+            ],
+            "object": "guitar.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Lisa was a happy",
+                        "and dreamy girl."
+                    ],
+                    "room": 2
+                },
+                {
+                    "text": [
+                        "On her 16th birthday, she",
+                        "planted her dreams in a pot.",
+                        "They grew into a flower..."
+                    ],
+                    "room": 4
+                }
+            ],
+            "object": "flower-pot.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Sometimes, when it was dark,",
+                        "she felt a bit of anxiety, though",
+                        "she never stopped to wonder why."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "But France is a sunny",
+                        "country, and the sunlight",
+                        "always blurred her fears..."
+                    ],
+                    "room": 5
+                }
+            ],
+            "object": "brightness.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Chapter 3:",
+                        "The spaceship"
+                    ],
+                    "room": 2
+                },
+                {
+                    "text": [
+                        "The music was loud.",
+                        "The crowd was cheering."
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "- Hi, can I join you?"
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "- Yes."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "- What's your name?"
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "- Lisa... yours?"
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "The music was loud.",
+                        "The crowd was cheering.",
+                        "The moon was waning."
+                    ],
+                    "room": 5
+                }
+            ],
+            "object": "moon.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Denis was blond and tall,",
+                        "and a photo was all that",
+                        "Lisa had from him."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "That, and the",
+                        "moonlight."
+                    ],
+                    "room": 3
+                },
+                {
+                    "text": [
+                        "And the stars they watched",
+                        "on the grass at a postrock",
+                        "concert in Germany."
+                    ],
+                    "room": 5
+                },
+                {
+                    "text": [
+                        "And the pencil he used to draw",
+                        "her a spaceship, in which they",
+                        "would fly across the universe..."
+                    ],
+                    "room": 4
+                }
+            ],
+            "object": "pencil.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "There are 10 million",
+                        "people in the Czech",
+                        "Republic."
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "But it takes just one",
+                        "to fall in love",
+                        "with the whole land."
+                    ],
+                    "room": 5
+                },
+                {
+                    "text": [
+                        "Once every week, Lisa would",
+                        "get a letter from Denis and",
+                        "would sent him a letter back."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "Between them, unforgiving,",
+                        "was Germany, the sweet",
+                        "land where they had met."
+                    ],
+                    "room": 5
+                },
+                {
+                    "text": [
+                        "Lisa's room was ",
+                        "full of bohemian",
+                        "envelopes..."
+                    ],
+                    "room": 2
+                }
+            ],
+            "object": "email.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Chapter 4:",
+                        "The tree"
+                    ],
+                    "room": 1
+                },
+                {
+                    "text": [
+                        "One day, Lisa",
+                        "went for a walk",
+                        "in the park."
+                    ],
+                    "room": 3
+                },
+                {
+                    "text": [
+                        "She found a fallen comet",
+                        "on a bench, and, merciful,",
+                        "took it with her."
+                    ],
+                    "room": 5
+                },
+                {
+                    "text": [
+                        "But the comet was cunning,",
+                        "and it needed water",
+                        "to survive."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "It enchanted Lisa,",
+                        "and its icy tail turned",
+                        "into a silvery vapour."
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "Lisa inhaled it, and the vapour ",
+                        "went into her kidney, and soaked",
+                        "all the water inside her."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "Then Lisa fainted from",
+                        "the pain and her parents",
+                        "called the doctor..."
+                    ],
+                    "room": 5
+                }
+            ],
+            "object": "medical-sign.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "The kidney stones kept",
+                        "Lisa in bed for a month,",
+                        "under anesthetics."
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "She slept all day",
+                        "and her mind",
+                        "wandered."
+                    ],
+                    "room": 1
+                },
+                {
+                    "text": [
+                        "The lights were going away",
+                        "and the Dreamer could",
+                        "wake up any moment now."
+                    ],
+                    "room": 5
+                },
+                {
+                    "text": [
+                        "Who was the Dreamer, that",
+                        "Lisa long ago forgot, and",
+                        "that the pain had brought back?"
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "All was evanescent,",
+                        "like a snowflake..."
+                    ],
+                    "room": 6
+                }
+            ],
+            "object": "snow-flake.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Then Lisa",
+                        "remembered."
+                    ],
+                    "room": 1
+                },
+                {
+                    "text": [
+                        "'Don't wake me up', he had",
+                        "whispered, as they were",
+                        "lying on the German grass."
+                    ],
+                    "room": 5
+                },
+                {
+                    "text": [
+                        "Could Denis",
+                        "have been",
+                        "the Dreamer?"
+                    ],
+                    "room": 2
+                },
+                {
+                    "text": [
+                        "Then the painkillers",
+                        "kicked in again, and",
+                        "the time stopped..."
+                    ],
+                    "room": 5
+                }
+            ],
+            "object": "stopwatch.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "When she finally got better,",
+                        "Lisa knew only one thing."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "She wanted to go East."
+                    ],
+                    "room": 5
+                },
+                {
+                    "text": [
+                        "She needed to see",
+                        "Denis again."
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "But he had stopped",
+                        "writing while she",
+                        "was ill."
+                    ],
+                    "room": 5
+                },
+                {
+                    "text": [
+                        "Lisa took her kidney stones",
+                        "and planted them in the garden",
+                        "and they grew into a tree..."
+                    ],
+                    "room": 4
+                }
+            ],
+            "object": "tree.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Its seeds would",
+                        "grow and the wind",
+                        "would fly them East."
+                    ],
+                    "room": 2
+                },
+                {
+                    "text": [
+                        "Across the land of Germany,",
+                        "to the blond Czech Dreamer."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "To the waning",
+                        "moon and stars..."
+                    ],
+                    "room": 1
+                }
+            ],
+            "object": "moon.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Chapter 5:",
+                        "Tic-tac-toe"
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "Then the world",
+                        "grew up,",
+                        "with Lisa."
+                    ],
+                    "room": 2
+                },
+                {
+                    "text": [
+                        "Her fears grew bigger,",
+                        "and she covered them",
+                        "with clouds."
+                    ],
+                    "room": 5
+                },
+                {
+                    "text": [
+                        "And she tried",
+                        "to find herself",
+                        "again..."
+                    ],
+                    "room": 3
+                }
+            ],
+            "object": "woman.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Lisa was happy."
+                    ],
+                    "room": 1
+                },
+                {
+                    "text": [
+                        "Her dress was white,",
+                        "and her English husband",
+                        "was thoughtful."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "And not even one thought",
+                        "of hers was related to",
+                        "the Czech Republic."
+                    ],
+                    "room": 5
+                },
+                {
+                    "text": [
+                        "She had learned to play",
+                        "tic-tac-toe with life,",
+                        "and she was winning..."
+                    ],
+                    "room": 5
+                }
+            ],
+            "object": "tic-tac-toe.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "And when the world crumbled",
+                        "again, and everyone left,",
+                        "she tried to call her parents."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "But she couldn't find",
+                        "heaven's phone number."
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "So she stood by the phone",
+                        "every day",
+                        "hoping they would call her..."
+                    ],
+                    "room": 5
+                }
+            ],
+            "object": "phone.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Chapter 6:",
+                        "The Dreamer"
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "Then she forgot whose",
+                        "call she was waiting for."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "She forgot why",
+                        "she was alone."
+                    ],
+                    "room": 1
+                },
+                {
+                    "text": [
+                        "She forgot what the flower",
+                        "in the pot was made of.",
+                        "It had started withering..."
+                    ],
+                    "room": 4
+                }
+            ],
+            "object": "flower.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Then she remembered",
+                        "she wanted to go East."
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "But she couldn't",
+                        "remember why."
+                    ],
+                    "room": 1
+                },
+                {
+                    "text": [
+                        "Lisa was afraid."
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "It was getting dark",
+                        "and she forgot",
+                        "where the light switch was."
+                    ],
+                    "room": 5
+                },
+                {
+                    "text": [
+                        "Then someone turned",
+                        "the lamp off..."
+                    ],
+                    "room": 4
+                }
+            ],
+            "object": "desk-lamp.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Lisa went to sleep."
+                    ],
+                    "room": 2
+                },
+                {
+                    "text": [
+                        "It was dark now",
+                        "and she didn't remember",
+                        "anything anymore."
+                    ],
+                    "room": 5
+                },
+                {
+                    "text": [
+                        "But then she",
+                        "understood."
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "She was the Dreamer."
+                    ],
+                    "room": 5
+                },
+                {
+                    "text": [
+                        "And she closed her",
+                        "old, wrinkled eyes."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "Lisa was not afraid",
+                        "anymore."
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "The Dreamer was",
+                        "ready to wake up..."
+                    ],
+                    "room": 1
+                },
+                {
+                    "text": [
+                        "The end"
+                    ],
+                    "room": 4
+                }
+            ],
+            "object": ""
+        }
+    ]
+}
