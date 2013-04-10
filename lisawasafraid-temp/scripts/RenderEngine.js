@@ -11,7 +11,7 @@ RenderEngineClass = Class.extend(
 	objToDraw: null,
 	
 	ready: false,
-	loadedCnt: 0,
+	loadCnt: 0,
 	
 	render_unit: 100,
 	
