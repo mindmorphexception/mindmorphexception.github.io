@@ -87,15 +87,13 @@ RenderEngineClass = Class.extend(
 			this.drawSprite(this.roomToDraw.backgr,0,0);
 		}
 		
-		this.context.globalAlpha = 1;
-		
 		/* if there are objects to draw */
 		if(this.objToDraw != null) for(var i = 0; i < this.objToDraw.length; ++i)
 		{
 			this.drawObject(this.objToDraw[i].obj,this.objToDraw[i].x,this.objToDraw[i].y);
 		}
 		
-
+		this.context.globalAlpha = 1;
 		
 		/* preview room contour
 		for(var i = 1; i <= 6; ++i)
