@@ -85,6 +85,7 @@ GameEngineClass = Class.extend(
 		this.seq = 0;	// usage: this.story[stage].sequences[sequence].text[line]
 		
 		console.log("game engine set up!");
+		this.ready = true;
 				
 	},
 	
