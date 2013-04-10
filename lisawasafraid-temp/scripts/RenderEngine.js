@@ -4,14 +4,22 @@ RenderEngineClass = Class.extend(
 	context: null,
 	w: null,
 	h: null, 
+	
 	bgr: null,
 	objects: null,
+	rooms: null,
+	
+	loadNeeded: 3,
+	ready: false,
+	loadCnt: 0,
+	
+	bgrsrc: "img/background.png",
+	objsrc:"img/objects.png",
+	roomssrc: "img/rooms.png",
+	
 	roomToDraw: null,
 	textToDraw: null,
 	objToDraw: null,
-	
-	ready: false,
-	loadCnt: 0,
 	
 	render_unit: 50,
 	
@@ -26,13 +34,18 @@ RenderEngineClass = Class.extend(
 		
 		/* load background image here */
 		var bgr = new Image();
-		bgr.onload = function() { gRenderEngine.bgr = this; gRenderEngine.loadCnt++; if(gRenderEngine.loadCnt == 2) gRenderEngine.ready = true; };
-		bgr.src = "img/background.png";
+		bgr.onload = function() { gRenderEngine.bgr = this; gRenderEngine.loadCnt++; if(gRenderEngine.loadCnt == gRenderEngine.loadNeeded) gRenderEngine.ready = true; };
+		bgr.src = this.bgrsrc;
 		
 		/* load objects image */
 		var objimg = new Image();
-		objimg.onload = function() { gRenderEngine.objects = this; gRenderEngine.loadCnt++; if(gRenderEngine.loadCnt == 2) gRenderEngine.ready = true; }; 
-		objimg.src = "img/objects.png";
+		objimg.onload = function() { gRenderEngine.objects = this; gRenderEngine.loadCnt++; if(gRenderEngine.loadCnt == gRenderEngine.loadNeeded) gRenderEngine.ready = true; }; 
+		objimg.src = this.objsrc;
+		
+		/* load rooms image here */
+		var roomsimg = new Image();
+		roomsimg.onload = function() { gRenderEngine.rooms = this; gRenderEngine.loadCnt++; if(gRenderEngine.loadCnt == gRenderEngine.loadNeeded) gRenderEngine.ready = true; };
+		roomsimg.src = this.roomssrc;
 		
 		this.context.textBaseline="top";
 		this.context.font = "26px 'Dancing Script'";
@@ -48,6 +61,11 @@ RenderEngineClass = Class.extend(
 		this.context.drawImage(img,x,y);
 	},
 	
+	drawRoom: function(room,x,y)
+	{
+		this.context.drawImage(this.rooms, room.frame.x, room.frame.y, room.frame.w, room.frame.h, x, y, room.frame.w, room.frame.h);
+	},
+	
 	drawObject: function(obj,x,y)
 	{
 		this.context.drawImage(this.objects, obj.frame.x, obj.frame.y, obj.frame.w, obj.frame.h, x, y, obj.frame.w, obj.frame.h);
@@ -59,12 +77,12 @@ RenderEngineClass = Class.extend(
 		/* draw background */
 		if(gEngine.gameEnded) 
 		{ 
-			if(this.storyOpacity > 0.01) this.storyOpacity = this.storyOpacity - 0.01; 
+			if(this.storyOpacity > 0.01) this.storyOpacity = this.storyOpacity - (this.render_unit/10000); //0.005; 
 		}
 		else
 		{
-			if(gEngine.play_stage && this.storyOpacity < 1) this.storyOpacity = this.storyOpacity + 0.05;
-			if(!gEngine.play_stage && this.storyOpacity > 0.7) this.storyOpacity = this.storyOpacity - 0.05;
+			if(gEngine.play_stage && this.storyOpacity < 1) this.storyOpacity = this.storyOpacity + (this.render_unit/1000); //0.05;
+			if(!gEngine.play_stage && this.storyOpacity > 0.7) this.storyOpacity = this.storyOpacity - (this.render_unit/1000); //0.05;
 		}
 		this.context.globalAlpha = this.storyOpacity;
 		this.drawSprite(this.bgr,0,0);
@@ -84,7 +102,7 @@ RenderEngineClass = Class.extend(
 		if(this.roomToDraw != null) 
 		{
 			this.context.globalAlpha = this.roomToDraw.opacity;
-			this.drawSprite(this.roomToDraw.backgr,0,0);
+			this.drawRoom(this.roomToDraw,0,0);
 		}
 		
 		/* if there are objects to draw */

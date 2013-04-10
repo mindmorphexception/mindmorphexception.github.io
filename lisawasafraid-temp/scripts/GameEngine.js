@@ -63,21 +63,9 @@ GameEngineClass = Class.extend(
 		var parsed = this.loadJSON("rooms");
 		this.rooms = parsed["rooms"];
 		
-		console.log('loading img');
-		/* load room images */
+		/* add some computations to rooms */
 		for(var i=0; i < this.rooms.length; ++i)
 		{
-			var img = new Image();
-			img.onload = function() {  
-										gEngine.nrImgLoaded++;
-										if(gEngine.nrImgLoaded == gEngine.rooms.length)
-										{
-											console.log('all images loaded');
-											gEngine.ready = true;
-										}
-									};
-			img.src = this.rooms[i].file;
-			this.rooms[i].backgr = img;
 			this.rooms[i].x = this.rooms[i].left;
 			this.rooms[i].y = this.rooms[i].high;
 			this.rooms[i].w = this.rooms[i].right - this.rooms[i].left;
