@@ -307,7 +307,7 @@ GameEngineClass = Class.extend(
 					var i = 0;
 					while(this.crtObjects.length > 1)
 					{
-						if(this.crtObjects[i].obj.name == this.targetObject) ++i;
+						if(this.crtObjects[i].obj.filename == this.targetObject) ++i;
 						else this.crtObjects.splice(i,1);
 					}
 					gRenderEngine.objToDraw = this.crtObjects;
