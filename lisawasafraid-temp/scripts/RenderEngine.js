@@ -45,14 +45,11 @@ RenderEngineClass = Class.extend(
 	
 	drawSprite: function(img,x,y)
 	{
-		console.log(img);
 		this.context.drawImage(img,x,y);
 	},
 	
 	drawObject: function(obj,x,y)
 	{
-		console.log(this.objects);
-		console.log(obj);
 		this.context.drawImage(this.objects, obj.frame.x, obj.frame.y, obj.frame.w, obj.frame.h, x, y, obj.frame.w, obj.frame.h);
 	},
 	
