@@ -18,10 +18,11 @@
 		<link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'> 
 		
 		<script type="text/javascript" src="scripts/core.js"></script>
-		<!--script type="text/javascript" src="scripts/xhr.js"></script-->
 		<script type="text/javascript" src="scripts/GameEngine.js"></script>
 		<script type="text/javascript" src="scripts/RenderEngine.js"></script>
 		<script type="text/javascript" src="scripts/InputEngine.js"></script>
+				
+		<script type="text/javascript" src="include/jQuery.js"></script>
 		
 		<script type="text/javascript">
 		
@@ -59,6 +60,9 @@
 				var a = document.getElementById("audio");
 				console.log(a.duration);
 				a.duration = 65.48249053955078;*/
+				
+				$("#canvas").fadeOut(1);
+				$("#credits_div").fadeOut(1);
 			
 				gEngine = new GameEngineClass(); gEngine.setup();
 				gRenderEngine = new RenderEngineClass(); gRenderEngine.setup();
@@ -78,8 +82,9 @@
 			
 			function startGame()
 			{
-				document.getElementById("loading_div").style.display = "none";
-				document.getElementById("canvas").style.visibility = "visible";
+				$("#loading_div").fadeOut(1);
+				$("#canvas").fadeIn(5000);
+				$("#credits_div").fadeIn(5000);
 				
 				setInterval(function() { gEngine.update(); }, gEngine.game_unit); 
 				setInterval(function() { gRenderEngine.render(); }, gRenderEngine.render_unit);
@@ -94,7 +99,7 @@
 				border:1px solid black;
 				margin-left: auto;
 				margin-right: auto;
-				visibility: hidden;
+				display: block;
 			}
 			body
 			{
@@ -109,22 +114,13 @@
 			a:visited {text-decoration:none; color:inherit;}
 			a:hover {text-decoration:none;color:inherit; border-bottom:1px solid;}
 			a:active {text-decoration:none;color:inherit;}
-			
+
 			#credits_div
 			{
+				display:none;
 				padding-top:35px;
 				font-family: Verdana;
 				font-size: 12px;
-			}
-			
-			#loading_div
-			{
-				position: absolute;
-				padding-top: 100px;
-				margin-left: auto;
-				margin-right: auto;
-				text-align:center;
-				width: 200px;
 			}
 		</style>
 		
@@ -145,46 +141,24 @@
 		
 		<div id="credits_div">
 			"Lisa was afraid": A puzzle-flavoured short story by <!--a href="https://plus.google.com/u/0/106532679685962165170" target="_blank"-->Iulia M. Comsa <br/><br/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-						
+
 			<small> Instructions: Click the text to advance the story.<br/>
-=======
-			
-			Instructions: Click the text to advance the story.<br/>
->>>>>>> parent of 8eab896... removing xhr
 			When the text fades out, open the rooms by clicking them and find an object related to the last phrase. <br/>
 			The content of the room changes every time the room is opened. <br/>
-			The object you are looking for might not always be in a room. <br/><br/>
+			The object you are looking for might not always be in a room. </small> <br/><br/>
 			
-			Full script (for your reading pleasure): <a href="story.txt">txt</a> <br/>
+			Read the full script: <a href="story.txt">txt</a> <br/>
 			Source code: <a href="LisaWasAfraid.zip">zip</a> <br/>
 			Full walkthrough: <a href="http://youtu.be/SIpaA7USLNI">YouTube</a> <br/><br/>
-			
-<<<<<<< HEAD
-=======
-			
-			Instructions: Click the text to advance the story.<br/>
-			When the text fades out, open the rooms by clicking them and find an object related to the last phrase. <br/>
-			The content of the room changes every time the room is opened. <br/>
-			The object you are looking for might not always be in a room. <br/><br/>
-			
->>>>>>> parent of 8eab896... removing xhr
-			Full script (for your reading pleasure): <a href="story.txt">txt</a> <br/>
-			Source code: <a href="LisaWasAfraid.zip">zip</a> <br/>
-			Full walkthrough: <a href="http://youtu.be/SIpaA7USLNI">YouTube</a> <br/><br/>
-			
-<<<<<<< HEAD
+
 			<small>
-=======
->>>>>>> parent of 8eab896... removing xhr
-=======
->>>>>>> parent of 8eab896... removing xhr
 			Music: Comfortable Mystery 4 by <a href="http://incompetech.com" target="_blank">Kevin MacLeod</a> <br/>
 			Object images provided by <a href="http://www.iconbeast.com/" target="_blank">IconBeast</a> <br/>
-			Some code taken from <a href="http://gritsgame.appspot.com/" target="_blank">the GRITS game</a> and the <a href="https://www.udacity.com/course/cs255" target="_blank">Udacity HTML5 Game Development course</a> <br/>
-			Everything else is made by me using <a href="http://www.gimp.org/" target="_blank">GIMP</a> <br/>
+			All other artwork is made by me using <a href="http://www.gimp.org/" target="_blank">GIMP</a> <br/>
+			Code for JS classes provided by <a href="http://gritsgame.appspot.com/" target="_blank">the GRITS game</a> 
+			Motivated by the <a href="https://www.udacity.com/course/cs255" target="_blank">Udacity HTML5 Game Development course</a> <br/>
 			This work is licensed under Creative Commons CC BY-NC-SA 
+			</small>
 		</div>
 		
 		<audio id="audio" autoplay loop>
