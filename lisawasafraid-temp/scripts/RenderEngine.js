@@ -5,9 +5,13 @@ RenderEngineClass = Class.extend(
 	w: null,
 	h: null, 
 	bgr: null,
+	objects: null,
 	roomToDraw: null,
 	textToDraw: null,
 	objToDraw: null,
+	
+	ready: false,
+	loadedCnt: 0,
 	
 	render_unit: 100,
 	
@@ -20,10 +24,15 @@ RenderEngineClass = Class.extend(
 		this.w = this.canvas.width;
 		this.h = this.canvas.height;
 		
-		/* load backgrund image here */
-		var img = new Image();
-		img.onload = function() { gRenderEngine.bgr = this; };
-		img.src = "img/background.png";
+		/* load background image here */
+		var bgr = new Image();
+		bgr.onload = function() { gRenderEngine.bgr = this; gRenderEngine.loadCnt++; if(gRenderEngine.loadCnt == 2) gRenderEngine.ready = true; };
+		bgr.src = "img/background.png";
+		
+		/* load objects image */
+		var objimg = new Image();
+		objimg.onload = function() { gRenderEngine.objects = this; gRenderEngine.loadCnt++; if(gRenderEngine.loadCnt == 2) gRenderEngine.ready = true; }; 
+		objimg.src = "img/objects.png";
 		
 		this.context.textBaseline="top";
 		this.context.font = "26px 'Dancing Script'";
@@ -37,6 +46,11 @@ RenderEngineClass = Class.extend(
 	drawSprite: function(img,x,y)
 	{
 		this.context.drawImage(img,x,y);
+	},
+	
+	drawObject: function(obj,x,y)
+	{
+		this.context.drawImage(this.objects,obj.frame.x, obj.frame.y, obj.frame.w, obj.frame.h, x, y);
 	},
 	
 	render: function()

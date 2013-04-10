@@ -86,32 +86,8 @@ GameEngineClass = Class.extend(
 		console.log('loading objects');
 		/* load objects json */
 		var parsed = this.loadJSON("objects");
-		var obj_filenames = parsed["objects"];
-		
-		/* set object filenames */
-		this.objects = new Array();
-		for(var i=0; i < obj_filenames.length; ++i)
-		{
-			this.objects[i] = new Object();
-			this.objects[i].name = obj_filenames[i];
-		}
-		
-		/* load object images */
-		for(var i=0; i < this.objects.length; ++i)
-		{
-			var img = new Image();
-			img.onload = function() {  
-										gEngine.nrImgLoaded++;
-										if(gEngine.nrImgLoaded == gEngine.rooms.length + gEngine.objects.length)
-										{
-											console.log('all images loaded');
-											gEngine.fullyLoaded = true;
-										}
-									};
-			img.src = 'img/obj/' + this.objects[i].name;
-			this.objects[i].img = img;
-		}
-		
+		this.objects = parsed["objects"];
+				
 		console.log('loading story');
 		/* load story from json */
 		parsed = this.loadJSON("story");
@@ -120,7 +96,7 @@ GameEngineClass = Class.extend(
 		this.seq = 0;	// usage: this.story[stage].sequences[sequence].text[line]
 		
 		console.log("game engine set up!");
-		
+				
 	},
 	
 	getCrtRoom: function()
@@ -300,13 +276,13 @@ GameEngineClass = Class.extend(
 							do	// pick an object that was not selected already
 							{
 								 pickedobj = Math.floor(Math.random() * this.objects.length);
-							} while(this.alreadySelectedObject(this.objects[pickedobj].name));
+							} while(this.alreadySelectedObject(this.objects[pickedobj].filename));
 							
 							this.crtObjects[picked] = new Object();
 							this.crtObjects[picked].obj = this.objects[pickedobj];
 							this.crtObjects[picked].x = x;
 							this.crtObjects[picked].y = y;
-							if(this.crtObjects[picked].obj.name == this.targetObject)	// if this happens to be the target, update target coordinates
+							if(this.crtObjects[picked].obj.filename == this.targetObject)	// if this happens to be the target, update target coordinates
 							{
 								this.targetObjectX = x;
 								this.targetObjectY = y;
@@ -399,7 +375,7 @@ GameEngineClass = Class.extend(
 	findObjByName: function(name)	// find an object in the array by name, if not there return null
 	{
 		for(var i = 0; i < this.objects.length; ++i)
-			if(this.objects[i]. name == name) return this.objects[i];
+			if(this.objects[i].filename == name) return this.objects[i];
 		return null;
 	},
 	
@@ -419,7 +395,7 @@ GameEngineClass = Class.extend(
 	{
 		for(var i = 0; i < this.crtObjects.length; ++i)
 		{	
-			if(this.crtObjects[i].obj.name == name) return true;
+			if(this.crtObjects[i].obj.filename == name) return true;
 		}
 		return false;
 	}
