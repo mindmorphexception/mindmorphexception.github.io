@@ -24,6 +24,7 @@ GameEngineClass = Class.extend(
 	nrObjects: 0,
 	
 	roomOpened: null,
+	lastRoomOpened: null,
 	crtObjects: null,
 	targetObject: null,
 	targetObjectX: null,
@@ -240,60 +241,7 @@ GameEngineClass = Class.extend(
 					if(i == gRenderEngine.textToDraw.room-1) continue;		// skip if text in room
 					if(gInputEngine.isinroom(i))	// if a room was clicked
 					{
-						this.roomOpened = i;
-						gRenderEngine.roomToDraw = this.rooms[i];	//send it to renderer	
-						this.rooms[i].opacity = 0;	//set initial opacity to 0
-						this.room_fading_in = true;
-						this.crt_time = 0;
-						
-						// pick 3 objects to draw in room
-						this.targetObject = this.story[this.stage].object;	// set target object to be clicked
-						this.targetObjectX = null;
-						this.targetObjectY = null;
-						var picked = 0;
-						this.crtObjects = new Array();
-						if(Math.random() > 0.5)		// pick target with probability this.targetProbability... no let's leave this to half-certainty for impatient n00bs
-						{
-							this.crtObjects[0] = new Object();
-							this.crtObjects[0].obj = this.findObjByName(this.targetObject);
-							this.crtObjects[0].x = Math.floor( this.rooms[this.roomOpened].left + Math.random() * (this.rooms[this.roomOpened].right - this.rooms[this.roomOpened].left - this.objSizeX));
-							this.crtObjects[0].y = Math.floor( this.rooms[this.roomOpened].high + Math.random() * (this.rooms[this.roomOpened].low - this.rooms[this.roomOpened].high - this.objSizeY));
-							picked++;
-							this.targetObjectX = this.crtObjects[0].x;	// update target coordinates
-							this.targetObjectY = this.crtObjects[0].y;
-						}
-						
-						if(this.nrObjects > 1) while(picked < this.nrObjects)	// pick rest of objects unless it's the first time
-						{
-							var x,y;
-							do	//pick some coordinates that don't colide with the other objects
-							{
-								x = Math.floor( this.rooms[this.roomOpened].left + Math.random() * (this.rooms[this.roomOpened].right - this.rooms[this.roomOpened].left - this.objSizeX));
-								y = Math.floor( this.rooms[this.roomOpened].high + Math.random() * (this.rooms[this.roomOpened].low - this.rooms[this.roomOpened].high - this.objSizeY));
-							} while (this.collides(x,y));
-							
-							var pickedobj;
-							do	// pick an object that was not selected already
-							{
-								 pickedobj = Math.floor(Math.random() * this.objects.length);
-							} while(this.alreadySelectedObject(this.objects[pickedobj].filename));
-							
-							this.crtObjects[picked] = new Object();
-							this.crtObjects[picked].obj = this.objects[pickedobj];
-							this.crtObjects[picked].x = x;
-							this.crtObjects[picked].y = y;
-							if(this.crtObjects[picked].obj.filename == this.targetObject)	// if this happens to be the target, update target coordinates
-							{
-								this.targetObjectX = x;
-								this.targetObjectY = y;
-							}
-							picked++;
-						}
-						
-						gRenderEngine.objToDraw = this.crtObjects;
-						
-						
-						this.needsInput = true;
+						this.generateRoom(i);	// open it
 						break;
 					}
 				}
@@ -321,10 +269,23 @@ GameEngineClass = Class.extend(
 				{
 					// close room
 					gRenderEngine.roomToDraw = null;
+					this.lastRoomOpened = this.roomOpened;
 					this.roomOpened = null;
 					this.crtObjects = null;
 					gRenderEngine.objToDraw = null;
 					this.needsInput = true;
+					
+					// if a room was clicked, fade it in
+					for(var i = 0; i < gEngine.rooms.length; ++i)	// check if user has clicked a room
+					{
+						if(i == gRenderEngine.textToDraw.room-1) continue;		// skip if text in room
+						if(i == this.lastRoomOpened) continue;		// skip if same room
+						if(gInputEngine.isinroom(i))	// if a room was clicked
+						{
+							this.generateRoom(i);	// open it
+							break;
+						}
+					}
 				}
 				
 			}
@@ -370,6 +331,64 @@ GameEngineClass = Class.extend(
 			this.story[this.stage].sequences[this.seq].opacity = this.crt_time / 1000;		//fade it out
 		}
 		*/
+	},
+	
+	generateRoom: function(i)	// ---------- function to generate a room --------------
+	{
+		this.roomOpened = i;
+		gRenderEngine.roomToDraw = this.rooms[i];	//send it to renderer	
+		this.rooms[i].opacity = 0;	//set initial opacity to 0
+		this.room_fading_in = true;
+		this.crt_time = 0;
+		
+		// pick some objects to draw in room
+		this.targetObject = this.story[this.stage].object;	// set target object to be clicked
+		this.targetObjectX = null;
+		this.targetObjectY = null;
+		var picked = 0;
+		this.crtObjects = new Array();
+		if(Math.random() > 0.5)		// pick target with probability this.targetProbability... no let's leave this to half-certainty for impatient n00bs
+		{
+			this.crtObjects[0] = new Object();
+			this.crtObjects[0].obj = this.findObjByName(this.targetObject);
+			this.crtObjects[0].x = Math.floor( this.rooms[this.roomOpened].left + Math.random() * (this.rooms[this.roomOpened].right - this.rooms[this.roomOpened].left - this.objSizeX));
+			this.crtObjects[0].y = Math.floor( this.rooms[this.roomOpened].high + Math.random() * (this.rooms[this.roomOpened].low - this.rooms[this.roomOpened].high - this.objSizeY));
+			picked++;
+			this.targetObjectX = this.crtObjects[0].x;	// update target coordinates
+			this.targetObjectY = this.crtObjects[0].y;
+		}
+		
+		if(this.nrObjects > 1) while(picked < this.nrObjects)	// pick rest of objects unless it's the first time
+		{
+			var x,y;
+			do	//pick some coordinates that don't colide with the other objects
+			{
+				x = Math.floor( this.rooms[this.roomOpened].left + Math.random() * (this.rooms[this.roomOpened].right - this.rooms[this.roomOpened].left - this.objSizeX));
+				y = Math.floor( this.rooms[this.roomOpened].high + Math.random() * (this.rooms[this.roomOpened].low - this.rooms[this.roomOpened].high - this.objSizeY));
+			} while (this.collides(x,y));
+			
+			var pickedobj;
+			do	// pick an object that was not selected already
+			{
+				 pickedobj = Math.floor(Math.random() * this.objects.length);
+			} while(this.alreadySelectedObject(this.objects[pickedobj].filename));
+			
+			this.crtObjects[picked] = new Object();
+			this.crtObjects[picked].obj = this.objects[pickedobj];
+			this.crtObjects[picked].x = x;
+			this.crtObjects[picked].y = y;
+			if(this.crtObjects[picked].obj.filename == this.targetObject)	// if this happens to be the target, update target coordinates
+			{
+				this.targetObjectX = x;
+				this.targetObjectY = y;
+			}
+			picked++;
+		}
+		
+		gRenderEngine.objToDraw = this.crtObjects;
+		
+		
+		this.needsInput = true;
 	},
 	
 	findObjByName: function(name)	// find an object in the array by name, if not there return null
