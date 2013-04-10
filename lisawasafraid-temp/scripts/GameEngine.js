@@ -131,7 +131,7 @@ GameEngineClass = Class.extend(
 			}
 			else if(this.seq_fading_out)
 			{
-				this.crt_time = this.crt_time - game_unit;	//increase crt timer
+				this.crt_time = this.crt_time - this.game_unit;	//increase crt timer
 				var opacity = this.crt_time / 1000;		
 				this.story[this.stage].sequences[this.seq].opacity = opacity;	// decrease text opacity
 				
@@ -193,7 +193,7 @@ GameEngineClass = Class.extend(
 		{
 			if (this.room_fading_in)	// if we're fading in a room now
 			{
-				this.crt_time = this.crt_time + game_unit;
+				this.crt_time = this.crt_time + this.game_unit;
 				var opacity = this.crt_time / 1000;		//increase opacity
 				this.rooms[this.roomOpened].opacity = opacity;
 				if(opacity == 1)	// if we finished fading in the room
@@ -205,7 +205,7 @@ GameEngineClass = Class.extend(
 			
 			else if(this.room_fading_out)	// if we're fading the room after target successfully clicked
 			{
-				this.crt_time = this.crt_time - game_unit;
+				this.crt_time = this.crt_time - this.game_unit;
 				var opacity = this.crt_time / 1000;		//decrease opacity
 				this.rooms[this.roomOpened].opacity = opacity;
 				if(opacity < 0.7) gRenderEngine.textToDraw.opacity = opacity;
