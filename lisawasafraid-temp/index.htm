@@ -22,8 +22,6 @@
 		<script type="text/javascript" src="scripts/RenderEngine.js"></script>
 		<script type="text/javascript" src="scripts/InputEngine.js"></script>
 		
-		<script type="text/javascript" src="include/jQuery.js"></script>
-		
 		<script type="text/javascript">
 		
 			/* -------- sound stuff here ----------- */
@@ -61,8 +59,6 @@
 				console.log(a.duration);
 				a.duration = 65.48249053955078;*/
 			
-				//$("#canvas").fadeOut(1);
-				//$("#credits_div").fadeOut(1);
 				gEngine = new GameEngineClass(); gEngine.setup();
 				gRenderEngine = new RenderEngineClass(); gRenderEngine.setup();
 				gInputEngine = new InputEngineClass(); gInputEngine.setup();
@@ -81,9 +77,6 @@
 			
 			function startGame()
 			{
-				//$("#loading_div").fadeOut(1);
-				//$("#canvas").fadeIn(5000);
-				//$("#credits_div").fadeIn(5000);
 				document.getElementById("loading_div").style.display = "none";
 				document.getElementById("canvas").style.visibility = "visible";
 				
