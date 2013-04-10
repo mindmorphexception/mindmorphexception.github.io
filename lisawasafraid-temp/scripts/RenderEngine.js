@@ -23,8 +23,8 @@ RenderEngineClass = Class.extend(
 	
 	render_unit: 50,
 	
-	storyModeOpacity: 0.6,
-	storyOpacity: 0.6,
+	storyModeOpacity: 0.65,
+	storyOpacity: 0.65,
 	
 	setup: function()
 	{
