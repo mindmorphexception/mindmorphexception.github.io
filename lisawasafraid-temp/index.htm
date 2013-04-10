@@ -71,7 +71,7 @@
 				gEngine.start();
 				
 				var interval = setInterval(function(){ 
-					if(gEngine.ready && gRenderEngine.ready != null) 
+					if(gEngine.ready && gRenderEngine.ready) 
 					{
 						interval = window.clearInterval(interval);
 						startGame();
