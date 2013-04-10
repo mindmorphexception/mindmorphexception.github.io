@@ -50,7 +50,7 @@ RenderEngineClass = Class.extend(
 	
 	drawObject: function(obj,x,y)
 	{
-		this.context.drawImage(this.objects,obj.frame.x, obj.frame.y, obj.frame.w, obj.frame.h, x, y);
+		this.context.drawImage(this.objects, obj.frame.x, obj.frame.y, obj.frame.w, obj.frame.h, x, y);
 	},
 	
 	render: function()
@@ -90,7 +90,7 @@ RenderEngineClass = Class.extend(
 		/* if there are objects to draw */
 		if(this.objToDraw != null) for(var i = 0; i < this.objToDraw.length; ++i)
 		{
-			this.drawObject(this.objToDraw[i].obj.img,this.objToDraw[i].x,this.objToDraw[i].y);
+			this.drawObject(this.objToDraw[i].obj,this.objToDraw[i].x,this.objToDraw[i].y);
 		}
 		
 		this.context.globalAlpha = 1;
