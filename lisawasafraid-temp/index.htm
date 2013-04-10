@@ -61,8 +61,8 @@
 				console.log(a.duration);
 				a.duration = 65.48249053955078;*/
 			
-				$("#canvas").fadeOut(1);
-				$("#credits_div").fadeOut(1);
+				//$("#canvas").fadeOut(1);
+				//$("#credits_div").fadeOut(1);
 				gEngine = new GameEngineClass(); gEngine.setup();
 				gRenderEngine = new RenderEngineClass(); gRenderEngine.setup();
 				gInputEngine = new InputEngineClass(); gInputEngine.setup();
@@ -81,9 +81,11 @@
 			
 			function startGame()
 			{
-				$("#loading_div").fadeOut(1);
-				$("#canvas").fadeIn(5000);
-				$("#credits_div").fadeIn(5000);
+				//$("#loading_div").fadeOut(1);
+				//$("#canvas").fadeIn(5000);
+				//$("#credits_div").fadeIn(5000);
+				document.getElementById("loading_div").style.display = "none";
+				document.getElementById("canvas").style.visibility = "visible";
 				
 				setInterval(function() { gEngine.update(); }, gEngine.game_unit); 
 				setInterval(function() { gRenderEngine.render(); }, gRenderEngine.render_unit);
@@ -98,7 +100,7 @@
 				border:1px solid black;
 				margin-left: auto;
 				margin-right: auto;
-				display: block;
+				visibility: hidden;
 			}
 			body
 			{
@@ -116,10 +118,15 @@
 			
 			#credits_div
 			{
-				display:none;
 				padding-top:35px;
 				font-family: Verdana;
 				font-size: 12px;
+			}
+			
+			#loading_div
+			{
+				position: absolute;
+				padding-top: 100px;
 			}
 		</style>
 		
@@ -141,14 +148,14 @@
 		<div id="credits_div">
 			"Lisa was afraid": A puzzle-flavoured short story by <!--a href="https://plus.google.com/u/0/106532679685962165170" target="_blank"-->Iulia M. Comsa <br/><br/>
 						
-			Full script (for your reading pleasure): <a href="story.txt">txt</a> <br/>
-			Source code: <a href="LisaWasAfraid.zip">zip</a> <br/>
-			Full walkthrough: <a href="http://youtu.be/SIpaA7USLNI">YouTube</a> <br/><br/>
-			
-			Instructions: <small> Click the text to advance the story.<br/>
+			<small> Instructions: Click the text to advance the story.<br/>
 			When the text fades out, open the rooms by clicking them and find an object related to the last phrase. <br/>
 			The content of the room changes every time the room is opened. <br/>
 			The object you are looking for might not always be in a room. </small> <br/><br/>
+			
+			Full script (for your reading pleasure): <a href="story.txt">txt</a> <br/>
+			Source code: <a href="LisaWasAfraid.zip">zip</a> <br/>
+			Full walkthrough: <a href="http://youtu.be/SIpaA7USLNI">YouTube</a> <br/><br/>
 			
 			<small>
 			Music: Comfortable Mystery 4 by <a href="http://incompetech.com" target="_blank">Kevin MacLeod</a> <br/>
