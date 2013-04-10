@@ -52,7 +52,6 @@ GameEngineClass = Class.extend(
 		}
 		var response = oRequest.responseText;
 		var parsed = JSON.parse(response);
-		console.log(parsed);
 		return parsed;
 	},
 	
@@ -88,7 +87,6 @@ GameEngineClass = Class.extend(
 		/* load objects json */
 		var parsed = this.loadJSON("objects");
 		this.objects = parsed["objects"];
-		console.log(this.objects);
 				
 		console.log('loading story');
 		/* load story from json */
