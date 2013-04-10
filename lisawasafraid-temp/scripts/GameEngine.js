@@ -4,7 +4,7 @@ GameEngineClass = Class.extend(
 	objects: new Array(),
 	
 	nrImgLoaded: 0,
-	fullyLoaded: false,
+	ready: false,
 	
 	story: null,
 	stage: null,
@@ -72,7 +72,7 @@ GameEngineClass = Class.extend(
 										if(gEngine.nrImgLoaded == gEngine.rooms.length)
 										{
 											console.log('all images loaded');
-											gEngine.fullyLoaded = true;
+											gEngine.ready = true;
 										}
 									};
 			img.src = this.rooms[i].file;

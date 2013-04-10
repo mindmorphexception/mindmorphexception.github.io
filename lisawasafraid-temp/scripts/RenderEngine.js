@@ -90,7 +90,7 @@ RenderEngineClass = Class.extend(
 		/* if there are objects to draw */
 		if(this.objToDraw != null) for(var i = 0; i < this.objToDraw.length; ++i)
 		{
-			this.drawSprite(this.objToDraw[i].obj.img,this.objToDraw[i].x,this.objToDraw[i].y);
+			this.drawObject(this.objToDraw[i].obj.img,this.objToDraw[i].x,this.objToDraw[i].y);
 		}
 		
 		this.context.globalAlpha = 1;
