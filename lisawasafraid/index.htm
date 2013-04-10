@@ -71,16 +71,16 @@
 				gEngine.start();
 				
 				var interval = setInterval(function(){ 
-					if(gEngine.fullyLoaded && gRenderEngine.bgr != null) 
+					if(gEngine.ready && gRenderEngine.ready) 
 					{
 						interval = window.clearInterval(interval);
-						init2();
+						startGame();
 					}
 					}, 200);
 				
 			}
 			
-			function init2()
+			function startGame()
 			{
 				$("#loading_div").fadeOut(1);
 				$("#canvas").fadeIn(5000);
