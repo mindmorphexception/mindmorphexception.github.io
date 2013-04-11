@@ -67,14 +67,12 @@ InputEngineClass = Class.extend(
 	
 	mouseOverObject: function(i)
 	{
-		console.log('check mouse over1 ' + this.x + ' ' + this.objToDraw)
-		if(!this.x || !this.y || !this.objToDraw) return false;
-		console.log('check mouse over2')
+		if(!this.x || !this.y || !gRenderEngine.objToDraw) return false;
 			
-		if(this.x > this.objToDraw[i].x && 
-			this.x < this.objToDraw[i].x + this.objToDraw[i].obj.frame.w && 
-			this.y > this.objToDraw[i].y && 
-			this.y < this.objToDraw[i].y + this.objToDraw[i].obj.frame.y) return true;
+		if(this.x > gRenderEngine.objToDraw[i].x && 
+			this.x < gRenderEngine.objToDraw[i].x + gRenderEngine.objToDraw[i].obj.frame.w && 
+			this.y > gRenderEngine.objToDraw[i].y && 
+			this.y < gRenderEngine.objToDraw[i].y + gRenderEngine.objToDraw[i].obj.frame.y) return true;
 			
 		return false;
 	}
