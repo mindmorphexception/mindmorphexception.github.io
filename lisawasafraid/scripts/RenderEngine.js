@@ -114,7 +114,7 @@ RenderEngineClass = Class.extend(
 		
 		this.context.globalAlpha = 1;
 		
-		this.context.fillText("This is just a preview! Come back after the deadline for a new version :)", 30, 520);
+		this.context.fillText("This is just a preview ! Come back after the deadline for a new version :)", 50, 520);
 		
 		/* preview room contour
 		for(var i = 1; i <= 6; ++i)
