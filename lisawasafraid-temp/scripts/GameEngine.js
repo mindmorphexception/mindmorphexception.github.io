@@ -106,11 +106,6 @@ GameEngineClass = Class.extend(
 	
 	update: function() 
 	{
-		if(this.crtObjects) for(var i = 0; i < this.crtObjects.length; ++i)
-					{
-						console.log(this.crtObjects[i].opacity);
-					}
-	
 		if(this.gameEnded) return;
 		
 		if(!this.play_stage)	// -------------------- if we're in text drawing stage ------------------------------------
@@ -314,7 +309,7 @@ GameEngineClass = Class.extend(
 					if(gInputEngine.mouseOverObject(i))
 						this.crtObjects[i].opacity = 1;
 					else
-						this.crtObjects[i].opacity = this.objOpacity;
+						this.crtObjects[i].opacity = this.objOpacity > this.rooms[this.crtRoom].opacity ? this.rooms[this.crtRoom].opacity : this.objOpacity;
 				}
 			}
 			
