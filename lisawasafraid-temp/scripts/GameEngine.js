@@ -371,7 +371,7 @@ GameEngineClass = Class.extend(
 			this.crtObjects[0].obj = this.findObjByName(this.targetObject);
 			this.crtObjects[0].x = Math.floor( this.rooms[this.roomOpened].left + Math.random() * (this.rooms[this.roomOpened].right - this.rooms[this.roomOpened].left - this.objSizeX));
 			this.crtObjects[0].y = Math.floor( this.rooms[this.roomOpened].high + Math.random() * (this.rooms[this.roomOpened].low - this.rooms[this.roomOpened].high - this.objSizeY));
-			this.crtObjects[0].opacity = this.objOpacity;
+			this.crtObjects[0].opacity = 0;
 			picked++;
 			this.targetObjectX = this.crtObjects[0].x;	// update target coordinates
 			this.targetObjectY = this.crtObjects[0].y;
