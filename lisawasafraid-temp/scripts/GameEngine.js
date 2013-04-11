@@ -32,7 +32,7 @@ GameEngineClass = Class.extend(
 	objSizeX: 30,
 	objSizeY: 30,
 	
-	objOpacity: 0.5,
+	objOpacity: 0.8,
 	
 	gameEnded: false,
 	
@@ -238,7 +238,7 @@ GameEngineClass = Class.extend(
 				}
 			}
 		
-			//else if(!gInputEngine.clicked) return;	//else if nothing was clicked there's nothing to do // oh yes there is
+			//else if(!gInputEngine.clicked) return;	//else if nothing was clicked there's nothing to do // L.E. oh yes there is
 			
 			if(gInputEngine.clicked)	// if user has clicked
 			{
@@ -256,44 +256,56 @@ GameEngineClass = Class.extend(
 				}
 				else
 				{
-					//check if user has clicked our object
-					if(gInputEngine.targetWasClicked())
+					var objClicked = false;
+					//check if an object was clicked 
+					for(var i = 0; i < this.crtObjects.length && !objClicked; ++i)
 					{
-						// remove other objects
-						var i = 0;
-						while(this.crtObjects.length > 1)
+						if(gInputEngine.objectWasClicked(i))
 						{
-							if(this.crtObjects[i].obj.filename == this.targetObject) 
-							{ 
-								this.crtObjects[i].opacity = 1;
-								++i; 
+							// if it's not the target, remove it
+							if(this.crtObjects[i].filename != this.targetObject)
+								this.crtObjects.splice(i,1);
+							else	// if it's the target...
+							{
+								// remove other objects
+								var j = 0;
+								while(this.crtObjects.length > 1)
+								{
+									if(this.crtObjects[j].obj.filename == this.targetObject) 
+									{ 
+										this.crtObjects[j].opacity = 1;
+										++j; 
+									}
+									else this.crtObjects.splice(j,1);
+								}
+								gRenderEngine.objToDraw = this.crtObjects;
+								
+								this.needsInput = false;
+								this.room_fading_out = true;
+								this.crt_time = 1000;
+								this.rooms[this.roomOpened].opacity = 1;
 							}
-							else this.crtObjects.splice(i,1);
+							objClicked = true;
 						}
-						gRenderEngine.objToDraw = this.crtObjects;
-						
-						this.needsInput = false;
-						this.room_fading_out = true;
-						this.crt_time = 1000;
-						this.rooms[this.roomOpened].opacity = 1;
 					}
-					else // target was not clicked
+					
+					if(!objClicked) // object was not clicked
 					{
-						// close room
-						gRenderEngine.roomToDraw = null;
-						this.lastRoomOpened = this.roomOpened;
-						this.roomOpened = null;
-						this.crtObjects = null;
-						gRenderEngine.objToDraw = null;
-						this.needsInput = true;
-						
-						// if a room was clicked, fade it in
+						// if a room was clicked, fade it in and close the current
 						for(var i = 0; i < gEngine.rooms.length; ++i)	// check if user has clicked a room
 						{
 							if(i == gRenderEngine.textToDraw.room-1) continue;		// skip if text in room
 							if(i == this.lastRoomOpened) continue;		// skip if same room
 							if(gInputEngine.isinroom(i))	// if a room was clicked
 							{
+								// close crt room
+								gRenderEngine.roomToDraw = null;
+								this.lastRoomOpened = this.roomOpened;
+								this.roomOpened = null;
+								this.crtObjects = null;
+								gRenderEngine.objToDraw = null;
+								this.needsInput = true;
+						
 								this.generateRoom(i);	// open it
 								break;
 							}
