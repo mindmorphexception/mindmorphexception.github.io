@@ -77,8 +77,7 @@ InputEngineClass = Class.extend(
 	
 	objectWasClicked: function(i)
 	{
-		console.log(this.x + " " + gEngine.objToDraw + " " + this.clicked);
-		if(!this.x || !this.y || !gEngine.objToDraw || !this.clicked) return false;
+		if(!this.x || !this.y || !gRenderEngine.objToDraw || !this.clicked) return false;
 		return this.insideObject(i);
 	},
 	
