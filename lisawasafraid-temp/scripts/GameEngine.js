@@ -265,7 +265,8 @@ GameEngineClass = Class.extend(
 							// if it's not the target, remove it
 							if(this.crtObjects[i].filename != this.targetObject)
 							{
-								console.log('nontarg clicked');
+								console.log(this.crtObjects[i].filename);
+								console.log(this.targetObject);
 								this.crtObjects.splice(i,1);
 							}
 							else	// if it's the target...
