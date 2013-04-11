@@ -32,7 +32,7 @@ GameEngineClass = Class.extend(
 	objSizeX: 30,
 	objSizeY: 30,
 	
-	objOpacity: 0.8,
+	objOpacity: 0.5,
 	
 	gameEnded: false,
 	
