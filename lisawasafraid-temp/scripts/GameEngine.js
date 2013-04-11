@@ -264,9 +264,13 @@ GameEngineClass = Class.extend(
 						{
 							// if it's not the target, remove it
 							if(this.crtObjects[i].filename != this.targetObject)
+							{
+								console.log('nontarg clicked');
 								this.crtObjects.splice(i,1);
+							}
 							else	// if it's the target...
 							{
+								console.log('target clicked');
 								// remove other objects
 								var j = 0;
 								while(this.crtObjects.length > 1)
@@ -295,7 +299,7 @@ GameEngineClass = Class.extend(
 						for(var i = 0; i < gEngine.rooms.length; ++i)	// check if user has clicked a room
 						{
 							if(i == gRenderEngine.textToDraw.room-1) continue;		// skip if text in room
-							if(i == this.lastRoomOpened) continue;		// skip if same room
+							if(i == this.roomOpened) continue;		// skip if same room
 							if(gInputEngine.isinroom(i))	// if a room was clicked
 							{
 								// close crt room
