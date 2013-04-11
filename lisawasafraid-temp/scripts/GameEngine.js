@@ -194,8 +194,14 @@ GameEngineClass = Class.extend(
 				var opacity = this.crt_time / 1000;		//increase opacity
 				this.rooms[this.roomOpened].opacity = opacity;
 				if(opacity < this.objOpacity) 
+				{
 					for(var i = 0; i < this.crtObjects.length; ++i)
+					{
+						console.log("gengine upd opac");
 						this.crtObjects[i].opacity = opacity;
+					}
+				}
+				
 				if(opacity == 1)	// if we finished fading in the room
 				{
 					this.room_fading_in = false;
