@@ -68,11 +68,12 @@ InputEngineClass = Class.extend(
 	mouseOverObject: function(i)
 	{
 		if(!this.x || !this.y || !gRenderEngine.objToDraw) return false;
+		
 			
 		if(this.x > gRenderEngine.objToDraw[i].x && 
 			this.x < gRenderEngine.objToDraw[i].x + gRenderEngine.objToDraw[i].obj.frame.w && 
 			this.y > gRenderEngine.objToDraw[i].y && 
-			this.y < gRenderEngine.objToDraw[i].y + gRenderEngine.objToDraw[i].obj.frame.y) return true;
+			this.y < gRenderEngine.objToDraw[i].y + gRenderEngine.objToDraw[i].obj.frame.h) return true;
 			
 		return false;
 	}
