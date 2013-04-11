@@ -300,7 +300,7 @@ GameEngineClass = Class.extend(
 						}
 					}
 				}
-				
+				gInputEngine.unclick();		// erase the click
 			}
 			
 			else if(this.roomOpened != null)	// if user a room is opened, maybe the user has a mouse over an object
@@ -316,7 +316,7 @@ GameEngineClass = Class.extend(
 				}
 			}
 			
-			gInputEngine.unclick();		// erase the click
+			
 		}
 		
 		
