@@ -103,7 +103,7 @@ RenderEngineClass = Class.extend(
 		if(this.roomToDraw != null) 
 		{
 			this.context.globalAlpha = this.roomToDraw.opacity;
-			this.drawRoom(this.roomToDraw,0,0);
+			this.drawRoom(this.roomToDraw,0,0); 
 		}
 		
 		/* if there are objects to draw */
