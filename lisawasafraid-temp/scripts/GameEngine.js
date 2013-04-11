@@ -218,6 +218,7 @@ GameEngineClass = Class.extend(
 				if(opacity == 0)	// if we finished fading out the room
 				{
 					this.room_fading_out = false;
+					this.roomOpened = null;
 					// reset stuff
 					this.crtObjects = null;
 					this.targetObject = null;
