@@ -67,8 +67,8 @@ InputEngineClass = Class.extend(
 	
 	mouseOverObject: function(i)
 	{
-		console.log('check mouse over')
-		if(!this.x || !this.y || !this.objToDraw || !this.objToDraw) return false;
+		console.log('check mouse over1 ' + this.x + ' ' + this.objToDraw)
+		if(!this.x || !this.y || !this.objToDraw) return false;
 		console.log('check mouse over2')
 			
 		if(this.x > this.objToDraw[i].x && 
