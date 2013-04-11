@@ -102,6 +102,7 @@ RenderEngineClass = Class.extend(
 		/* if a room is open */
 		if(this.roomToDraw != null) 
 		{
+			console.log("room opac: "  + this.roomToDraw.opacity);
 			this.context.globalAlpha = this.roomToDraw.opacity;
 			this.drawRoom(this.roomToDraw,0,0);
 		}
