@@ -10,6 +10,7 @@ InputEngineClass = Class.extend(
 	setup: function()
 	{
 		gRenderEngine.canvas.addEventListener('mouseup', this.mouseup, false);	
+		gRenderEngine.canvas.addEventListener('mousemove', this.mousemove, false);	
 		console.log("input engine set up!");
 	},
 	
@@ -18,6 +19,16 @@ InputEngineClass = Class.extend(
 		if (gEngine.needsInput && event.button == 0)	// text stage and needs input to fade out text
 		{
 			gInputEngine.clicked = true;
+			gInputEngine.x = (event.offsetX || event.clientX - $(event.target).offset().left + window.pageXOffset );	// annoying Firefox
+			gInputEngine.y = (event.offsetY || event.clientY - $(event.target).offset().top + window.pageYOffset );
+		}
+		
+	},
+	
+	mousemove: function(event) 
+	{
+		if (gEngine.needsInput)	// text stage and needs input to fade out text
+		{
 			gInputEngine.x = (event.offsetX || event.clientX - $(event.target).offset().left + window.pageXOffset );	// annoying Firefox
 			gInputEngine.y = (event.offsetY || event.clientY - $(event.target).offset().top + window.pageYOffset );
 		}
@@ -52,6 +63,20 @@ InputEngineClass = Class.extend(
 			this.y < gEngine.targetObjectY + gEngine.objSizeY) return true;
 			
 		return false;
+	},
+	
+	mouseOverObject: function(i)
+	{
+		if(!this.x || !this.y || !gEngine.objToDraw || !gEngine.objToDraw) return false;
+			
+		if(this.x > gEngine.objToDraw[i].x && 
+			this.x < gEngine.objToDraw[i].x + gEngine.objToDraw[i].obj.frame.w && 
+			this.y > gEngine.objToDraw[i].y && 
+			this.y < gEngine.objToDraw[i].y + gEngine.objToDraw[i].obj.frame.y) return true;
+			
+		return false;
 	}
+	
+	
 }
 );

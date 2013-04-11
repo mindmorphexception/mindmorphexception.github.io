@@ -32,6 +32,8 @@ GameEngineClass = Class.extend(
 	objSizeX: 30,
 	objSizeY: 30,
 	
+	objOpacity: 0.8,
+	
 	gameEnded: false,
 	
 	/*
@@ -203,6 +205,7 @@ GameEngineClass = Class.extend(
 				this.crt_time = this.crt_time - this.game_unit;
 				var opacity = this.crt_time / 1000;		//decrease opacity
 				this.rooms[this.roomOpened].opacity = opacity;
+				this.crtObjects[0].opacity = opacity;
 				if(opacity < 0.7) gRenderEngine.textToDraw.opacity = opacity;
 				if(opacity == 0)	// if we finished fading out the room
 				{
@@ -226,54 +229,15 @@ GameEngineClass = Class.extend(
 				}
 			}
 		
-			else if(!gInputEngine.clicked) return;	//else if nothing was clicked there's nothing to do
+			//else if(!gInputEngine.clicked) return;	//else if nothing was clicked there's nothing to do // oh yes there is
 			
-			else if(this.roomOpened == null)	//if no room is open
+			if(gInputEngine.clicked)	// if user has clicked
 			{
-				for(var i = 0; i < gEngine.rooms.length; ++i)	// check if user has clicked a room
+				if(this.roomOpened == null && gInputEngine.clicked)	//if no room is open
 				{
-					if(i == gRenderEngine.textToDraw.room-1) continue;		// skip if text in room
-					if(gInputEngine.isinroom(i))	// if a room was clicked
-					{
-						this.generateRoom(i);	// open it
-						break;
-					}
-				}
-			}
-			else
-			{
-				//check if user has clicked our object
-				if(gInputEngine.targetWasClicked())
-				{
-					// remove other objects
-					var i = 0;
-					while(this.crtObjects.length > 1)
-					{
-						if(this.crtObjects[i].obj.filename == this.targetObject) ++i;
-						else this.crtObjects.splice(i,1);
-					}
-					gRenderEngine.objToDraw = this.crtObjects;
-					
-					this.needsInput = false;
-					this.room_fading_out = true;
-					this.crt_time = 1000;
-					this.rooms[this.roomOpened].opacity = 1;
-				}
-				else // target was not clicked
-				{
-					// close room
-					gRenderEngine.roomToDraw = null;
-					this.lastRoomOpened = this.roomOpened;
-					this.roomOpened = null;
-					this.crtObjects = null;
-					gRenderEngine.objToDraw = null;
-					this.needsInput = true;
-					
-					// if a room was clicked, fade it in
 					for(var i = 0; i < gEngine.rooms.length; ++i)	// check if user has clicked a room
 					{
 						if(i == gRenderEngine.textToDraw.room-1) continue;		// skip if text in room
-						if(i == this.lastRoomOpened) continue;		// skip if same room
 						if(gInputEngine.isinroom(i))	// if a room was clicked
 						{
 							this.generateRoom(i);	// open it
@@ -281,7 +245,64 @@ GameEngineClass = Class.extend(
 						}
 					}
 				}
+				else
+				{
+					//check if user has clicked our object
+					if(gInputEngine.targetWasClicked())
+					{
+						// remove other objects
+						var i = 0;
+						while(this.crtObjects.length > 1)
+						{
+							if(this.crtObjects[i].obj.filename == this.targetObject) 
+							{ 
+								this.crtObjects[i].opacity = 1;
+								++i; 
+							}
+							else this.crtObjects.splice(i,1);
+						}
+						gRenderEngine.objToDraw = this.crtObjects;
+						
+						this.needsInput = false;
+						this.room_fading_out = true;
+						this.crt_time = 1000;
+						this.rooms[this.roomOpened].opacity = 1;
+					}
+					else // target was not clicked
+					{
+						// close room
+						gRenderEngine.roomToDraw = null;
+						this.lastRoomOpened = this.roomOpened;
+						this.roomOpened = null;
+						this.crtObjects = null;
+						gRenderEngine.objToDraw = null;
+						this.needsInput = true;
+						
+						// if a room was clicked, fade it in
+						for(var i = 0; i < gEngine.rooms.length; ++i)	// check if user has clicked a room
+						{
+							if(i == gRenderEngine.textToDraw.room-1) continue;		// skip if text in room
+							if(i == this.lastRoomOpened) continue;		// skip if same room
+							if(gInputEngine.isinroom(i))	// if a room was clicked
+							{
+								this.generateRoom(i);	// open it
+								break;
+							}
+						}
+					}
+				}
 				
+			}
+			
+			else if(this.roomOpened != null)	// if user a room is opened, maybe the user has a mouse over an object
+			{
+				for(var i = 0; i < this.crtObjects.length; ++i)
+				{
+					if(gInputEngine.mouseOverObject(i))
+						this.crtObjects[i].opacity = 1;
+					else
+						this.crtObjects[i].opacity = this.objOpacity;
+				}
 			}
 			
 			gInputEngine.unclick();		// erase the click
@@ -347,6 +368,7 @@ GameEngineClass = Class.extend(
 			this.crtObjects[0].obj = this.findObjByName(this.targetObject);
 			this.crtObjects[0].x = Math.floor( this.rooms[this.roomOpened].left + Math.random() * (this.rooms[this.roomOpened].right - this.rooms[this.roomOpened].left - this.objSizeX));
 			this.crtObjects[0].y = Math.floor( this.rooms[this.roomOpened].high + Math.random() * (this.rooms[this.roomOpened].low - this.rooms[this.roomOpened].high - this.objSizeY));
+			this.crtObjects[0].opacity = this.objOpacity;
 			picked++;
 			this.targetObjectX = this.crtObjects[0].x;	// update target coordinates
 			this.targetObjectY = this.crtObjects[0].y;
@@ -371,6 +393,7 @@ GameEngineClass = Class.extend(
 			this.crtObjects[picked].obj = this.objects[pickedobj];
 			this.crtObjects[picked].x = x;
 			this.crtObjects[picked].y = y;
+			this.crtObjects[picked].opacity = this.objOpacity;
 			if(this.crtObjects[picked].obj.filename == this.targetObject)	// if this happens to be the target, update target coordinates
 			{
 				this.targetObjectX = x;

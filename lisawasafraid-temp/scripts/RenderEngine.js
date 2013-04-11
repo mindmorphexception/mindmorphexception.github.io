@@ -109,6 +109,7 @@ RenderEngineClass = Class.extend(
 		/* if there are objects to draw */
 		if(this.objToDraw != null) for(var i = 0; i < this.objToDraw.length; ++i)
 		{
+			this.context.globalAlpha = this.objToDraw[i].opacity;
 			this.drawObject(this.objToDraw[i].obj,this.objToDraw[i].x,this.objToDraw[i].y);
 		}
 		
