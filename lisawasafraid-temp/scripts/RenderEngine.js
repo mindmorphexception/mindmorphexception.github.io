@@ -102,7 +102,6 @@ RenderEngineClass = Class.extend(
 		/* if a room is open */
 		if(this.roomToDraw != null) 
 		{
-			console.log("room opac: "  + this.roomToDraw.opacity);
 			this.context.globalAlpha = this.roomToDraw.opacity;
 			this.drawRoom(this.roomToDraw,0,0);
 		}
@@ -111,7 +110,6 @@ RenderEngineClass = Class.extend(
 		if(this.objToDraw != null) for(var i = 0; i < this.objToDraw.length; ++i)
 		{
 			this.context.globalAlpha = this.objToDraw[i].opacity;
-			console.log(this.objToDraw[i].opacity);
 			this.drawObject(this.objToDraw[i].obj,this.objToDraw[i].x,this.objToDraw[i].y);
 		}
 		
