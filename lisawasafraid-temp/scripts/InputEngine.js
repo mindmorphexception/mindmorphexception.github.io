@@ -65,17 +65,26 @@ InputEngineClass = Class.extend(
 		return false;
 	},
 	
-	mouseOverObject: function(i)
+	insideObject: function(i)
 	{
-		if(!this.x || !this.y || !gRenderEngine.objToDraw) return false;
-		
-			
 		if(this.x > gRenderEngine.objToDraw[i].x && 
 			this.x < gRenderEngine.objToDraw[i].x + gRenderEngine.objToDraw[i].obj.frame.w && 
 			this.y > gRenderEngine.objToDraw[i].y && 
 			this.y < gRenderEngine.objToDraw[i].y + gRenderEngine.objToDraw[i].obj.frame.h) return true;
 			
 		return false;
+	},
+	
+	objectWasClicked: function(i)
+	{
+		if(!this.x || !this.y || !gEngine.objToDraw || !this.clicked) return false;
+		return this.insideObject(i);
+	},
+	
+	mouseOverObject: function(i)
+	{
+		if(!this.x || !this.y || !gRenderEngine.objToDraw) return false;
+		return this.insideObject(i);
 	}
 	
 	
