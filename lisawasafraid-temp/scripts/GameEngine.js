@@ -93,7 +93,7 @@ GameEngineClass = Class.extend(
 	
 	getCrtRoom: function()
 	{
-		return this.rooms[this.crtRoom];
+		return this.rooms[this.roomOpened];
 	},
 	
 	start: function()	//send the first text to renderer
@@ -310,10 +310,7 @@ GameEngineClass = Class.extend(
 						this.crtObjects[i].opacity = 1;
 					else
 					{
-						if(!this.crtObjects[i])  console.log('1');
-						if(!this.objOpacity)  console.log('2');
-						if(!this.rooms[this.crtRoom].opacity)  console.log('3');
-						this.crtObjects[i].opacity = this.objOpacity > this.rooms[this.crtRoom].opacity ? this.rooms[this.crtRoom].opacity : this.objOpacity;
+						this.crtObjects[i].opacity = this.objOpacity > this.rooms[this.roomOpened].opacity ? this.rooms[this.roomOpened].opacity : this.objOpacity;
 					}
 				}
 			}
