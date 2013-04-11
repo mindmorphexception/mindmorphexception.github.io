@@ -23,7 +23,8 @@ RenderEngineClass = Class.extend(
 	
 	render_unit: 50,
 	
-	storyOpacity: 0.7,
+	storyModeOpacity: 0.65,
+	storyOpacity: 0.65,
 	
 	setup: function()
 	{
@@ -77,12 +78,12 @@ RenderEngineClass = Class.extend(
 		/* draw background */
 		if(gEngine.gameEnded) 
 		{ 
-			if(this.storyOpacity > 0.01) this.storyOpacity = this.storyOpacity - (this.render_unit/10000); //0.005; 
+			if(this.storyOpacity > 0.01) this.storyOpacity = this.storyOpacity - (this.render_unit/20000); 
 		}
 		else
 		{
-			if(gEngine.play_stage && this.storyOpacity < 1) this.storyOpacity = this.storyOpacity + (this.render_unit/1000); //0.05;
-			if(!gEngine.play_stage && this.storyOpacity > 0.7) this.storyOpacity = this.storyOpacity - (this.render_unit/1000); //0.05;
+			if(gEngine.play_stage && this.storyOpacity < 1) this.storyOpacity = this.storyOpacity + (this.render_unit/2000); 
+			if(!gEngine.play_stage && this.storyOpacity > this.storyModeOpacity) this.storyOpacity = this.storyOpacity - (this.render_unit/2000);
 		}
 		this.context.globalAlpha = this.storyOpacity;
 		this.drawSprite(this.bgr,0,0);
