@@ -269,7 +269,6 @@ GameEngineClass = Class.extend(
 							}
 							else	// if it's the target...
 							{
-								console.log('target clicked');
 								// remove other objects
 								var j = 0;
 								while(this.crtObjects.length > 1)
