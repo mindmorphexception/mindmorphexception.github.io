@@ -193,6 +193,9 @@ GameEngineClass = Class.extend(
 				this.crt_time = this.crt_time + this.game_unit;
 				var opacity = this.crt_time / 1000;		//increase opacity
 				this.rooms[this.roomOpened].opacity = opacity;
+				if(opacity < this.objOpacity) 
+					for(var i = 0; i < this.crtObjects.length; ++i)
+						this.crtObjects[i].opacity = opacity;
 				if(opacity == 1)	// if we finished fading in the room
 				{
 					this.room_fading_in = false;
@@ -393,7 +396,7 @@ GameEngineClass = Class.extend(
 			this.crtObjects[picked].obj = this.objects[pickedobj];
 			this.crtObjects[picked].x = x;
 			this.crtObjects[picked].y = y;
-			this.crtObjects[picked].opacity = this.objOpacity;
+			this.crtObjects[picked].opacity = 0;
 			if(this.crtObjects[picked].obj.filename == this.targetObject)	// if this happens to be the target, update target coordinates
 			{
 				this.targetObjectX = x;
