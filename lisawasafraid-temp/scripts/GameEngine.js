@@ -106,6 +106,11 @@ GameEngineClass = Class.extend(
 	
 	update: function() 
 	{
+		if(this.crtObjects) for(var i = 0; i < this.crtObjects.length; ++i)
+					{
+						console.log(this.crtObjects[i].opacity);
+					}
+	
 		if(this.gameEnded) return;
 		
 		if(!this.play_stage)	// -------------------- if we're in text drawing stage ------------------------------------
@@ -197,7 +202,6 @@ GameEngineClass = Class.extend(
 				{
 					for(var i = 0; i < this.crtObjects.length; ++i)
 					{
-						console.log("gengine upd opac");
 						this.crtObjects[i].opacity = opacity;
 					}
 				}
