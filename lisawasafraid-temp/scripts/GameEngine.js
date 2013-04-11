@@ -309,7 +309,12 @@ GameEngineClass = Class.extend(
 					if(gInputEngine.mouseOverObject(i))
 						this.crtObjects[i].opacity = 1;
 					else
+					{
+						if(!this.crtObjects[i])  console.log('1');
+						if(!this.objOpacity)  console.log('2');
+						if(!this.rooms[this.crtRoom].opacity)  console.log('3');
 						this.crtObjects[i].opacity = this.objOpacity > this.rooms[this.crtRoom].opacity ? this.rooms[this.crtRoom].opacity : this.objOpacity;
+					}
 				}
 			}
 			
