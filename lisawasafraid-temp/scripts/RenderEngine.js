@@ -51,7 +51,7 @@ RenderEngineClass = Class.extend(
 		this.context.textBaseline="top";
 		this.context.font = "26px 'Dancing Script'";
 		
-		this.hasChanged = true;
+		//this.storyOpacity = 0;
 		
 		console.log("game renderer set up!");
 	},

@@ -93,7 +93,7 @@
 				console.log(a.duration);
 				a.duration = 65.48249053955078;*/
 				
-				$("#canvas").fadeOut(1);
+				//$("#canvas").fadeOut(1);
 				$("#credits_div").fadeOut(1);
 			
 				gEngine = new GameEngineClass(); gEngine.setup();
@@ -115,7 +115,7 @@
 			function startGame()
 			{
 				$("#loading_div").fadeOut(1);
-				$("#canvas").fadeIn(5000);
+				//$("#canvas").fadeIn(5000);
 				$("#credits_div").fadeIn(5000);
 				
 				setInterval(function() { gEngine.update(); }, gEngine.game_unit); 
