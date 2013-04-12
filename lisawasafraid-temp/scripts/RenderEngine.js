@@ -101,7 +101,6 @@ RenderEngineClass = Class.extend(
 			this.context.globalAlpha = gEngine.mistakes < 1 ? 1 : 1/(gEngine.mistakes); //gEngine.mistakes < 1 ? 1 : 1/Math.sqrt(gEngine.mistakes);
 			this.context.fillText("Balance: " + gEngine.mistakes,350,520);
 		}
-		this.context.globalAlpha = 1;
 		
 		/* if there is text */
 		if(this.textToDraw != null) 
@@ -109,10 +108,9 @@ RenderEngineClass = Class.extend(
 			this.context.fillStyle = "#BBAAFF";
 			this.context.globalAlpha = this.textToDraw.opacity;
 			var textroom = gEngine.rooms[this.textToDraw.room-1];
-			console.log(this.context.globalAlpha);
 			for(var i = 0; i < this.textToDraw.text.length; ++i)
 				this.context.fillText(this.textToDraw.text[i],textroom.x,textroom.y + 30*i);
-			this.context.globalAlpha = 1;
+			
 		}
 		
 		/* if a room is open */

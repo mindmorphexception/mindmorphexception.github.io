@@ -282,6 +282,7 @@ GameEngineClass = Class.extend(
 					{
 						gRenderEngine.textToDraw = new Object();
 						gRenderEngine.textToDraw.text = new Array();
+						gRenderEngine.textToDraw.opacity = 1;
 						gRenderEngine.textToDraw.text[0] = 'You slept away...';
 						gRenderEngine.textToDraw.text[1] = 'Try again.';
 						gRenderEngine.textToDraw.room = 4;
