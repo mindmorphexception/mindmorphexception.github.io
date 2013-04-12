@@ -430,8 +430,8 @@
                 },
                 {
                     "text": [
-                        "Lisa inhaled it, and the vapour ",
-                        "went into her kidney, and soaked",
+                        "Lisa inhaled it, and the vapour",
+                        "filled her kidney, and soaked",
                         "all the water inside her."
                     ],
                     "room": 4
@@ -525,7 +525,7 @@
                     "room": 5
                 }
             ],
-            "object": "stopwatch.png"
+            "object": "clock.png"
         },
         {
             "sequences": [
@@ -726,7 +726,7 @@
                     "room": 4
                 }
             ],
-            "object": "flower.png"
+            "object": "flower-pot.png"
         },
         {
             "sequences": [
