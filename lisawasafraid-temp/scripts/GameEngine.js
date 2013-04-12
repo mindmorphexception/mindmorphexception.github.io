@@ -134,9 +134,25 @@ GameEngineClass = Class.extend(
 			{
 				this.crt_time = this.crt_time + this.game_unit;	//increase crt timer
 				var opacity = this.crt_time / 1000;		
-				this.story[this.stage].sequences[this.seq].opacity = opacity;	// increase text opacity
+				gRenderEngine.textToDraw.opacity = opacity;	// increase text opacity
+				
+				if(opacity == 1 && this.story.length <= this.stage+1 && gRenderEngine.text.length <= this.seq+1)	// if this was the last sequence of the last stage
+						{
+							console.log("Thank you for checking out the console for my game :P. Have a beautiful day!");
+							// clear everything. yes at this point I am writing unnecessary code because I have 24h to the deadline so it might not all make sense...
+							this.needsInput = false;
+							this.seq_fading_in = false;
+							this.room_fading_in = false;
+							this.roo_fading_out = false;
+							this.seq_fading_out = false;
+							gRenderEngine.objToDraw = null;
+							gRenderEngine.roomToDraw = null;
+							this.gameEnded = true;
+							return;
+						}
+				
 				if(opacity > 0.75)
-				{
+				{						
 					this.needsInput = true;		// for impatient users - allow click before full fade in
 					if(gInputEngine.clicked && gInputEngine.isinroom(this.story[this.stage].sequences[this.seq].room-1)) // if the user clicked on the correct text
 						this.seq_fading_out = true;			// fade out seq after full fade in
@@ -183,20 +199,7 @@ GameEngineClass = Class.extend(
 			{
 				if(gInputEngine.clicked && gInputEngine.isinroom(this.story[this.stage].sequences[this.seq].room-1)) // if the user clicked on the correct text
 				{
-					if(this.story[this.stage].sequences.length <= this.seq+1 && this.story.length <= this.stage+1)	// if this was the last sequence of the last stage
-						{
-							console.log("Thank you for checking out the console for my game :P. Have a beautiful day!");
-							// clear everything. yes at this point I am writing unnecessary code because I have 24h to the deadline so it might not all make sense...
-							this.needsInput = false;
-							this.seq_fading_in = false;
-							this.room_fading_in = false;
-							this.roo_fading_out = false;
-							this.seq_fading_out = false;
-							gRenderEngine.objToDraw = null;
-							gRenderEngine.roomToDraw = null;
-							this.gameEnded = true;
-							return;
-						}
+					
 					//start fading out && don't need input anymore
 					this.crt_time = 1000;
 					this.seq_fading_out = true;
