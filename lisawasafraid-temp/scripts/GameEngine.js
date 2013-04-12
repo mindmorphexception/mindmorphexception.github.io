@@ -89,21 +89,21 @@ GameEngineClass = Class.extend(
 		
 		this.mistakes = 1;
 		
-		this.roomOpened: null;
-		this.lastRoomOpened: null;
-		this.crtObjects: null;
-		this.targetObject: null;
-		this.targetObjectX: null;
-		this.targetObjectY: null;
+		this.roomOpened = null;
+		this.lastRoomOpened = null;
+		this.crtObjects = null;
+		this.targetObject = null;
+		this.targetObjectX = null;
+		this.targetObjectY = null;
 		
-		this.play_stage: false;
-		this.seq_fading_in: true;
-		this.seq_fading_out: false;
-		this.crt_time: 0;
-		this.room_fading_in: false;
-		this.room_fading_out: false;
+		this.play_stage = false;
+		this.seq_fading_in = true;
+		this.seq_fading_out = false;
+		this.crt_time = 0;
+		this.room_fading_in = false;
+		this.room_fading_out = false;
 
-		this.needsInput: true;
+		this.needsInput = true;
 		
 		console.log("game engine set up!");
 		this.ready = true;
