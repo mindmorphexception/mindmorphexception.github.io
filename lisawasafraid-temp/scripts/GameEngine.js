@@ -35,6 +35,7 @@ GameEngineClass = Class.extend(
 	objOpacity: 0.8,
 	
 	gameEnded: false,
+	gameOver: false,
 	mistakes: 1,
 	
 	/*
@@ -126,7 +127,7 @@ GameEngineClass = Class.extend(
 	
 	update: function() 
 	{		
-		if(this.gameEnded) return;
+		if(this.gameEnded || this.gameOver) return;
 		
 		if(!this.play_stage)	// -------------------- if we're in text drawing stage ------------------------------------
 		{
@@ -148,7 +149,8 @@ GameEngineClass = Class.extend(
 							this.seq_fading_out = false;
 							gRenderEngine.objToDraw = null;
 							gRenderEngine.roomToDraw = null;
-							this.gameEnded = true;
+							if(this.mistakes < 1) this.gameOver = true;
+							else this.gameEnded = true;
 							return;
 						}
 				
