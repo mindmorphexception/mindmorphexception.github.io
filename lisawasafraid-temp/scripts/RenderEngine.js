@@ -75,7 +75,7 @@ RenderEngineClass = Class.extend(
 	render: function()
 	{
 		this.context.clearRect(0,0,this.w,this.h); 
-		/* draw background */
+		/* draw background && score */
 		if(gEngine.gameEnded) 
 		{ 
 			if(this.storyOpacity > 0.01) this.storyOpacity = this.storyOpacity - (this.render_unit/20000); 
@@ -87,6 +87,7 @@ RenderEngineClass = Class.extend(
 		}
 		this.context.globalAlpha = this.storyOpacity;
 		this.drawSprite(this.bgr,0,0);
+		this.context.fillText("Balance: " + gEngine.mistakes,300,520);
 		this.context.globalAlpha = 1;
 		
 		/* if there is text */
@@ -112,7 +113,7 @@ RenderEngineClass = Class.extend(
 			this.context.globalAlpha = this.objToDraw[i].opacity;
 			this.drawObject(this.objToDraw[i].obj,this.objToDraw[i].x,this.objToDraw[i].y);
 		}
-		
+				
 		this.context.globalAlpha = 1;
 		
 		/* preview room contour

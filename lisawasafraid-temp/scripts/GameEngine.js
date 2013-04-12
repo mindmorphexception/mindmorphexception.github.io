@@ -35,6 +35,7 @@ GameEngineClass = Class.extend(
 	objOpacity: 0.8,
 	
 	gameEnded: false,
+	mistakes: 1,
 	
 	/*
 	sequence_time: 8000,
@@ -86,8 +87,27 @@ GameEngineClass = Class.extend(
 		this.stage = 0;
 		this.seq = 0;	// usage: this.story[stage].sequences[sequence].text[line]
 		
+		this.mistakes = 1;
+		
+		this.roomOpened: null;
+		this.lastRoomOpened: null;
+		this.crtObjects: null;
+		this.targetObject: null;
+		this.targetObjectX: null;
+		this.targetObjectY: null;
+		
+		this.play_stage: false;
+		this.seq_fading_in: true;
+		this.seq_fading_out: false;
+		this.crt_time: 0;
+		this.room_fading_in: false;
+		this.room_fading_out: false;
+
+		this.needsInput: true;
+		
 		console.log("game engine set up!");
 		this.ready = true;
+		
 				
 	},
 	
@@ -266,9 +286,11 @@ GameEngineClass = Class.extend(
 							if(this.crtObjects[i].obj.filename != this.targetObject)
 							{
 								this.crtObjects.splice(i,1);
+								this.mistakes--;
 							}
 							else	// if it's the target...
 							{
+								this.mistakes++;
 								// remove other objects
 								var j = 0;
 								while(this.crtObjects.length > 1)
