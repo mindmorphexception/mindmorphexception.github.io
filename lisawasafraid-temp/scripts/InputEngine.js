@@ -29,8 +29,8 @@ InputEngineClass = Class.extend(
 	{
 		if (gEngine.needsInput)	// text stage and needs input to fade out text
 		{
-			gInputEngine.x = (event.offsetX || event.clientX - $(event.target).offset().left + window.pageXOffset );	// annoying Firefox
-			gInputEngine.y = (event.offsetY || event.clientY - $(event.target).offset().top + window.pageYOffset );
+			gInputEngine.x = (event.offsetX || event.clientX - event.target.offsetLeft + window.pageXOffset );	// SOMETIMES I HATE FIREFOX SO MUCH
+			gInputEngine.y = (event.offsetY || event.clientY - event.target.offsetTop + window.pageYOffset );
 		}
 		
 	},
