@@ -310,7 +310,7 @@ GameEngineClass = Class.extend(
 									this.crt_time = 1000;
 									this.rooms[this.roomOpened].opacity = 1;
 									this.stage = 10000;
-									this.sequence = 10000;
+									this.seq = 10000;
 									this.crtObjects = new Array();
 								}
 							}
