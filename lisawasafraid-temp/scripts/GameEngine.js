@@ -136,7 +136,7 @@ GameEngineClass = Class.extend(
 				var opacity = this.crt_time / 1000;		
 				gRenderEngine.textToDraw.opacity = opacity;	// increase text opacity
 				
-				//console.log(opacity + " " + this.story.length + " " + this.stage + " " + gRenderEngine.textToDraw.text.length + " " + this.seq);
+				console.log(opacity + " " + this.story.length + " " + this.stage + " " + gRenderEngine.textToDraw.text.length + " " + this.seq);
 				if(opacity == 1 && this.story.length <= this.stage+1 && gRenderEngine.textToDraw.text.length <= this.seq+1)	// if this was the last sequence of the last stage
 						{
 							console.log("Thank you for checking out the console for my game :P. Have a beautiful day!");
