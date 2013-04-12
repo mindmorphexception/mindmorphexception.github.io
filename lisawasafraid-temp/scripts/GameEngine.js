@@ -125,18 +125,7 @@ GameEngineClass = Class.extend(
 	},
 	
 	update: function() 
-	{
-		if(this.mistakes < 1)
-		{
-			this.gameEnded = true;
-			gRenderEngine.roomToDraw = null;
-			gRenderEngine.objToDraw = null;
-			gRenderEngine.textToDraw.text[0] = 'You slept away...';
-			gRenderEngine.textToDraw.text[1] = 'Try again.';
-			gRenderEngine.textToDraw.room = 4;
-			return;
-		}
-		
+	{		
 		if(this.gameEnded) return;
 		
 		if(!this.play_stage)	// -------------------- if we're in text drawing stage ------------------------------------
@@ -194,7 +183,7 @@ GameEngineClass = Class.extend(
 			{
 				if(gInputEngine.clicked && gInputEngine.isinroom(this.story[this.stage].sequences[this.seq].room-1)) // if the user clicked on the correct text
 				{
-					if(this.story[this.stage].sequences.length == this.seq+1 && this.story.length == this.stage+1)	// if this was the last sequence of the last stage
+					if(this.story[this.stage].sequences.length <= this.seq+1 && this.story.length <= this.stage+1)	// if this was the last sequence of the last stage
 						{
 							console.log("Thank you for checking out the console for my game :P. Have a beautiful day!");
 							// clear everything. yes at this point I am writing unnecessary code because I have 24h to the deadline so it might not all make sense...
@@ -262,7 +251,16 @@ GameEngineClass = Class.extend(
 					this.crt_time = 0;
 					this.stage++;	// move to next stage
 					this.seq_fading_in = true;
-					gRenderEngine.textToDraw = this.story[this.stage].sequences[this.seq];	// send to renderer
+					if(this.stage < this.story.length)	// if game over
+					{
+						gRenderEngine.textToDraw.text[0] = 'You slept away...';
+						gRenderEngine.textToDraw.text[1] = 'Try again.';
+						gRenderEngine.textToDraw.room = 4;
+					}
+					else
+					{
+						gRenderEngine.textToDraw = this.story[this.stage].sequences[this.seq];	// send to renderer
+					}
 					this.story[this.stage].sequences[this.seq].opacity = 0;					// start with opacity 0
 					this.play_stage = false;
 					
@@ -298,6 +296,16 @@ GameEngineClass = Class.extend(
 							{
 								this.crtObjects.splice(i,1);
 								this.mistakes--;
+								if(this.mistakes < 1)		// game over
+								{
+									this.needsInput = false;
+									this.room_fading_out = true;
+									this.crt_time = 1000;
+									this.rooms[this.roomOpened].opacity = 1;
+									this.crtObjects = null;
+									this.stage = 10000;
+									this.sequence = 10000;
+								}
 							}
 							else	// if it's the target...
 							{
