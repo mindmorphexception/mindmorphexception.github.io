@@ -158,7 +158,7 @@ GameEngineClass = Class.extend(
 			{
 				this.crt_time = this.crt_time + this.game_unit;	//increase crt timer
 				var opacity = this.crt_time / 1000;
-				if(this.gameOver) opacity = opacity * 2;
+				//if(this.gameOver) opacity = opacity * 2;
 				gRenderEngine.textToDraw.opacity = opacity;	// increase text opacity
 				
 				if(opacity == 1 && (this.gameOver || (this.story.length == this.stage+1 && this.story[this.stage].sequences.length == this.seq+1)))	// if this was the last sequence of the last stage
