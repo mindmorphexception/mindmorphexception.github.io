@@ -50,7 +50,6 @@ RenderEngineClass = Class.extend(
 		
 		this.context.textBaseline="top";
 		this.context.font = "26px 'Dancing Script'";
-		this.context.fillStyle = "#BBAAFF";
 		
 		this.hasChanged = true;
 		
@@ -87,12 +86,13 @@ RenderEngineClass = Class.extend(
 		}
 		this.context.globalAlpha = this.storyOpacity;
 		this.drawSprite(this.bgr,0,0);
-		this.context.fillText("Balance: " + gEngine.mistakes,300,520);
+		this.context.fillStyle = "#AAFFBB"; this.context.fillText("Balance: " + gEngine.mistakes,350,520);
 		this.context.globalAlpha = 1;
 		
 		/* if there is text */
 		if(this.textToDraw != null) 
 		{
+			this.context.fillStyle = "#BBAAFF";
 			this.context.globalAlpha = this.textToDraw.opacity;
 			var textroom = gEngine.rooms[this.textToDraw.room-1];
 			for(var i = 0; i < this.textToDraw.text.length; ++i)
