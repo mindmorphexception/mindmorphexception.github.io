@@ -282,8 +282,8 @@ GameEngineClass = Class.extend(
 						gRenderEngine.textToDraw = new Object();
 						gRenderEngine.textToDraw.text = new Array();
 						gRenderEngine.textToDraw.text[0] = 'You slept away...';
-						gRenderEngine.textToDraw.text[1] = 'You lost your balance.';
-						gRenderEngine.textToDraw.text[2] = 'Try again.';
+						gRenderEngine.textToDraw.text[1] = 'Try again.';
+						gRenderEngine.textToDraw.text[2] = 'Take care. Keep your balance this time.';
 						gRenderEngine.textToDraw.room = 4;
 					}
 					else
