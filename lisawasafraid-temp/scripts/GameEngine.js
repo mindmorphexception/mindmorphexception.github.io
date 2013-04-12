@@ -253,6 +253,7 @@ GameEngineClass = Class.extend(
 					this.seq_fading_in = true;
 					if(this.stage < this.story.length)	// if game over
 					{
+						gRenderEngine.textToDraw = new Object();
 						gRenderEngine.textToDraw.text[0] = 'You slept away...';
 						gRenderEngine.textToDraw.text[1] = 'Try again.';
 						gRenderEngine.textToDraw.room = 4;
