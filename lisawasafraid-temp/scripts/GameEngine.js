@@ -140,7 +140,7 @@ GameEngineClass = Class.extend(
 	update: function() 
 	{		
 		if(this.gameEnded) return;
-		if(this.gameOver)
+		if(this.gameOver && !this.seq_fading_in)
 		{
 			if(gInputEngine.clicked && gInputEngine.isinroom(3))
 			{
@@ -157,7 +157,8 @@ GameEngineClass = Class.extend(
 			if(this.seq_fading_in)	// if we're fading in a sequence now
 			{
 				this.crt_time = this.crt_time + this.game_unit;	//increase crt timer
-				var opacity = this.crt_time / 1000;		
+				var opacity = this.crt_time / 1000;
+				if(this.gameOver) opacity = opacity * 2;
 				gRenderEngine.textToDraw.opacity = opacity;	// increase text opacity
 				
 				if(opacity == 1 && (this.gameOver || (this.story.length == this.stage+1 && this.story[this.stage].sequences.length == this.seq+1)))	// if this was the last sequence of the last stage
@@ -169,7 +170,7 @@ GameEngineClass = Class.extend(
 							this.seq_fading_out = false;
 							gRenderEngine.objToDraw = null;
 							gRenderEngine.roomToDraw = null;
-							if(this.mistakes < 1) { this.gameOver = true; this.needsInput = true; }
+							if(this.mistakes < 1) { this.needsInput = true; }
 							else { this.gameEnded = true; this.needsInput = false; console.log("Thank you for checking out the console for my game :P. Have a beautiful day!"); }
 							return;
 						}
@@ -333,11 +334,11 @@ GameEngineClass = Class.extend(
 									gRenderEngine.textToDraw.text[0] = 'You slept away...';
 									gRenderEngine.textToDraw.text[1] = 'Try again.';
 									gRenderEngine.textToDraw.room = 4;
-									gRenderEngine.textToDraw.opacity = 1;					// start with opacity 0
+									gRenderEngine.textToDraw.opacity = 0;					// start with opacity 0
 									
 									this.seq_fading_in = true;
 									this.play_stage = false;
-									this.needsInput = true;
+									this.needsInput = false;
 									this.gameOver = true;
 								}
 							}
