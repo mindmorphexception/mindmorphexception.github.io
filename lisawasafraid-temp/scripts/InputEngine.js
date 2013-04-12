@@ -22,7 +22,7 @@ InputEngineClass = Class.extend(
 			gInputEngine.x = (event.offsetX || event.clientX - $(event.target).offset().left + window.pageXOffset );	// annoying Firefox
 			gInputEngine.y = (event.offsetY || event.clientY - $(event.target).offset().top + window.pageYOffset );
 			
-			var testx = (event.offsetX || event.clientX - event.target.offset().left + window.pageXOffset );	// annoying Firefox
+			var testx = (event.offsetX || event.clientX - event.target.offsetLeft + window.pageXOffset );	// annoying Firefox
 			console.log(gInputEngine.x + " " + testx);
 		}
 		
