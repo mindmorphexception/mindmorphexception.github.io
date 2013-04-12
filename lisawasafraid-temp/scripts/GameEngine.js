@@ -228,7 +228,7 @@ GameEngineClass = Class.extend(
 				}
 			}
 			
-			else if(this.room_fading_out)	// if we're fading the room after target successfully clicked
+			else if(this.room_fading_out)	// if we're fading the room after target successfully clicked or game over
 			{
 				this.crt_time = this.crt_time - this.game_unit;
 				var opacity = this.crt_time / 1000;		//decrease opacity
@@ -289,7 +289,7 @@ GameEngineClass = Class.extend(
 				{
 					var objClicked = false;
 					//check if an object was clicked 
-					for(var i = 0; i < this.crtObjects.length && !objClicked; ++i)
+					for(var i = 0; !objClicked && i < this.crtObjects.length; ++i)
 					{
 						if(gInputEngine.objectWasClicked(i))
 						{
@@ -304,9 +304,9 @@ GameEngineClass = Class.extend(
 									this.room_fading_out = true;
 									this.crt_time = 1000;
 									this.rooms[this.roomOpened].opacity = 1;
-									this.crtObjects = null;
 									this.stage = 10000;
 									this.sequence = 10000;
+									this.crtObjects = new Array();
 								}
 							}
 							else	// if it's the target...
