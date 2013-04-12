@@ -278,18 +278,10 @@ GameEngineClass = Class.extend(
 					this.crt_time = 0;
 					this.stage++;	// move to next stage
 					this.seq_fading_in = true;
-					if(this.stage > this.story.length)	// if game over
-					{
-						gRenderEngine.textToDraw = new Object();
-						gRenderEngine.textToDraw.text = new Array();
-						gRenderEngine.textToDraw.text[0] = 'You slept away...';
-						gRenderEngine.textToDraw.text[1] = 'Try again.';
-						gRenderEngine.textToDraw.room = 4;
-					}
-					else
-					{
-						gRenderEngine.textToDraw = this.story[this.stage].sequences[this.seq];	// send to renderer
-					}
+					
+					
+					gRenderEngine.textToDraw = this.story[this.stage].sequences[this.seq];	// send to renderer
+					
 					gRenderEngine.textToDraw.opacity = 0;					// start with opacity 0
 					this.play_stage = false;
 					
@@ -328,13 +320,25 @@ GameEngineClass = Class.extend(
 								if(this.mistakes < 1)		// game over
 								{
 									this.needsInput = false;
-									this.room_fading_out = true;
-									this.crt_time = 1000;
-									this.rooms[this.roomOpened].opacity = 1;
 									this.stage = 10000;
 									this.seq = 10000;
+									
 									this.crtObjects = new Array();
 									gRenderEngine.objToDraw = this.crtObjects;
+									gRenderEngine.roomToDraw = null;
+									
+									this.roomOpened = null;
+									gRenderEngine.objToDraw = null;
+								
+									gRenderEngine.textToDraw = new Object();
+									gRenderEngine.textToDraw.text = new Array();
+									gRenderEngine.textToDraw.text[0] = 'You slept away...';
+									gRenderEngine.textToDraw.text[1] = 'Try again.';
+									gRenderEngine.textToDraw.room = 4;
+									gRenderEngine.textToDraw.opacity = 0;					// start with opacity 0
+									
+									this.seq_fading_in = true;
+									this.play_stage = false;
 								}
 							}
 							else	// if it's the target...
