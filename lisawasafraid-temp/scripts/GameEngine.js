@@ -127,7 +127,13 @@ GameEngineClass = Class.extend(
 	
 	update: function() 
 	{		
-		if(this.gameEnded || this.gameOver) return;
+		if(this.gameEnded) return;
+		if(this.gameOver)
+		{
+			if(gInputEngine.clicked && gInputEngine.isinroom(3))
+				console.log('starting again...');
+			return;
+		}
 		
 		if(!this.play_stage)	// -------------------- if we're in text drawing stage ------------------------------------
 		{
@@ -140,15 +146,14 @@ GameEngineClass = Class.extend(
 				if(opacity == 1 && this.story.length <= this.stage+1 && gRenderEngine.textToDraw.text.length <= this.seq+1)	// if this was the last sequence of the last stage
 						{
 							// clear everything. yes at this point I am writing unnecessary code because I have 24h to the deadline so it might not all make sense...
-							this.needsInput = false;
 							this.seq_fading_in = false;
 							this.room_fading_in = false;
 							this.roo_fading_out = false;
 							this.seq_fading_out = false;
 							gRenderEngine.objToDraw = null;
 							gRenderEngine.roomToDraw = null;
-							if(this.mistakes < 1) { this.gameOver = true; }
-							else { this.gameEnded = true; console.log("Thank you for checking out the console for my game :P. Have a beautiful day!"); }
+							if(this.mistakes < 1) { this.gameOver = true; this.needsInput = true; }
+							else { this.gameEnded = true; this.needsInput = false; console.log("Thank you for checking out the console for my game :P. Have a beautiful day!"); }
 							return;
 						}
 				
