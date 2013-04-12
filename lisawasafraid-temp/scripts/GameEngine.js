@@ -159,7 +159,7 @@ GameEngineClass = Class.extend(
 				var opacity = this.crt_time / 1000;		
 				gRenderEngine.textToDraw.opacity = opacity;	// increase text opacity
 				
-				if(opacity == 1 && this.story.length <= this.stage+1 && gRenderEngine.textToDraw.text.length <= this.seq+1)	// if this was the last sequence of the last stage
+				if(opacity == 1 && (this.story.length == this.stage+1 && this.story[this.stage].sequences.length <= this.seq+1) || this.story.length < this.stage+1)	// if this was the last sequence of the last stage
 						{
 							// clear everything. yes at this point I am writing unnecessary code because I have 24h to the deadline so it might not all make sense...
 							this.seq_fading_in = false;
