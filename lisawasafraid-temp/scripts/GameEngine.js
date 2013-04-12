@@ -233,7 +233,8 @@ GameEngineClass = Class.extend(
 				this.crt_time = this.crt_time - this.game_unit;
 				var opacity = this.crt_time / 1000;		//decrease opacity
 				this.rooms[this.roomOpened].opacity = opacity;
-				this.crtObjects[0].opacity = opacity;
+				for(var i = 0; i < this.crtObjects.length; ++i)
+					if(this.crtObjects.[i].opacity = opacity;
 				if(opacity < 0.7) gRenderEngine.textToDraw.opacity = opacity;
 				if(opacity == 0)	// if we finished fading out the room
 				{
