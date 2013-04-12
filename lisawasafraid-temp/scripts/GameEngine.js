@@ -160,7 +160,7 @@ GameEngineClass = Class.extend(
 				var opacity = this.crt_time / 1000;
 				//if(this.gameOver) opacity = opacity * 2;
 				gRenderEngine.textToDraw.opacity = opacity;	// increase text opacity
-				console.log('increasing opacity ' + opacity);
+				console.log('increasing opacity ' + opacity + " " + this.gameOver);
 				
 				if(opacity == 1 && (this.gameOver || (this.story.length == this.stage+1 && this.story[this.stage].sequences.length == this.seq+1)))	// if this was the last sequence of the last stage
 						{
@@ -171,7 +171,7 @@ GameEngineClass = Class.extend(
 							this.seq_fading_out = false;
 							gRenderEngine.objToDraw = null;
 							gRenderEngine.roomToDraw = null;
-							if(this.mistakes < 1) { this.needsInput = true; }
+							if(this.mistakes < 1) { this.needsInput = true; console.log('game over'); }
 							else { this.gameEnded = true; this.needsInput = false; console.log("Thank you for checking out the console for my game :P. Have a beautiful day!"); }
 							return;
 						}
