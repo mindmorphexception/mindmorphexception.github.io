@@ -148,6 +148,7 @@ GameEngineClass = Class.extend(
 				this.init();
 				this.start();
 			}
+			gInputEngine.unclick();
 			return;
 		}
 		
