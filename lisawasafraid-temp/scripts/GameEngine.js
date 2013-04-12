@@ -126,6 +126,17 @@ GameEngineClass = Class.extend(
 	
 	update: function() 
 	{
+		if(this.mistakes < 1)
+		{
+			this.gameEnded = true;
+			gRenderEngine.roomToDraw = null;
+			gRenderEngine.objToDraw = null;
+			gRenderEngine.textToDraw.text[0] = 'You slept away...';
+			gRenderEngine.textToDraw.text[1] = 'Try again.';
+			gRenderEngine.textToDraw.room = 4;
+			return;
+		}
+		
 		if(this.gameEnded) return;
 		
 		if(!this.play_stage)	// -------------------- if we're in text drawing stage ------------------------------------
