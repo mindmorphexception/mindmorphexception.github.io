@@ -280,6 +280,7 @@ GameEngineClass = Class.extend(
 					this.seq_fading_in = true;
 					if(this.stage > this.story.length)	// if game over
 					{
+						console.log('setting text to draw');
 						gRenderEngine.textToDraw = new Object();
 						gRenderEngine.textToDraw.text = new Array();
 						gRenderEngine.textToDraw.text[0] = 'You slept away...';
