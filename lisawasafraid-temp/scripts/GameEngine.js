@@ -341,6 +341,7 @@ GameEngineClass = Class.extend(
 									this.play_stage = false;
 									this.needsInput = false;
 									this.gameOver = true;
+									console.log('SETTING GAME OVER');
 								}
 							}
 							else	// if it's the target...
