@@ -86,7 +86,7 @@ RenderEngineClass = Class.extend(
 		}
 		this.context.globalAlpha = this.storyOpacity;
 		this.drawSprite(this.bgr,0,0);
-		this.context.fillStyle = "#AAFFBB"; this.context.fillText("Balance: " + gEngine.mistakes,350,520);
+		this.context.fillStyle = "#99DDAA"; this.context.fillText("Balance: " + gEngine.mistakes,350,520);
 		this.context.globalAlpha = 1;
 		
 		/* if there is text */
