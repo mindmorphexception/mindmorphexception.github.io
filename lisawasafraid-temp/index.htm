@@ -92,9 +92,6 @@
 				console.log(a.duration);
 				a.duration = 65.48249053955078;*/
 				
-				//$("#canvas").fadeOut(1);
-				//$("#credits_div").fadeOut(1);
-			
 				gEngine = new GameEngineClass(); gEngine.setup();
 				gRenderEngine = new RenderEngineClass(); gRenderEngine.setup();
 				gInputEngine = new InputEngineClass(); gInputEngine.setup();
@@ -114,10 +111,6 @@
 			function startGame()
 			{
 				document.getElementById("loading_div").style.display = "none";
-				//$("#loading_div").fadeOut(1);
-				//$("#canvas").fadeIn(5000);
-				//$("#credits_div").fadeIn(5000);
-				
 				setInterval(function() { gEngine.update(); }, gEngine.game_unit); 
 				setInterval(function() { gRenderEngine.render(); }, gRenderEngine.render_unit);
 			}
