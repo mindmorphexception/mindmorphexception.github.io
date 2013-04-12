@@ -251,9 +251,10 @@ GameEngineClass = Class.extend(
 					this.crt_time = 0;
 					this.stage++;	// move to next stage
 					this.seq_fading_in = true;
-					if(this.stage < this.story.length)	// if game over
+					if(this.stage > this.story.length)	// if game over
 					{
 						gRenderEngine.textToDraw = new Object();
+						gRenderEngine.textToDraw.text = new Array();
 						gRenderEngine.textToDraw.text[0] = 'You slept away...';
 						gRenderEngine.textToDraw.text[1] = 'Try again.';
 						gRenderEngine.textToDraw.room = 4;
