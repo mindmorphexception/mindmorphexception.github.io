@@ -137,10 +137,8 @@ GameEngineClass = Class.extend(
 				var opacity = this.crt_time / 1000;		
 				gRenderEngine.textToDraw.opacity = opacity;	// increase text opacity
 				
-				console.log(opacity + " " + this.story.length + " " + this.stage + " " + gRenderEngine.textToDraw.text.length + " " + this.seq);
 				if(opacity == 1 && this.story.length <= this.stage+1 && gRenderEngine.textToDraw.text.length <= this.seq+1)	// if this was the last sequence of the last stage
 						{
-							console.log("Thank you for checking out the console for my game :P. Have a beautiful day!");
 							// clear everything. yes at this point I am writing unnecessary code because I have 24h to the deadline so it might not all make sense...
 							this.needsInput = false;
 							this.seq_fading_in = false;
@@ -149,8 +147,8 @@ GameEngineClass = Class.extend(
 							this.seq_fading_out = false;
 							gRenderEngine.objToDraw = null;
 							gRenderEngine.roomToDraw = null;
-							if(this.mistakes < 1) this.gameOver = true;
-							else this.gameEnded = true;
+							if(this.mistakes < 1) { this.gameOver = true; }
+							else { this.gameEnded = true; console.log("Thank you for checking out the console for my game :P. Have a beautiful day!"); }
 							return;
 						}
 				
@@ -314,6 +312,7 @@ GameEngineClass = Class.extend(
 									this.stage = 10000;
 									this.seq = 10000;
 									this.crtObjects = new Array();
+									gRenderEngine.objToDraw = this.crtObjects;
 								}
 							}
 							else	// if it's the target...
