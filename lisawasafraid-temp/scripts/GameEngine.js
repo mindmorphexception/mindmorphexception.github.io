@@ -340,6 +340,7 @@ GameEngineClass = Class.extend(
 									this.seq_fading_in = true;
 									this.play_stage = false;
 									this.needsInput = false;
+									this.gameOver = true;
 								}
 							}
 							else	// if it's the target...
