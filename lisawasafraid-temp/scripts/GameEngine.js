@@ -142,7 +142,6 @@ GameEngineClass = Class.extend(
 		if(this.gameEnded) return;
 		if(this.gameOver)
 		{
-			console.log('game over');
 			if(gInputEngine.clicked && gInputEngine.isinroom(3))
 			{
 				this.needsInput = false;
@@ -170,7 +169,7 @@ GameEngineClass = Class.extend(
 							this.seq_fading_out = false;
 							gRenderEngine.objToDraw = null;
 							gRenderEngine.roomToDraw = null;
-							if(this.mistakes < 1) { this.gameOver = true; this.needsInput = true; console.log("game over"); }
+							if(this.mistakes < 1) { this.gameOver = true; this.needsInput = true; }
 							else { this.gameEnded = true; this.needsInput = false; console.log("Thank you for checking out the console for my game :P. Have a beautiful day!"); }
 							return;
 						}
