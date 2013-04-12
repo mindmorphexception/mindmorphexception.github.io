@@ -85,7 +85,11 @@ RenderEngineClass = Class.extend(
 		}
 		else
 		{
-			if(!gEngine.gameOver && this.storyOpacity < this.storyModeOpacity) this.storyOpacity = this.storyOpacity + (this.render_unit/10000);
+			if(!gEngine.gameOver && this.storyOpacity < this.storyModeOpacity) 
+			{ 
+				this.storyOpacity = this.storyOpacity + (this.render_unit/10000);
+				if(this.storyOpacity > this.storyModeOpacity) this.storyOpacity = this.storyModeOpacity;
+			}
 			if(gEngine.play_stage && this.storyOpacity < 1) this.storyOpacity = this.storyOpacity + (this.render_unit/2000); 
 			if(!gEngine.play_stage && this.storyOpacity > this.storyModeOpacity) this.storyOpacity = this.storyOpacity - (this.render_unit/2000);
 		}
