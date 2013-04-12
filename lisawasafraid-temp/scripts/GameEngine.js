@@ -38,6 +38,9 @@ GameEngineClass = Class.extend(
 	gameOver: false,
 	mistakes: 1,
 	
+	checkpoint_stage: 0,
+	checkpoint_seq: 0,
+	
 	/*
 	sequence_time: 8000,
 	sequence_pause: 2000,
@@ -96,8 +99,8 @@ GameEngineClass = Class.extend(
 	
 	init: function()
 	{
-		this.stage = 0;
-		this.seq = 0;	// usage: this.story[stage].sequences[sequence].text[line]
+		this.stage = this.checkpoint_stage;
+		this.seq = this.checkpoint_stage;	// usage: this.story[stage].sequences[sequence].text[line]
 		
 		this.mistakes = 1;
 		
@@ -211,6 +214,7 @@ GameEngineClass = Class.extend(
 					this.seq_fading_out = false;			// no more fading out
 					gRenderEngine.textToDraw = null;		// remove the text to draw from renderer
 					this.seq++;								// move to next sequence 
+					if(this.story[this.stage].sequence[this.seq].indexOf("Chapter") != -1) { this.checkpoint_stage = this.stage; this.checkpoint_seq = this.seq; }
 					
 					// start fading in next sequence					
 					this.crt_time = 0;
