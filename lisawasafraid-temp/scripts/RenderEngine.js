@@ -94,13 +94,11 @@ RenderEngineClass = Class.extend(
 			if(!gEngine.play_stage && this.storyOpacity > this.storyModeOpacity) this.storyOpacity = this.storyOpacity - (this.render_unit/2000);
 		}
 		this.context.globalAlpha = this.storyOpacity;
-		this.drawSprite(this.bgr,0,0);
-		if(!gEngine.gameEnded)
-		{
-			this.context.fillStyle = "#77BB99"; 
-			this.context.globalAlpha = gEngine.mistakes < 1 ? 1 : 1/(gEngine.mistakes); //gEngine.mistakes < 1 ? 1 : 1/Math.sqrt(gEngine.mistakes);
-			this.context.fillText("Balance: " + gEngine.mistakes,350,520);
-		}
+		this.drawSprite(this.bgr,0,0);		
+		this.context.fillStyle = "#77BB99"; 
+		this.context.globalAlpha = gEngine.mistakes < 1 ? 1 : 1/(gEngine.mistakes); //gEngine.mistakes < 1 ? 1 : 1/Math.sqrt(gEngine.mistakes);
+		this.context.fillText("Balance: " + gEngine.mistakes,350,520);
+	
 		
 		/* if there is text */
 		if(this.textToDraw != null) 
