@@ -160,7 +160,7 @@ GameEngineClass = Class.extend(
 				var opacity = this.crt_time / 1000;
 				//if(this.gameOver) opacity = opacity * 2;
 				gRenderEngine.textToDraw.opacity = opacity;	// increase text opacity
-				console.log('increasing opacity ' + opacity + " " + this.gameOver);
+				//console.log('increasing opacity ' + opacity + " " + this.gameOver);
 				
 				if(opacity == 1 && (this.gameOver || (this.story.length == this.stage+1 && this.story[this.stage].sequences.length == this.seq+1)))	// if this was the last sequence of the last stage
 						{
@@ -341,7 +341,7 @@ GameEngineClass = Class.extend(
 									this.play_stage = false;
 									this.needsInput = false;
 									this.gameOver = true;
-									console.log('SETTING GAME OVER');
+									this.crt_time = 0;
 								}
 							}
 							else	// if it's the target...
