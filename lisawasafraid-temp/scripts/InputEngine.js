@@ -19,11 +19,8 @@ InputEngineClass = Class.extend(
 		if (gEngine.needsInput && event.button == 0)	// text stage and needs input to fade out text
 		{
 			gInputEngine.clicked = true;
-			gInputEngine.x = (event.offsetX || event.clientX - $(event.target).offset().left + window.pageXOffset );	// annoying Firefox
-			gInputEngine.y = (event.offsetY || event.clientY - $(event.target).offset().top + window.pageYOffset );
-			
-			var testx = (event.offsetX || event.clientX - event.target.offsetLeft + window.pageXOffset );	// annoying Firefox
-			console.log(gInputEngine.x + " " + testx);
+			gInputEngine.x = (event.offsetX || event.clientX - event.target.offsetLeft + window.pageXOffset );	// SOMETIMES I HATE FIREFOX SO MUCH
+			gInputEngine.y = (event.offsetY || event.clientY - event.target.offsetTop + window.pageYOffset );
 		}
 		
 	},
