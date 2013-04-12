@@ -264,7 +264,7 @@ GameEngineClass = Class.extend(
 					{
 						gRenderEngine.textToDraw = this.story[this.stage].sequences[this.seq];	// send to renderer
 					}
-					this.story[this.stage].sequences[this.seq].opacity = 0;					// start with opacity 0
+					gRenderEngine.textToDraw.opacity = 0;					// start with opacity 0
 					this.play_stage = false;
 					
 				}
