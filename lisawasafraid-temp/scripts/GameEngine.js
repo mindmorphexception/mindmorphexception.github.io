@@ -85,6 +85,17 @@ GameEngineClass = Class.extend(
 		/* load story from json */
 		parsed = this.loadJSON("story");
 		this.story = parsed["stages"];
+		
+		this.init();
+		
+		console.log("game engine set up!");
+		this.ready = true;
+		
+		
+	},
+	
+	init: function()
+	{
 		this.stage = 0;
 		this.seq = 0;	// usage: this.story[stage].sequences[sequence].text[line]
 		
@@ -106,10 +117,8 @@ GameEngineClass = Class.extend(
 
 		this.needsInput = true;
 		
-		console.log("game engine set up!");
-		this.ready = true;
-		
-				
+		this.gameOver = false;
+		this.play_stage = false;
 	},
 	
 	getCrtRoom: function()
@@ -131,7 +140,11 @@ GameEngineClass = Class.extend(
 		if(this.gameOver)
 		{
 			if(gInputEngine.clicked && gInputEngine.isinroom(3))
-				console.log('starting again...');
+			{
+				this.needsInput = false;
+				this.init();
+				this.start();
+			}
 			return;
 		}
 		
