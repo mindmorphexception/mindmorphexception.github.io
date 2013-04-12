@@ -142,6 +142,7 @@ GameEngineClass = Class.extend(
 		if(this.gameEnded) return;
 		if(this.gameOver)
 		{
+			console.log('game over');
 			if(gInputEngine.clicked && gInputEngine.isinroom(3))
 			{
 				this.needsInput = false;
