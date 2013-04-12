@@ -95,9 +95,12 @@ RenderEngineClass = Class.extend(
 		}
 		this.context.globalAlpha = this.storyOpacity;
 		this.drawSprite(this.bgr,0,0);
-		this.context.fillStyle = "#77BB99"; 
-		this.context.globalAlpha = gEngine.mistakes < 1 ? 1 : 1/(gEngine.mistakes); //gEngine.mistakes < 1 ? 1 : 1/Math.sqrt(gEngine.mistakes);
-		this.context.fillText("Balance: " + gEngine.mistakes,350,520);
+		if(!gEngine.gameEnded)
+		{
+			this.context.fillStyle = "#77BB99"; 
+			this.context.globalAlpha = gEngine.mistakes < 1 ? 1 : 1/(gEngine.mistakes); //gEngine.mistakes < 1 ? 1 : 1/Math.sqrt(gEngine.mistakes);
+			this.context.fillText("Balance: " + gEngine.mistakes,350,520);
+		}
 		this.context.globalAlpha = 1;
 		
 		/* if there is text */
