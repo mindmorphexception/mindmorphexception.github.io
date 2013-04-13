@@ -302,7 +302,7 @@ GameEngineClass = Class.extend(
 				var i = 0;
 				while(i < this.crtObjects.length)
 				{
-					if(this.crtObjects[i].opacity < this.objOpacity)
+					if(this.crtObjects[i].fadingOut)
 					{
 						this.crtObjects[i].opacity = this.crtObjects[i].opacity - this.game_unit/1000;
 						if(this.crtObjects[i].opacity < 0.05)
@@ -333,12 +333,12 @@ GameEngineClass = Class.extend(
 					//check if an object was clicked 
 					for(var i = 0; !objClicked && i < this.crtObjects.length; ++i)
 					{
-						if(gInputEngine.objectWasClicked(i))
+						if(!this.crtObjects[i].fadingOut && gInputEngine.objectWasClicked(i))
 						{
 							// if it's not the target, start fading it out it
 							if(this.crtObjects[i].obj.filename != this.targetObject)
 							{
-								this.crtObjects[i].opacity = this.objOpacity - 0.05;
+								this.crtObjects[i].fadingOut = true;
 								this.mistakes--;
 								if(this.mistakes < 1)		// game over
 								{
@@ -419,7 +419,7 @@ GameEngineClass = Class.extend(
 			
 			else if(this.roomOpened != null)	// if user a room is opened, maybe the user has a mouse over an object
 			{
-				for(var i = 0; i < this.crtObjects.length; ++i)
+				for(var i = 0; i < this.crtObjects.length; ++i) if(!this.crtObjects[i].fadingOut)
 				{
 					if(gInputEngine.mouseOverObject(i))
 						this.crtObjects[i].opacity = 1;
