@@ -99,7 +99,8 @@ RenderEngineClass = Class.extend(
 		var target_opacity = this.context.globalAlpha;
 		if(!gEngine.gameEnded) target_opacity = gEngine.mistakes < 1 ? 1 : 1/(gEngine.mistakes); //gEngine.mistakes < 1 ? 1 : 1/Math.sqrt(gEngine.mistakes);
 		if(!gEngine.gameEnded && !gEngine.gameOver && this.storyModeOpacity >= this.storyOpacity) target_opacity = target_opacity * (1 - (this.storyModeOpacity - this.storyOpacity) / this.storyModeOpacity);
-		this.context.globalAlpha = this.context.globalAlpha + (this.context.globalAlpha - target_opacity) * (this.render_unit/5000);
+		//this.context.globalAlpha = this.context.globalAlpha + (this.context.globalAlpha - target_opacity) * (this.render_unit/5000);
+		this.context.globalAlpha = target_opacity;
 		this.context.fillText("Balance: " + gEngine.mistakes,350,520);
 	
 		
