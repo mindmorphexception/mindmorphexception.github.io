@@ -25,6 +25,8 @@ RenderEngineClass = Class.extend(
 	
 	storyModeOpacity: 0.65,
 	storyOpacity: 0.65,
+	scoreOpacity: 0.5,
+	scoreTargetOpacity: 0.5,
 	
 	setup: function()
 	{
@@ -74,7 +76,7 @@ RenderEngineClass = Class.extend(
 	render: function()
 	{
 		this.context.clearRect(0,0,this.w,this.h); 
-		/* draw background && score */
+		/* draw background */
 		if(gEngine.gameEnded) 
 		{ 
 			if(this.storyOpacity > 0.01) { var o = this.storyOpacity - (this.render_unit/10000); this.storyOpacity = o > 0.01 ? o : 0.01; }
@@ -95,13 +97,36 @@ RenderEngineClass = Class.extend(
 		}
 		this.context.globalAlpha = this.storyOpacity;
 		this.drawSprite(this.bgr,0,0);		
+		
+		/* draw score */
+		if(gEngine.gameEnded)
+		{
+			this.scoreTargetOpacity = this.storyOpacity;
+		}
+		else if(gEngine.gameOver)
+		{
+			this.scoreTargetOpacity = 1;
+		}
+		else
+		{
+			var strength = gEngine.mistakes < 1 ? 1 : 1/(gEngine.mistakes);
+			this.scoreTargetOpacity = (this.context.globalAlpha + strength)/2;
+			if(this.scoreTargetOpacity > 1) this.scoreTargetOpacity = 1;
+			if(this.scoreTargetOpacity < 0) this.scoreTargetOpacity = 0;
+		}
 		this.context.fillStyle = "#77BB99"; 
+		this.scoreOpacity = this.scoreOpacity + (this.scoreOpacity - this.scoreTargetOpacity)/10;
+		if(this.scoreOpacity > 1) this.scoreOpacity = 1;
+		if(this.scoreOpacity < 0) this.scoreOpacity = 0;
+		this.context.globalAlpha = this.scoreOpacity;
+		this.context.fillText("Balance: " + gEngine.mistakes,350,520);
+		/*
 		var target_opacity = this.context.globalAlpha;
 		if(!gEngine.gameEnded) target_opacity = gEngine.mistakes < 1 ? 1 : 1/(gEngine.mistakes); //gEngine.mistakes < 1 ? 1 : 1/Math.sqrt(gEngine.mistakes);
 		if(!gEngine.gameEnded && !gEngine.gameOver && this.storyModeOpacity >= this.storyOpacity) target_opacity = target_opacity * (1 - (this.storyModeOpacity - this.storyOpacity) / this.storyModeOpacity);
 		//this.context.globalAlpha = this.context.globalAlpha + (this.context.globalAlpha - target_opacity) * (this.render_unit/5000);
-		this.context.globalAlpha = target_opacity;
-		this.context.fillText("Balance: " + gEngine.mistakes,350,520);
+		this.context.globalAlpha = target_opacity;*/
+		
 	
 		
 		/* if there is text */
