@@ -296,6 +296,23 @@ GameEngineClass = Class.extend(
 		
 			//else if(!gInputEngine.clicked) return;	//else if nothing was clicked there's nothing to do // L.E. oh yes there is
 			
+			// else, let's see if any objects are fading out
+			if(this.roomOpened != null) 
+			{
+				var i = 0;
+				while(i < this.crtObjects.length)
+				{
+					if(this.crtObjects[i].opacity < this.objOpacity)
+					{
+						this.crtObjects[i].opacity = this.crtObjects[i].opacity - this.game_unit/1000;
+						if(this.crtObjects[i].opacity < 0.05)
+							this.crtObjects.splice(i,1);
+						else i++;
+					}
+					else i++;
+				}
+			}
+			
 			if(gInputEngine.clicked)	// if user has clicked
 			{
 				if(this.roomOpened == null && gInputEngine.clicked)	//if no room is open
@@ -318,10 +335,10 @@ GameEngineClass = Class.extend(
 					{
 						if(gInputEngine.objectWasClicked(i))
 						{
-							// if it's not the target, remove it
+							// if it's not the target, start fading it out it
 							if(this.crtObjects[i].obj.filename != this.targetObject)
 							{
-								this.crtObjects.splice(i,1);
+								this.crtObjects[i].opacity = this.objOpacity - 0.05;
 								this.mistakes--;
 								if(this.mistakes < 1)		// game over
 								{
