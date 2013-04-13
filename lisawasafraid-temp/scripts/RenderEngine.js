@@ -97,6 +97,7 @@ RenderEngineClass = Class.extend(
 		this.drawSprite(this.bgr,0,0);		
 		this.context.fillStyle = "#77BB99"; 
 		if(!gEngine.gameEnded) this.context.globalAlpha = gEngine.mistakes < 1 ? 1 : 1/(gEngine.mistakes); //gEngine.mistakes < 1 ? 1 : 1/Math.sqrt(gEngine.mistakes);
+		if(!gEngine.gameEnded && !gEngine.gameOver && this.storyModeOpacity >= this.storyOpacity) this.context.globalAlpha = this.context.globalAlpha * (1 - (this.storyModeOpacity - this.storyOpacity) / this.storyModeOpacity);
 		this.context.fillText("Balance: " + gEngine.mistakes,350,520);
 	
 		
