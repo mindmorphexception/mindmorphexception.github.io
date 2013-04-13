@@ -103,7 +103,7 @@ RenderEngineClass = Class.extend(
 		/* if there is text */
 		if(this.textToDraw != null) 
 		{
-			if(gEngine.gameOver) this.context.fillStyle = "#FFBB88";
+			if(gEngine.gameOver) this.context.fillStyle = "#FF88BB";
 			else this.context.fillStyle = "#BBAAFF";
 			this.context.globalAlpha = this.textToDraw.opacity;
 			var textroom = gEngine.rooms[this.textToDraw.room-1];
