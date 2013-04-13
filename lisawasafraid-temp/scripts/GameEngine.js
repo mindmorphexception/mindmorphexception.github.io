@@ -297,7 +297,7 @@ GameEngineClass = Class.extend(
 			//else if(!gInputEngine.clicked) return;	//else if nothing was clicked there's nothing to do // L.E. oh yes there is
 			
 			// else, let's see if any objects are fading out
-			if(this.roomOpened != null) 
+			else if(this.roomOpened != null) 
 			{
 				var i = 0;
 				while(i < this.crtObjects.length)
