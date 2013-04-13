@@ -106,7 +106,7 @@ RenderEngineClass = Class.extend(
 			if(gEngine.gameOver) this.context.fillStyle = "#FF55CC";
 			else this.context.fillStyle = "#BBAAFF";
 			this.context.globalAlpha = this.textToDraw.opacity;
-			if(!gEngine.gameOver && !gEngine.gameEnded) this.context.globalAlpha = this.context.globalAlpha * (1 - (this.storyModeOpacity - this.storyOpacity) / this.storyModeOpacity);
+			if(!gEngine.gameOver && !gEngine.gameEnded  && this.storyModeOpacity >= this.storyOpacity) this.context.globalAlpha = this.context.globalAlpha * (1 - (this.storyModeOpacity - this.storyOpacity) / this.storyModeOpacity);
 			var textroom = gEngine.rooms[this.textToDraw.room-1];
 			for(var i = 0; i < this.textToDraw.text.length; ++i)
 				this.context.fillText(this.textToDraw.text[i],textroom.x,textroom.y + 30*i);
