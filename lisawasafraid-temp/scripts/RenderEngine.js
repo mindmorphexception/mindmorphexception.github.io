@@ -81,7 +81,7 @@ RenderEngineClass = Class.extend(
 		}
 		else if(gEngine.gameOver)
 		{
-			if(this.storyOpacity > 0.01) { var o = this.storyOpacity - (this.render_unit/2000); this.storyOpacity = o > 0.01 ? o : 0.01; }
+			if(this.storyOpacity > 0.01) { var o = this.storyOpacity - (this.render_unit/3500); this.storyOpacity = o > 0.01 ? o : 0.01; }
 		}
 		else
 		{
@@ -103,7 +103,7 @@ RenderEngineClass = Class.extend(
 		/* if there is text */
 		if(this.textToDraw != null) 
 		{
-			if(gEngine.gameOver) this.context.fillStyle = "#FFAABB";
+			if(gEngine.gameOver) this.context.fillStyle = "#FF8888";
 			else this.context.fillStyle = "#BBAAFF";
 			this.context.globalAlpha = this.textToDraw.opacity;
 			var textroom = gEngine.rooms[this.textToDraw.room-1];
