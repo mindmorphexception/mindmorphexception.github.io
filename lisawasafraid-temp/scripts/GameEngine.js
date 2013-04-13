@@ -366,6 +366,7 @@ GameEngineClass = Class.extend(
 								
 								this.needsInput = false;
 								this.room_fading_out = true;
+								this.room_fading_in = false;
 								this.crt_time = 1000;
 								this.rooms[this.roomOpened].opacity = 1;
 							}
