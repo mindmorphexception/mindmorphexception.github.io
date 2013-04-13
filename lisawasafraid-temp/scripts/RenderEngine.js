@@ -25,8 +25,8 @@ RenderEngineClass = Class.extend(
 	
 	storyModeOpacity: 0.65,
 	storyOpacity: 0.65,
-	scoreOpacity: 0.5,
-	scoreTargetOpacity: 0.5,
+	scoreOpacity: 0,
+	scoreTargetOpacity: 0,
 	
 	setup: function()
 	{
@@ -115,7 +115,7 @@ RenderEngineClass = Class.extend(
 			if(this.scoreTargetOpacity < 0) this.scoreTargetOpacity = 0;
 		}
 		this.context.fillStyle = "#77BB99"; 
-		this.scoreOpacity = this.scoreOpacity + (this.scoreTargetOpacity - this.scoreOpacity)/100;
+		this.scoreOpacity = this.scoreOpacity + (this.scoreTargetOpacity - this.scoreOpacity) * (this.render_unit / 3000);
 		if(this.scoreOpacity > 1) this.scoreOpacity = 1;
 		if(this.scoreOpacity < 0) this.scoreOpacity = 0;
 		this.context.globalAlpha = this.scoreOpacity;
