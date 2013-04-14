@@ -19,7 +19,7 @@ RoomClass = Class.extend(
 	contains: function(name)
 	{
 		for(var i = 0; i < this.objects.length; ++i)
-			if(this.objects[i].filename == name) return true;
+			if(this.objects[i].obj.filename == name) return true;
 		return false;
 	}
 }
