@@ -106,7 +106,7 @@ RenderEngineClass = Class.extend(
 		/* draw score */
 		if(gEngine.mistakes < this.lastNrMistakes)
 		{
-			this.mistakesOpacity = 1;
+			this.mistakeOpacity = 1;
 		}
 		this.context.fillStyle = "#AAFFCC"; 
 		this.context.globalAlpha = this.mistakeOpacity;
