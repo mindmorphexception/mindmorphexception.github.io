@@ -128,7 +128,7 @@ RenderEngineClass = Class.extend(
 		/* if there is text */
 		if(this.textToDraw != null) 
 		{
-			if(gEngine.gameOver) this.context.fillStyle = "#FF5588";
+			if(gEngine.gameOver) this.context.fillStyle = "#FF77AA";
 			else this.context.fillStyle = "#BBAAFF";
 			this.context.globalAlpha = this.textToDraw.opacity;
 			if(!gEngine.gameOver && !gEngine.gameEnded  && this.storyModeOpacity >= this.storyOpacity) this.context.globalAlpha = this.context.globalAlpha * (1 - (this.storyModeOpacity - this.storyOpacity) / this.storyModeOpacity);
