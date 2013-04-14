@@ -28,7 +28,8 @@ RenderEngineClass = Class.extend(
 	scoreOpacity: 0,
 	scoreTargetOpacity: 0,
 	
-	mistakeOpacity: null,
+	mistakeOpacity: 0,
+	lastNrMistakes: null,
 	
 	setup: function()
 	{
@@ -56,6 +57,8 @@ RenderEngineClass = Class.extend(
 		this.context.font = "26px 'Dancing Script'";
 		
 		this.storyOpacity = 0;
+		
+		this.lastNrMistakes = 3;
 		
 		console.log("game renderer set up!");
 	},
@@ -101,26 +104,16 @@ RenderEngineClass = Class.extend(
 		this.drawSprite(this.bgr,0,0);		
 		
 		/* draw score */
-		if(gEngine.mistakes < 3)
+		if(gEngine.mistakes < this.lastNrMistakes)
 		{
-			this.context.fillStyle = "#AAFFCC";
-			if(this.mistakeOpacity == null)
-			{
-				this.mistakeOpacity = 1;
-				this.context.globalAlpha = this.mistakeOpacity;
-				this.context.fillText("Balance: " + gEngine.mistakes,350,520);
-			}
-			else 
-			{
-				this.mistakeOpacity = this.mistakeOpacity - (this.render_unit / 5000);
-				if(this.mistakeOpacity < 0.01) this.mistakeOpacity = null;
-				else 
-				{
-					this.context.globalAlpha = this.mistakeOpacity;
-					this.context.fillText("Balance: " + gEngine.mistakes,350,520);
-				}
-			}	
+			this.mistakesOpacity = 1;
 		}
+		this.context.fillStyle = "#AAFFCC"; 
+		this.context.globalAlpha = this.mistakeOpacity;
+		this.context.fillText("Balance: " + gEngine.mistakes,350,520);
+		this.mistakeOpacity = this.mistakeOpacity - this.render_unit / 5000;
+		if(this.mistakeOpacity < 0.01) this.mistakeOpacity = 0;
+		this.lastNrMistakes = gEngine.mistakes;
 		
 		/* nice score code if(gEngine.gameEnded)
 		{
