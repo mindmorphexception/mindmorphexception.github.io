@@ -35,12 +35,6 @@ InputEngineClass = Class.extend(
 		
 	},
 	
-	mouseover: function()	// this updates the room hovered over in play stage
-	{
-		//if(!gEngine.play_stage) return;
-		console.log('hover');
-	},
-	
 	unclick: function()
 	{
 		this.x = null; this.y = null; this.clicked = false;
