@@ -533,6 +533,7 @@ GameEngineClass = Class.extend(
 						
 			this.crtObjects[j].x = x;
 			this.crtObjects[j].y = y;
+			this.crtObjects[j].opacity = 0;
 		}
 				
 		gRenderEngine.objToDraw = this.crtObjects;
