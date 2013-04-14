@@ -480,11 +480,6 @@ GameEngineClass = Class.extend(
 		
 		/* set objects */
 		var crtTextRoom = this.story[this.stage].sequences[this.seq].room - 1;
-		console.log(this.story[this.stage].sequences[this.seq]);
-		console.log(this.stage);
-		console.log(this.seq);
-		console.log('text is in room: ' + crtTextRoom);
-		console.log('selected room is ' + i);
 		this.crtObjects = i >= crtTextRoom ? this.crtRooms[i-1].objects : this.crtRooms[i].objects;
 		
 		/* set x and y for objects */
@@ -527,7 +522,7 @@ GameEngineClass = Class.extend(
 	
 	alreadySelectedObject: function(name)	// ------ updated for pre-generated rooms --------
 	{
-		console.log('testing ' + 'name already selected?');
+		console.log('testing ' + name + 'already selected?');
 		for(var i = 0; i < this.crtRooms; ++i)
 			if(this.crtRooms[i].contains(name))
 				return true;
