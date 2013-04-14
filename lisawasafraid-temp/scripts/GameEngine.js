@@ -107,7 +107,7 @@ GameEngineClass = Class.extend(
 		this.mistakes = 1;
 		
 		this.targetProbability = 0.5;
-		this.nrObjects = 0;
+		this.nrObjects = 10;
 		
 		this.roomOpened = null;
 		this.lastRoomOpened = null;
