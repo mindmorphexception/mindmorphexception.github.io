@@ -119,7 +119,7 @@ RenderEngineClass = Class.extend(
 			if(this.scoreTargetOpacity < 0) this.scoreTargetOpacity = 0;
 		}
 		this.context.fillStyle = "#AAFFCC"; 
-		this.scoreOpacity = this.scoreOpacity + (this.scoreTargetOpacity - this.scoreOpacity) * (this.render_unit / 250);
+		this.scoreOpacity = this.scoreOpacity + (this.scoreTargetOpacity - this.scoreOpacity) * (this.render_unit / 500);
 		if(this.scoreOpacity > 1) this.scoreOpacity = 1;
 		if(this.scoreOpacity < 0) this.scoreOpacity = 0;
 		this.context.globalAlpha = this.scoreOpacity;
