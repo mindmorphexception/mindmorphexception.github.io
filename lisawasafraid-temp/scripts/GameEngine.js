@@ -475,7 +475,6 @@ GameEngineClass = Class.extend(
 	
 	generateRooms: function()	// ---------- function to generate all rooms ----------
 	{
-		console.log('generating rooms...');
 		this.crtRooms = new Array();
 		for(var i = 0; i < 5; ++i) this.crtRooms[i] = new RoomClass();
 		
@@ -505,7 +504,8 @@ GameEngineClass = Class.extend(
 		/* increase nr of obj up to 25 incl the target */
 		if(this.nrObjects < 24) this.nrObjects++;
 		
-		console.log('finished generating');
+		console.log(this.crtRooms);
+		
 	},
 	
 	openRoom: function(i)	// ---------- function to generate a room --------------
