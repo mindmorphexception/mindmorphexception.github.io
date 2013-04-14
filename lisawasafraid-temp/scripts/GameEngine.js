@@ -408,7 +408,7 @@ GameEngineClass = Class.extend(
 								gRenderEngine.objToDraw = null;
 								this.needsInput = true;
 						
-								this.generateRoom(i);	// open it
+								this.openRoom(i);	// open it
 								break;
 							}
 						}
