@@ -514,8 +514,10 @@ GameEngineClass = Class.extend(
 		this.crt_time = 0;
 		
 		/* set objects */
-		var crtTextRoom = this.story[this.stage].sequences[this.seq].room-1;
+		var crtTextRoom = this.story[this.stage].sequences[this.seq].room - 1;
+		console.log(this.story[this.stage].sequences[this.seq].room);
 		console.log('text is in room ' + crtTextRoom + " i is " + i);
+		console.log(this.crtRooms);
 		this.crtObjects = i >= crtTextRoom ? this.crtRooms[i+1].objects : this.crtRooms[i].objects;
 		
 		/* set x and y for objects */
