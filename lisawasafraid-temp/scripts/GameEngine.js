@@ -88,7 +88,7 @@ GameEngineClass = Class.extend(
 				
 		console.log('loading story');
 		/* load story from json */
-		parsed = this.loadJSON("teststory");
+		parsed = this.loadJSON("story");
 		this.story = parsed["stages"];
 		
 		this.init();
@@ -561,10 +561,13 @@ GameEngineClass = Class.extend(
 	
 	alreadySelectedObject: function(name)	// ------ updated for pre-generated rooms --------
 	{
+		console.log('testing ' + 'name already selected?');
 		for(var i = 0; i < this.crtRooms; ++i)
 			if(this.crtRooms[i].contains(name))
 				return true;
+		console.log('nope');
 		return false;
+		
 	}
 	
 }
