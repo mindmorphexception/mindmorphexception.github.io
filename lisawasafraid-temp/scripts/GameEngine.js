@@ -463,10 +463,7 @@ GameEngineClass = Class.extend(
 		}
 		
 		/* increase nr of obj up to 25 incl the target */
-		if(this.nrObjects < 24) this.nrObjects++;
-		
-		console.log(this.crtRooms);
-		
+		if(this.nrObjects < 24) this.nrObjects++;		
 	},
 	
 	openRoom: function(i)	// ---------- function to generate a room --------------
