@@ -497,7 +497,7 @@ GameEngineClass = Class.extend(
 				 pickedobj = Math.floor(Math.random() * this.objects.length);
 			} while(this.alreadySelectedObject(this.objects[pickedobj].filename));
 			
-			this.crtRooms[rndRoom].add(this.objects[pickedobjects];
+			this.crtRooms[rndRoom].add(this.objects[pickedobjects]);
 		}
 		
 		/* increase nr of obj up to 25 incl the target */
