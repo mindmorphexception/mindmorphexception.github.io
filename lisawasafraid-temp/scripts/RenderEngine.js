@@ -147,7 +147,7 @@ RenderEngineClass = Class.extend(
 		if(gEngine.mistakes == 2) text = "D*n't**ake*m*sta**s**.";
 		if(gEngine.mistakes == 1) text = "**n*t****e*m**ta**s**.";
 		if(gEngine.mistakes == 0) text = "**********************";
-		this.context.fillText("Balance: " + gEngine.mistakes,350,520);
+		this.context.fillText(text,350,520);
 		
 		
 		/* if there is text */
