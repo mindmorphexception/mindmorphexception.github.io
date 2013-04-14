@@ -482,7 +482,7 @@ GameEngineClass = Class.extend(
 		this.targetObject = this.story[this.stage].object;
 		/* pick a room for the target */
 		var targetRoom = Math.floor(Math.random() * 5); if(targetRoom > 4) targetRoom = 4;
-		this.crtRooms[i].add(this.findObjByName(this.targetObject));
+		this.crtRooms[targetRoom].add(this.findObjByName(this.targetObject));
 		
 		/* generate the rest of objects */
 		var generated = 0;
