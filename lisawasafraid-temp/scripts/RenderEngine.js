@@ -104,6 +104,7 @@ RenderEngineClass = Class.extend(
 		this.drawSprite(this.bgr,0,0);		
 		
 		/* draw score */
+		/*
 		if(gEngine.mistakes < this.lastNrMistakes)
 		{
 			this.mistakeOpacity = 1;
@@ -116,9 +117,9 @@ RenderEngineClass = Class.extend(
 		this.context.fillText(text,350,520);
 		this.mistakeOpacity = this.mistakeOpacity - this.render_unit / 5000;
 		if(this.mistakeOpacity < 0.01) this.mistakeOpacity = 0;
-		this.lastNrMistakes = gEngine.mistakes;
+		this.lastNrMistakes = gEngine.mistakes;*/
 		
-		/* nice score code if(gEngine.gameEnded)
+		if(gEngine.gameEnded)
 		{
 			this.scoreTargetOpacity = this.storyOpacity;
 		}
@@ -142,7 +143,11 @@ RenderEngineClass = Class.extend(
 		if(this.scoreOpacity > 1) this.scoreOpacity = 1;
 		if(this.scoreOpacity < 0) this.scoreOpacity = 0;
 		this.context.globalAlpha = this.scoreOpacity;
-		this.context.fillText("Balance: " + gEngine.mistakes,350,520); nice score code*/
+		var text = "Don't make mistakes...";
+		if(gEngine.mistakes == 2) text = "D*n't**ake*m*sta**s**.";
+		if(gEngine.mistakes == 1) text = "**n*t****e*m**ta**s**.";
+		if(gEngine.mistakes == 0) text = "**********************";
+		this.context.fillText("Balance: " + gEngine.mistakes,350,520);
 		
 		
 		/* if there is text */
