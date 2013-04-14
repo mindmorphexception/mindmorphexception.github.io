@@ -107,6 +107,10 @@ RenderEngineClass = Class.extend(
 		{
 			this.scoreTargetOpacity = 1;
 		}
+		else if(!gEngine.play_stage)
+		{
+			this.scoreTargetOpacity = 0;
+		}
 		else
 		{
 			var strength = gEngine.mistakes < 1 ? 1 : 1/(gEngine.mistakes);

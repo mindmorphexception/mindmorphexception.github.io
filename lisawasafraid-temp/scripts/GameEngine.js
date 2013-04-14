@@ -23,7 +23,7 @@ GameEngineClass = Class.extend(
 	needsInput: true,
 	
 	targetProbability: 0.5,
-	nrObjects: 10,
+	nrObjects: 0,
 	
 	roomOpened: null,
 	lastRoomOpened: null,
@@ -99,8 +99,7 @@ GameEngineClass = Class.extend(
 		
 		this.mistakes = 1;
 		
-		this.targetProbability = 0.5;
-		this.nrObjects = 10;
+		//this.nrObjects = 10;
 		
 		this.roomOpened = null;
 		this.lastRoomOpened = null;
