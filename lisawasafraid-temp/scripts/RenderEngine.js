@@ -28,6 +28,8 @@ RenderEngineClass = Class.extend(
 	scoreOpacity: 0,
 	scoreTargetOpacity: 0,
 	
+	mistakeOpacity: null,
+	
 	setup: function()
 	{
 		this.canvas = document.getElementById("canvas"); 
@@ -99,7 +101,28 @@ RenderEngineClass = Class.extend(
 		this.drawSprite(this.bgr,0,0);		
 		
 		/* draw score */
-		if(gEngine.gameEnded)
+		if(gEngine.mistakes < 3)
+		{
+			this.context.fillStyle = "#AAFFCC";
+			if(this.mistakeOpacity == null)
+			{
+				this.mistakeOpacity = 1;
+				this.context.globalAlpha = this.mistakeOpacity;
+				this.context.fillText("Balance: " + gEngine.mistakes,350,520);
+			}
+			else 
+			{
+				this.mistakeOpacity = this.mistakeOpacity - (this.render_unit / 5000);
+				if(this.mistakeOpacity < 0.01) this.mistakeOpacity = null;
+				else 
+				{
+					this.context.globalAlpha = this.mistakeOpacity;
+					this.context.fillText("Balance: " + gEngine.mistakes,350,520);
+				}
+			}	
+		}
+		
+		/* nice score code if(gEngine.gameEnded)
 		{
 			this.scoreTargetOpacity = this.storyOpacity;
 		}
@@ -123,7 +146,8 @@ RenderEngineClass = Class.extend(
 		if(this.scoreOpacity > 1) this.scoreOpacity = 1;
 		if(this.scoreOpacity < 0) this.scoreOpacity = 0;
 		this.context.globalAlpha = this.scoreOpacity;
-		this.context.fillText("Balance: " + gEngine.mistakes,350,520);
+		this.context.fillText("Balance: " + gEngine.mistakes,350,520); nice score code*/
+		
 		
 		/* if there is text */
 		if(this.textToDraw != null) 
