@@ -476,7 +476,7 @@ GameEngineClass = Class.extend(
 	generateRooms: function()	// ---------- function to generate all rooms ----------
 	{
 		this.crtRooms = new Array();
-		for(var i = 0; i < 5; ++i) this.crtRooms[i] = new Room();
+		for(var i = 0; i < 5; ++i) this.crtRooms[i] = new RoomClass();
 		
 		/* set target object to be clicked */
 		this.targetObject = this.story[this.stage].object;
