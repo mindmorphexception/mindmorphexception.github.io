@@ -215,6 +215,7 @@ GameEngineClass = Class.extend(
 					this.seq_fading_out = false;			// no more fading out
 					gRenderEngine.textToDraw = null;		// remove the text to draw from renderer
 					this.seq++;								// move to next sequence 
+					console.log(this.story[this.stage].sequences[this.seq].text[0].indexOf("Chapter"));
 					if(this.story[this.stage].sequences[this.seq].text[0].indexOf("Chapter") != -1) { this.checkpoint_stage = this.stage; this.checkpoint_seq = this.seq; console.log("checkpoint established"); }
 					
 					// start fading in next sequence					
@@ -450,7 +451,8 @@ GameEngineClass = Class.extend(
 		while(generated < this.nrObjects)
 		{
 			var rndRoom = Math.floor(Math.random() * 5); if(rndRoom > 4) rndRoom = 4;
-			if(this.crtRooms[rndRoom].nrObjects > 4) continue;	// maximum 5 objects per room
+			if(rndRoom < 3 && this.crtRooms[rndRoom].nrObjects() > 4) continue;	// maximum 5 objects per small room
+			if(rndRoom >= 3 && this.crtRooms[rndRoom].nrObjects() > 7) continue;	// maximum 8 objects per large room
 			
 			var pickedobj;
 			do	// pick an object that was not selected already
