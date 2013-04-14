@@ -479,9 +479,11 @@ GameEngineClass = Class.extend(
 		var crtTextRoom = this.story[this.stage].sequences[this.seq].room - 1;
 		this.crtObjects = i >= crtTextRoom ? this.crtRooms[i-1].objects : this.crtRooms[i].objects;
 		
-		/* set x and y for objects */
-		for(var j = 0; j < this.crtObjects.length; ++j)
+		/* set x and y for objects + remove fading out objects */
+		var j = 0;
+		while(j < this.crtObjects.length)
 		{
+			if(this.crtObjects[j].fadingOut) { this.crtObjects.splice(j,1); continue; }
 			var x,y;
 			do	/* pick some coordinates that don't colide with the other objects */
 			{
@@ -492,6 +494,7 @@ GameEngineClass = Class.extend(
 			this.crtObjects[j].x = x;
 			this.crtObjects[j].y = y;
 			this.crtObjects[j].opacity = 0;
+			++j;
 		}
 				
 		gRenderEngine.objToDraw = this.crtObjects;
