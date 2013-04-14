@@ -475,6 +475,7 @@ GameEngineClass = Class.extend(
 	
 	generateRooms: function()	// ---------- function to generate all rooms ----------
 	{
+		console.log('generating rooms...');
 		this.crtRooms = new Array();
 		for(var i = 0; i < 5; ++i) this.crtRooms[i] = new RoomClass();
 		
@@ -498,10 +499,13 @@ GameEngineClass = Class.extend(
 			} while(this.alreadySelectedObject(this.objects[pickedobj].filename));
 			
 			this.crtRooms[rndRoom].add(this.objects[pickedobj]);
+			++generated;
 		}
 		
 		/* increase nr of obj up to 25 incl the target */
 		if(this.nrObjects < 24) this.nrObjects++;
+		
+		console.log('finished generating');
 	},
 	
 	openRoom: function(i)	// ---------- function to generate a room --------------
@@ -515,8 +519,6 @@ GameEngineClass = Class.extend(
 		
 		/* set objects */
 		var crtTextRoom = this.story[this.stage].sequences[this.seq].room - 1;
-		console.log('crttextroom ' + crtTextRoom);
-		console.log('selected room ' + i);
 		this.crtObjects = i >= crtTextRoom ? this.crtRooms[i-1].objects : this.crtRooms[i].objects;
 		
 		/* set x and y for objects */
