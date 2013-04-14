@@ -214,9 +214,9 @@ GameEngineClass = Class.extend(
 				{
 					this.seq_fading_out = false;			// no more fading out
 					gRenderEngine.textToDraw = null;		// remove the text to draw from renderer
-					this.seq++;								// move to next sequence 
 					console.log(this.story[this.stage].sequences[this.seq].text[0].indexOf("Chapter"));
 					if(this.story[this.stage].sequences[this.seq].text[0].indexOf("Chapter") != -1) { this.checkpoint_stage = this.stage; this.checkpoint_seq = this.seq; console.log("checkpoint established"); }
+					this.seq++;								// move to next sequence 
 					
 					// start fading in next sequence					
 					this.crt_time = 0;

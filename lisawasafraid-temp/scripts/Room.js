@@ -5,7 +5,7 @@ RoomClass = Class.extend(
 	nrObjects: function()
 	{
 		if(this.objects) 
-			return this.objects.length();
+			return this.objects.length;
 		return -1;
 	},
 	
