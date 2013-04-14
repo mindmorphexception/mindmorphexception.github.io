@@ -200,7 +200,6 @@ GameEngineClass = Class.extend(
 				
 				if(opacity < 0.7 && this.story[this.stage].sequences.length == this.seq+1)	// if this was actually the last sequence of this stage
 				{
-					this.seq = 0;
 					this.play_stage = true;
 					//console.log("entering play stage...");
 					this.crt_time = 0;
@@ -285,6 +284,7 @@ GameEngineClass = Class.extend(
 					
 					this.crt_time = 0;
 					this.stage++;	// move to next stage
+					this.seq = 0;
 					this.seq_fading_in = true;
 					
 					
