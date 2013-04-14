@@ -114,7 +114,7 @@ RenderEngineClass = Class.extend(
 			if(this.scoreTargetOpacity > 1) this.scoreTargetOpacity = 1;
 			if(this.scoreTargetOpacity < 0) this.scoreTargetOpacity = 0;
 		}
-		this.context.fillStyle = "#77BB99"; 
+		this.context.fillStyle = "#AAFFCC"; 
 		this.scoreOpacity = this.scoreOpacity + (this.scoreTargetOpacity - this.scoreOpacity) * (this.render_unit / 2000);
 		if(this.scoreOpacity > 1) this.scoreOpacity = 1;
 		if(this.scoreOpacity < 0) this.scoreOpacity = 0;
