@@ -497,7 +497,7 @@ GameEngineClass = Class.extend(
 				 pickedobj = Math.floor(Math.random() * this.objects.length);
 			} while(this.alreadySelectedObject(this.objects[pickedobj].filename));
 			
-			this.crtRooms[rndRoom].add(this.objects[pickedobjects]);
+			this.crtRooms[rndRoom].add(this.objects[pickedobj]);
 		}
 		
 		/* increase nr of obj up to 25 incl the target */
@@ -530,8 +530,8 @@ GameEngineClass = Class.extend(
 				y = Math.floor( this.rooms[this.roomOpened].high + Math.random() * (this.rooms[this.roomOpened].low - this.rooms[this.roomOpened].high - this.objSizeY));
 			} while (this.collides(x,y));
 						
-			this.crtObjects[picked].x = x;
-			this.crtObjects[picked].y = y;
+			this.crtObjects[j].x = x;
+			this.crtObjects[j].y = y;
 		}
 				
 		gRenderEngine.objToDraw = this.crtObjects;
