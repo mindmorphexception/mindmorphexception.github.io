@@ -38,7 +38,7 @@ GameEngineClass = Class.extend(
 	
 	gameEnded: false,
 	gameOver: false,
-	mistakes: 1,
+	mistakes: 3,
 	
 	checkpoint_stage: 0,
 	checkpoint_seq: 0,
@@ -97,7 +97,7 @@ GameEngineClass = Class.extend(
 		this.stage = this.checkpoint_stage;
 		this.seq = this.checkpoint_seq;	// usage: this.story[stage].sequences[sequence].text[line]
 		
-		this.mistakes = 1;
+		this.mistakes = 3;
 		
 		//this.nrObjects = 10;
 		
@@ -155,9 +155,7 @@ GameEngineClass = Class.extend(
 			{
 				this.crt_time = this.crt_time + this.game_unit;	//increase crt timer
 				var opacity = this.crt_time / 1000;
-				//if(this.gameOver) opacity = opacity * 2;
 				gRenderEngine.textToDraw.opacity = opacity;	// increase text opacity
-				//console.log('increasing opacity ' + opacity + " " + this.gameOver);
 				
 				if(opacity == 1 && (this.gameOver || (this.story.length == this.stage+1 && this.story[this.stage].sequences.length == this.seq+1)))	// if this was the last sequence of the last stage
 						{
@@ -173,7 +171,7 @@ GameEngineClass = Class.extend(
 							return;
 						}
 				
-				if(opacity > 0.75)
+				if(opacity > 0.5)
 				{						
 					this.needsInput = true;		// for impatient users - allow click before full fade in
 					if(gInputEngine.clicked && gInputEngine.isinroom(this.story[this.stage].sequences[this.seq].room-1)) // if the user clicked on the correct text
@@ -359,7 +357,7 @@ GameEngineClass = Class.extend(
 							}
 							else	// if it's the target...
 							{
-								this.mistakes++;
+								//this.mistakes++;
 								// remove other objects
 								var j = 0;
 								while(this.crtObjects.length > 1)
