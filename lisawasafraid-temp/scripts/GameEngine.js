@@ -195,7 +195,8 @@ GameEngineClass = Class.extend(
 					this.crt_time = 0;
 					this.needsInput = true;
 					this.roomOpened = null;
-					this.seq_fading_out = false;		
+					this.seq_fading_out = false;	
+					this.mistakes = 3;
 					
 					this.generateRooms();
 				}
