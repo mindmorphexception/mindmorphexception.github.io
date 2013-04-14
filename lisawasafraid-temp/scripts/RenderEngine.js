@@ -113,7 +113,7 @@ RenderEngineClass = Class.extend(
 		var text = "";
 		if(gEngine.mistakes == 2) text = "Think again.";
 		else if(gEngine.mistakes == 1) text = "One more try.";
-		this.context.fillText("Balance: " + gEngine.mistakes,350,520);
+		this.context.fillText(text,350,520);
 		this.mistakeOpacity = this.mistakeOpacity - this.render_unit / 5000;
 		if(this.mistakeOpacity < 0.01) this.mistakeOpacity = 0;
 		this.lastNrMistakes = gEngine.mistakes;
