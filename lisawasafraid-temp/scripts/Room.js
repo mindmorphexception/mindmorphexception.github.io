@@ -18,6 +18,7 @@ RoomClass = Class.extend(
 	
 	contains: function(name)
 	{
+		console.log('contains?');
 		for(var i = 0; i < this.objects.length; ++i)
 		{
 			console.log(this.objects[i].obj.filename + " " + name);
