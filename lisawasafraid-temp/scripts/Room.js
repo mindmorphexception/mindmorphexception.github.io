@@ -16,7 +16,7 @@ RoomClass = Class.extend(
 		this.objects.push(newObj);
 	},
 	
-	contains: function(name)
+	containsName: function(name)
 	{
 		console.log('contains?');
 		for(var i = 0; i < this.objects.length; ++i)
