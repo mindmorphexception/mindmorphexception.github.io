@@ -519,9 +519,9 @@ GameEngineClass = Class.extend(
 	
 	alreadySelectedObject: function(name)	// ------ updated for pre-generated rooms --------
 	{
-		console.log('contains0');
+		console.log(this.crtRooms[0]);
 		for(var i = 0; i < this.crtRooms; ++i)
-			if(this.crtRooms[i].contains(name))
+			if(this.crtRooms[i].containsName(name))
 				return true;
 		return false;
 		
