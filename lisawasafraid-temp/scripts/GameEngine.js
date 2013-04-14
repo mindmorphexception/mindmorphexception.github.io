@@ -432,45 +432,6 @@ GameEngineClass = Class.extend(
 			
 			
 		}
-		
-		
-		/* code for alternate fixed time text flow:
-		this.crt_time = this.crt_time - 100;
-		if(this.crt_time == 0)
-		{
-			if(this.is_sequence_pause)	// we need to draw the next sequence of this stage
-			{
-				console.log("drawing sequence");
-				console.log(this.seq);
-				this.is_sequence_pause = false;		// no more sequence pause 
-				gRenderEngine.textToDraw = this.story[this.stage].sequences[this.seq];	// add text to draw
-				this.story[this.stage].sequences[this.seq].opacity = 0;	//start with opacity 0 to fade in
-				this.crt_time = this.sequence_time;	// set timer to sequence duration
-			}
-			else	// we need to erase current text and pause, or switch to next stage
-			{
-				console.log("pauseing sequence");
-				this.crt_time = this.sequence_pause;	// set timer to sequence pause duration
-				gRenderEngine.textToDraw = null;		// no text to draw
-				this.is_sequence_pause = true;			// start the pause
-				this.seq++;								// move to next sequence in current stage
-				if(this.story[this.stage]..sequences.length == this.seq)	// if this was the last sequence of this stage
-				{
-					console.log("entering next stage...");
-					this.crt_time = -1;
-				}
-			}
-		}
-		else if(gRenderEngine.textToDraw != null && this.crt_time > this.sequence_time-1000)	// if we've recently drawn some text
-		{
-			this.story[this.stage].sequences[this.seq].opacity = (this.sequence_time - this.crt_time) / 1000;		//fade it in
-		}
-		
-				else if(gRenderEngine.textToDraw != null && this.crt_time < 1000)	// if we're going to remove text shortly
-		{
-			this.story[this.stage].sequences[this.seq].opacity = this.crt_time / 1000;		//fade it out
-		}
-		*/
 	},
 	
 	generateRooms: function()	// ---------- function to generate all rooms ----------
@@ -519,6 +480,8 @@ GameEngineClass = Class.extend(
 		
 		/* set objects */
 		var crtTextRoom = this.story[this.stage].sequences[this.seq].room - 1;
+		console.log('text is in room: ' + crtTextRoom);
+		console.log('selected room is ' + i);
 		this.crtObjects = i >= crtTextRoom ? this.crtRooms[i-1].objects : this.crtRooms[i].objects;
 		
 		/* set x and y for objects */
