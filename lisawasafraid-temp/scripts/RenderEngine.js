@@ -109,11 +109,11 @@ RenderEngineClass = Class.extend(
 		{
 			this.mistakeOpacity = 1;
 		}
-		this.context.fillStyle = "#FF66BB"; 
+		this.context.fillStyle = "#FF3399"; 
 		this.context.globalAlpha = this.mistakeOpacity;
 		var text = "";
 		if(gEngine.mistakes == 2) text = "Attempts left: 2";
-		else if(gEngine.mistakes == 1) text = "Attepts left: 1";
+		else if(gEngine.mistakes == 1) text = "Attempts left: 1";
 		this.context.fillText(text,350,520);
 		this.mistakeOpacity = this.mistakeOpacity - this.render_unit / 2500;
 		if(this.mistakeOpacity < 0.01) this.mistakeOpacity = 0;
