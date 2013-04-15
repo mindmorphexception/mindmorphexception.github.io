@@ -144,7 +144,7 @@ RenderEngineClass = Class.extend(
 		if(this.scoreOpacity > 1) this.scoreOpacity = 1;
 		if(this.scoreOpacity < 0) this.scoreOpacity = 0;
 		this.context.globalAlpha = this.scoreOpacity;
-		this.context.fillText("Balance: " + gEngine.mistakes,350,520);
+		this.context.fillText("Attempts left: " + gEngine.mistakes,350,520);
 		
 		
 		/* if there is text */
