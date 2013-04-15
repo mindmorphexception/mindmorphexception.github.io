@@ -109,7 +109,7 @@ RenderEngineClass = Class.extend(
 		{
 			this.mistakeOpacity = 1;
 		}
-		this.context.fillStyle = "#EE56A4"; 
+		this.context.fillStyle = "#F356A4"; 
 		this.context.font = "20px 'Dancing Script'";
 		this.context.globalAlpha = this.mistakeOpacity;
 		var text = "";
