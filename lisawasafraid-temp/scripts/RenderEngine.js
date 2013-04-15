@@ -109,7 +109,7 @@ RenderEngineClass = Class.extend(
 		{
 			this.mistakeOpacity = 1;
 		}
-		this.context.fillStyle = "#779988"; 
+		this.context.fillStyle = "#AADDBB"; 
 		this.context.globalAlpha = this.mistakeOpacity;
 		var text = "";
 		if(gEngine.mistakes == 2) text = "No, not that .";
