@@ -115,7 +115,7 @@ RenderEngineClass = Class.extend(
 		if(gEngine.mistakes >= 2) text = "Attempts left: 2";
 		else if(gEngine.mistakes == 1) text = "Attempts left: 1";
 		else if(gEngine.mistakes == 0) text = "Attempts left: 0";
-		console.log(this.mistakeOpacity);
+		
 		this.context.fillText(text,350,520);
 		if(gEngine.mistakes == 1) { if(this.mistakeOpacity > 0.6) this.mistakeOpacity = this.mistakeOpacity - this.render_unit / 2500; }
 		else if(gEngine.mistakes == 2) { if(this.mistakeOpacity > 0.4) this.mistakeOpacity = this.mistakeOpacity - this.render_unit / 2500; }
