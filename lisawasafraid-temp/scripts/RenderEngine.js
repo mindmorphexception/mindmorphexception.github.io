@@ -104,7 +104,7 @@ RenderEngineClass = Class.extend(
 		this.drawSprite(this.bgr,0,0);		
 		
 		/* draw score */
-		/*
+		
 		if(gEngine.mistakes < this.lastNrMistakes)
 		{
 			this.mistakeOpacity = 1;
@@ -112,14 +112,15 @@ RenderEngineClass = Class.extend(
 		this.context.fillStyle = "#AAFFCC"; 
 		this.context.globalAlpha = this.mistakeOpacity;
 		var text = "";
-		if(gEngine.mistakes == 2) text = "No, not that .";
-		else if(gEngine.mistakes == 1) text = "No !";
+		if(gEngine.mistakes == 2) text = "Attempts left: 2";
+		else if(gEngine.mistakes == 1) text = "Attempts left: 1";
 		this.context.fillText(text,350,520);
-		this.mistakeOpacity = this.mistakeOpacity - this.render_unit / 2500;
+		if(gEngine.mistakes == 1 && this.mistakeOpacity > 0.6) this.mistakeOpacity = this.mistakeOpacity - this.render_unit / 2500;
+		if(gEngine.mistakes == 2 && this.mistakeOpacity > 0.4) this.mistakeOpacity = this.mistakeOpacity - this.render_unit / 2500;
 		if(this.mistakeOpacity < 0.01) this.mistakeOpacity = 0;
-		this.lastNrMistakes = gEngine.mistakes;*/
+		this.lastNrMistakes = gEngine.mistakes;
 		
-		
+		/*
 		if(gEngine.gameEnded)
 		{
 			this.scoreTargetOpacity = this.storyOpacity;
@@ -145,7 +146,7 @@ RenderEngineClass = Class.extend(
 		if(this.scoreOpacity < 0) this.scoreOpacity = 0;
 		this.context.globalAlpha = this.scoreOpacity;
 		this.context.fillText("Attempts left: " + gEngine.mistakes,350,520);
-		
+		*/
 		
 		/* if there is text */
 		if(this.textToDraw != null) 
