@@ -143,11 +143,7 @@ RenderEngineClass = Class.extend(
 		if(this.scoreOpacity > 1) this.scoreOpacity = 1;
 		if(this.scoreOpacity < 0) this.scoreOpacity = 0;
 		this.context.globalAlpha = this.scoreOpacity;
-		var text = "Don't make mistakes...";
-		if(gEngine.mistakes == 2) text = "D*n't**ake*m*sta**s**.";
-		if(gEngine.mistakes == 1) text = "**n*t****e*m**ta**s**.";
-		if(gEngine.mistakes == 0) text = "**********************";
-		this.context.fillText(text,350,520);
+		this.context.fillText("Balance: " + gEngine.mistakes,350,520);
 		
 		
 		/* if there is text */
