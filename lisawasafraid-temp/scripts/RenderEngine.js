@@ -110,6 +110,7 @@ RenderEngineClass = Class.extend(
 			this.mistakeOpacity = 1;
 		}
 		this.context.fillStyle = "#EE56A4"; 
+		this.context.font = "20px 'Dancing Script'";
 		this.context.globalAlpha = this.mistakeOpacity;
 		var text = "";
 		if(gEngine.mistakes == 2) text = "Attempts left: 2";
@@ -146,6 +147,8 @@ RenderEngineClass = Class.extend(
 		this.context.globalAlpha = this.scoreOpacity;
 		this.context.fillText("Attempts left: " + gEngine.mistakes,350,520);
 		*/
+		
+		this.context.font = "26px 'Dancing Script'";
 		
 		/* if there is text */
 		if(this.textToDraw != null) 
