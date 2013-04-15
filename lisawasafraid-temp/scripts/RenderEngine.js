@@ -104,21 +104,22 @@ RenderEngineClass = Class.extend(
 		this.drawSprite(this.bgr,0,0);		
 		
 		/* draw score */
-		/*
+		
 		if(gEngine.mistakes < this.lastNrMistakes)
 		{
 			this.mistakeOpacity = 1;
 		}
-		this.context.fillStyle = "#AAFFCC"; 
+		this.context.fillStyle = "#66BB88"; 
 		this.context.globalAlpha = this.mistakeOpacity;
 		var text = "";
-		if(gEngine.mistakes == 2) text = "Think again.";
+		if(gEngine.mistakes == 2) text = "Think again...";
 		else if(gEngine.mistakes == 1) text = "One more try.";
 		this.context.fillText(text,350,520);
 		this.mistakeOpacity = this.mistakeOpacity - this.render_unit / 5000;
 		if(this.mistakeOpacity < 0.01) this.mistakeOpacity = 0;
-		this.lastNrMistakes = gEngine.mistakes;*/
+		this.lastNrMistakes = gEngine.mistakes;
 		
+		/*
 		if(gEngine.gameEnded)
 		{
 			this.scoreTargetOpacity = this.storyOpacity;
@@ -143,7 +144,7 @@ RenderEngineClass = Class.extend(
 		if(this.scoreOpacity > 1) this.scoreOpacity = 1;
 		if(this.scoreOpacity < 0) this.scoreOpacity = 0;
 		this.context.globalAlpha = this.scoreOpacity;
-		this.context.fillText("Balance: " + gEngine.mistakes,350,520);
+		this.context.fillText("Balance: " + gEngine.mistakes,350,520);*/
 		
 		
 		/* if there is text */
