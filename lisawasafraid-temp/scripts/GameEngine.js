@@ -184,6 +184,7 @@ GameEngineClass = Class.extend(
 			}
 			else if(this.seq_fading_out)
 			{
+				
 				this.crt_time = this.crt_time - this.game_unit;	//increase crt timer
 				var opacity = this.crt_time / 1000;		
 				this.story[this.stage].sequences[this.seq].opacity = opacity;	// decrease text opacity
@@ -193,6 +194,7 @@ GameEngineClass = Class.extend(
 					this.play_stage = true;
 					//console.log("entering play stage...");
 					this.crt_time = 0;
+					gInputEngine.unclick();
 					this.needsInput = true;
 					this.roomOpened = null;
 					this.seq_fading_out = false;	
