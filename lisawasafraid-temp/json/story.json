@@ -107,7 +107,7 @@
                         "the lights on would prevent",
                         "the Dreamer from waking up."
                     ],
-                    "room": 5
+                    "room": 4
                 },
                 {
                     "text": [
@@ -123,7 +123,7 @@
                         "her heart would start",
 						"to beat like crazy..."
                     ],
-                    "room": 4
+                    "room": 5
                 }
             ],
             "object": "heart-rate.png"
