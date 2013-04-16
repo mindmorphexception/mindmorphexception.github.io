@@ -445,7 +445,7 @@ GameEngineClass = Class.extend(
 		{
 			var rndRoom = Math.floor(Math.random() * 5); if(rndRoom > 4) rndRoom = 4;
 			if(rndRoom < 3 && this.crtRooms[rndRoom].nrObjects() > 4) continue;	// maximum 5 objects per small room
-			if(rndRoom >= 3 && this.crtRooms[rndRoom].nrObjects() > 7) continue;	// maximum 8 objects per large room
+			if(rndRoom >= 3 && this.crtRooms[rndRoom].nrObjects() > 6) continue;	// maximum 7 objects per large room (!depends on text room)
 			
 			var pickedobj;
 			do	// pick an object that was not selected already
