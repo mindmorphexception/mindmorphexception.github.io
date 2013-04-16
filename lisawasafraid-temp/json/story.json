@@ -75,7 +75,8 @@
                 {
                     "text": [
                         "Would he know that",
-                        "he is dreaming the world?"
+                        "he is dreaming",
+						"the world?"
                     ],
                     "room": 6
                 },
@@ -106,7 +107,7 @@
                         "the lights on would prevent",
                         "the Dreamer from waking up."
                     ],
-                    "room": 4
+                    "room": 5
                 },
                 {
                     "text": [
@@ -114,13 +115,13 @@
 						"her thoughts",
                         "were not rational."
                     ],
-                    "room": 1
+                    "room": 3
                 },
                 {
                     "text": [
                         "But whenever it was dark,",
                         "her heart would start",
-						"to beat too fast..."
+						"to beat like crazy..."
                     ],
                     "room": 4
                 }
