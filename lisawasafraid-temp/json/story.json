@@ -121,7 +121,7 @@
                     "text": [
                         "But whenever it was dark,",
                         "her heart would start",
-						"to beat like crazy..."
+						"beating like crazy..."
                     ],
                     "room": 5
                 }
@@ -190,7 +190,7 @@
                 {
                     "text": [
                         "She loved",
-                        "to write stories."
+                        "writing stories."
                     ],
                     "room": 1
                 },
@@ -375,7 +375,7 @@
                 {
                     "text": [
                         "Between them, unforgiving,",
-                        "was Germany, the dear",
+                        "was Germany, the sweet",
                         "land where they had met."
                     ],
                     "room": 5
@@ -479,8 +479,8 @@
                 },
                 {
                     "text": [
-                        "Who was the Dreamer, that",
-                        "Lisa long ago forgot, and",
+                        "Who was the Dreamer, who",
+                        "Lisa had long ago forgot, and",
                         "that the pain had brought back?"
                     ],
                     "room": 4
@@ -618,22 +618,22 @@
                 },
                 {
                     "text": [
-                        "Her fears grew bigger,",
-                        "and she covered them",
-                        "with clouds."
+                        "She tried to",
+                        "find herself",
+                        "again."
                     ],
-                    "room": 5
+                    "room": 3
                 },
                 {
                     "text": [
-                        "And she tried",
-                        "to find herself",
-                        "again..."
+                        "Her fears grew bigger,",
+                        "but she covered them",
+                        "with clouds..."
                     ],
-                    "room": 3
+                    "room": 5
                 }
             ],
-            "object": "woman.png"
+            "object": "cloud.png"
         },
         {
             "sequences": [
@@ -645,9 +645,9 @@
                 },
                 {
                     "text": [
-                        "Her dress was white,",
-                        "and her English husband",
-                        "was thoughtful."
+                        "Her white dress was",
+                        "lovely and her English",
+                        "husband was thoughtful."
                     ],
                     "room": 4
                 },
@@ -812,7 +812,7 @@
                 {
                     "text": [
                         "The Dreamer was",
-                        "ready to wake up..."
+                        "ready to wake up."
                     ],
                     "room": 1
                 },

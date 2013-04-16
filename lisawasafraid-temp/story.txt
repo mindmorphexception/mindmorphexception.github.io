@@ -1,14 +1,15 @@
     
 	Lisa was afraid
 	
-    a literary-ish deviation for an HTML5 experiment
+    - a little script for a HTML5 literary experiment -
 	by Iulia M Comsa
 	
     08.04.2013
 	
-	* This is not rhymeless poetry. It's prose; newlines are just to mirror what's on the canvas.
+	* This is not postmodern rhymeless poetry. It's prose; newlines are just to mirror what's on the canvas.
+	* Triple points mark puzzle breaks in the story and not suspension... except those in this phrase...
 	* I am not a native English speaker. And this was all written in a few hours. Therefore, feel free not to assign a non-zero artistic value to it.
-	* I also apologise to any countries that I may offend in this text. They are really chosen randomly.
+	* Yes, all the countries in this text are chosen randomly.
 
 Chapter 1: Click me
 
@@ -43,19 +44,21 @@ he is dreaming the world?
 Could he hear Lisa's thoughts, 
 or was he oblivious?
 
-When she would grow up, 
-Lisa would find him 
-somewhere in the world...
+Lying on the sofa, Lisa
+dreamed of finding the Dreamer
+when she would grow up...
 
 Lisa thought that keeping 
 the lights on would prevent 
 the Dreamer from waking up.
 
-She knew that 
-this was irrational.
+She knew that
+her thoughts 
+were not rational.
 
-Her brain was probably 
-tricking her...
+But whenever it was dark,
+her heart would start
+beating like crazy...
 
 Lisa's weird thoughts might 
 have been the effect of the 
@@ -80,7 +83,7 @@ She loved reading
 books...
 
 She loved 
-to write stories.
+writing stories.
 
 She used the fountain pen
 her parents got her 
@@ -147,7 +150,7 @@ get a letter from Denis and
 would sent him a letter back.
 
 Between them, unforgiving, 
-was Germany, the dear 
+was Germany, the sweet 
 land where they had met.
 
 Lisa's room was  
@@ -193,7 +196,7 @@ and the Dreamer could
 wake up any moment now.
 
 Who was the Dreamer, that 
-Lisa long ago forgot, and 
+Lisa had long ago forgot, and 
 that the pain had brought back?
 
 All was evanescent, 
@@ -246,19 +249,19 @@ Then the world
 grew up, 
 with Lisa.
 
-Her fears grew bigger, 
-and she covered them 
-with clouds.
+She tried to
+find herself 
+again.
 
-And she tried 
-to find herself 
-again...
+Her fears grew bigger, 
+but she covered them 
+with clouds...
 
 Lisa was happy.
 
-Her dress was white, 
-and her English husband 
-was thoughtful.
+Her white dress was, 
+lovely and her English
+husband was thoughtful.
 
 And not even one thought 
 of hers was related to 
@@ -322,6 +325,6 @@ Lisa was not afraid
 anymore.
 
 The Dreamer was 
-ready to wake up...
+ready to wake up.
 
 The end
