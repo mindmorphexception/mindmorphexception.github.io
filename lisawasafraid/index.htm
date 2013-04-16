@@ -17,12 +17,42 @@
 		
 		<link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'> 
 		
+		
+		<style type="text/css">
+			#canvas
+			{
+				border:1px solid black;
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
+			}
+			body
+			{
+				background-color: black;
+				font-family: 'Dancing Script', cursive;
+				font-size: 20px;
+				color: white;
+				text-align:center;
+				cursor: pointer;
+			}
+			a:link {text-decoration:none; color:inherit; border-bottom:1px dotted;}
+			a:visited {text-decoration:none; color:inherit;}
+			a:hover {text-decoration:none;color:inherit; border-bottom:1px solid;}
+			a:active {text-decoration:none;color:inherit;}
+
+			#credits_div
+			{
+				padding-top:35px;
+				font-family: Verdana;
+				font-size: 12px;
+			}
+		</style>
+		
 		<script type="text/javascript" src="scripts/core.js"></script>
 		<script type="text/javascript" src="scripts/GameEngine.js"></script>
 		<script type="text/javascript" src="scripts/RenderEngine.js"></script>
 		<script type="text/javascript" src="scripts/InputEngine.js"></script>
-				
-		<script type="text/javascript" src="include/jQuery.js"></script>
+		<script type="text/javascript" src="scripts/Room.js"></script>
 		
 		<script type="text/javascript">
 		
@@ -61,9 +91,6 @@
 				console.log(a.duration);
 				a.duration = 65.48249053955078;*/
 				
-				$("#canvas").fadeOut(1);
-				$("#credits_div").fadeOut(1);
-			
 				gEngine = new GameEngineClass(); gEngine.setup();
 				gRenderEngine = new RenderEngineClass(); gRenderEngine.setup();
 				gInputEngine = new InputEngineClass(); gInputEngine.setup();
@@ -82,10 +109,7 @@
 			
 			function startGame()
 			{
-				$("#loading_div").fadeOut(1);
-				$("#canvas").fadeIn(5000);
-				$("#credits_div").fadeIn(5000);
-				
+				document.getElementById("loading_div").style.display = "none";
 				setInterval(function() { gEngine.update(); }, gEngine.game_unit); 
 				setInterval(function() { gRenderEngine.render(); }, gRenderEngine.render_unit);
 			}
@@ -93,36 +117,6 @@
 		
 		
 		
-		<style type="text/css">
-			#canvas
-			{
-				border:1px solid black;
-				margin-left: auto;
-				margin-right: auto;
-				display: block;
-			}
-			body
-			{
-				background-color: black;
-				font-family: 'Dancing Script', cursive;
-				font-size: 20px;
-				color: white;
-				text-align:center;
-				cursor: pointer;
-			}
-			a:link {text-decoration:none; color:inherit; border-bottom:1px dotted;}
-			a:visited {text-decoration:none; color:inherit;}
-			a:hover {text-decoration:none;color:inherit; border-bottom:1px solid;}
-			a:active {text-decoration:none;color:inherit;}
-
-			#credits_div
-			{
-				display:none;
-				padding-top:35px;
-				font-family: Verdana;
-				font-size: 12px;
-			}
-		</style>
 		
 	</head>
 	
@@ -142,22 +136,22 @@
 		<div id="credits_div">
 			"Lisa was afraid": A puzzle-flavoured short story by <!--a href="https://plus.google.com/u/0/106532679685962165170" target="_blank"-->Iulia M. Comsa <br/><br/>
 
-			<small> Instructions: Click the text to advance the story.<br/>
-			When the text fades out, open the rooms by clicking them and find an object related to the last phrase. <br/>
-			The content of the room changes every time the room is opened. <br/>
-			The object you are looking for might not always be in a room. </small> <br/><br/>
+			<small> Instructions: Click the text. Follow the story. <br/>
+			Open the rooms. Find the object related to the last phrase. <br/>
+			Be careful. Don't make mistakes. Don't sleep away... <br/>
+			</small> <br/><br/>
 			
 			Read the full script: <a href="story.txt">txt</a> <br/>
-			Source code: <a href="LisaWasAfraid.zip">zip</a> <br/>
-			Full walkthrough: <a href="http://youtu.be/SIpaA7USLNI">YouTube</a> <br/><br/>
+			Source code: <a href="https://github.com/mindmorphexception/mindmorphexception.github.io">GitHub</a> <br/>
+			Full walkthrough: <a href="http://youtu.be/SIECgqxN4FM">YouTube</a> <br/><br/>
 
 			<small>
 			Music: Comfortable Mystery 4 by <a href="http://incompetech.com" target="_blank">Kevin MacLeod</a> <br/>
 			Object images provided by <a href="http://www.iconbeast.com/" target="_blank">IconBeast</a> <br/>
 			All other artwork is made by me using <a href="http://www.gimp.org/" target="_blank">GIMP</a> <br/>
-			Code for JS classes provided by <a href="http://gritsgame.appspot.com/" target="_blank">the GRITS game</a> <br/>
+			Class object code provided by <a href="http://gritsgame.appspot.com/" target="_blank">the GRITS game</a> <br/>
 			Motivated by the <a href="https://www.udacity.com/course/cs255" target="_blank">Udacity HTML5 Game Development course</a> <br/>
-			This work is licensed under Creative Commons CC BY-NC-SA 
+			This work is licensed under Creative Commons CC BY-NC-SA
 			</small>
 		</div>
 		

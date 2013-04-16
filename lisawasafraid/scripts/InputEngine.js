@@ -10,6 +10,7 @@ InputEngineClass = Class.extend(
 	setup: function()
 	{
 		gRenderEngine.canvas.addEventListener('mouseup', this.mouseup, false);	
+		gRenderEngine.canvas.addEventListener('mousemove', this.mousemove, false);	
 		console.log("input engine set up!");
 	},
 	
@@ -18,16 +19,20 @@ InputEngineClass = Class.extend(
 		if (gEngine.needsInput && event.button == 0)	// text stage and needs input to fade out text
 		{
 			gInputEngine.clicked = true;
-			gInputEngine.x = (event.offsetX || event.clientX - $(event.target).offset().left + window.pageXOffset );	// annoying Firefox
-			gInputEngine.y = (event.offsetY || event.clientY - $(event.target).offset().top + window.pageYOffset );
+			gInputEngine.x = (event.offsetX || event.clientX - event.target.offsetLeft + window.pageXOffset );	// SOMETIMES I HATE FIREFOX SO MUCH
+			gInputEngine.y = (event.offsetY || event.clientY - event.target.offsetTop + window.pageYOffset );
 		}
 		
 	},
 	
-	mouseover: function()	// this updates the room hovered over in play stage
+	mousemove: function(event) 
 	{
-		//if(!gEngine.play_stage) return;
-		console.log('hover');
+		if (gEngine.needsInput)	// text stage and needs input to fade out text
+		{
+			gInputEngine.x = (event.offsetX || event.clientX - event.target.offsetLeft + window.pageXOffset );	// SOMETIMES I HATE FIREFOX SO MUCH
+			gInputEngine.y = (event.offsetY || event.clientY - event.target.offsetTop + window.pageYOffset );
+		}
+		
 	},
 	
 	unclick: function()
@@ -52,6 +57,30 @@ InputEngineClass = Class.extend(
 			this.y < gEngine.targetObjectY + gEngine.objSizeY) return true;
 			
 		return false;
+	},
+	
+	insideObject: function(i)
+	{
+		if(this.x > gRenderEngine.objToDraw[i].x && 
+			this.x < gRenderEngine.objToDraw[i].x + gRenderEngine.objToDraw[i].obj.frame.w && 
+			this.y > gRenderEngine.objToDraw[i].y && 
+			this.y < gRenderEngine.objToDraw[i].y + gRenderEngine.objToDraw[i].obj.frame.h) return true;
+			
+		return false;
+	},
+	
+	objectWasClicked: function(i)
+	{
+		if(!this.x || !this.y || !gRenderEngine.objToDraw || !this.clicked) return false;
+		return this.insideObject(i);
+	},
+	
+	mouseOverObject: function(i)
+	{
+		if(!this.x || !this.y || !gRenderEngine.objToDraw) return false;
+		return this.insideObject(i);
 	}
+	
+	
 }
 );
