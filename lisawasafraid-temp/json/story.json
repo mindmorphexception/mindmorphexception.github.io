@@ -77,14 +77,15 @@
                         "Would he know that",
                         "he is dreaming the world?"
                     ],
-                    "room": 5
+                    "room": 6
                 },
                 {
                     "text": [
-                        "Could he hear Lisa's thoughts,",
+                        "Could he hear",
+						"Lisa's thoughts,",
                         "or was he oblivious?"
                     ],
-                    "room": 4
+                    "room": 5
                 },
                 {
                     "text": [
@@ -92,7 +93,7 @@
                         "dreamed of finding the Dreamer",
                         "when she would grow up..."
                     ],
-                    "room": 5
+                    "room": 4
                 }
             ],
             "object": "sofa.png"
