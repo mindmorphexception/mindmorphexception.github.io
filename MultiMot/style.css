@@ -1,0 +1,135 @@
+body
+{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+	padding-left:10%;
+	padding-right:10%;
+}
+
+#title_div
+{
+	padding-top:3px;
+	font-size:34px;
+	color: #F05E24;
+	text-align:center;
+	font-family: 'Cardo', Verdana, serif;
+	font-weight: bold;
+	background-color: white;
+}
+#subtitle_div
+{
+	padding-bottom:30px;
+	padding-top:0px;
+	font-size:14px;
+	color: #191970;
+	text-align:center;
+	font-family: 'Caudex', Verdana, serif;
+	font-weight: 400;
+	background-color: white;
+	margin-bottom:30px;
+}
+
+
+button, .button
+{
+	color: #F05E24;
+	padding:5px;
+	margin:10px;
+	width:200px;
+	background-color:white;
+	font-family:'Noto Serif';
+	
+	font-size:14px;
+}
+
+
+#infodiv
+{
+	font-size: small;
+	color: navy;
+}
+
+.error
+{
+	color:red;
+}
+
+.ok
+{
+	color:green;
+}
+
+.warning
+{
+	color:orange;
+}
+
+#wrap
+{
+	clear:both;
+	display:inline-block;
+	width:100%;
+	margin:0 auto;
+	
+}
+
+#graph_textarea
+{
+	white-space: nowrap;
+}
+
+#graph_panel
+{
+	float:left;
+	width:45%;
+	
+}
+
+#motif_panel
+{
+	float:right;
+	width:45%;
+}
+
+label
+{
+	display:block;
+}
+
+input[type="submit"]
+{
+	display:block;
+}
+
+.col_headline
+{
+	font-weight:bold;
+	border-bottom:1px solid #C57639;
+	padding-bottom:1px;
+	margin-bottom:10px;
+	font-size:18px;
+	font-family: 'Noto Serif';
+	color: #191970;
+}
+
+hr
+{
+	border: 0; 
+	border-top: 1px solid #C57639;
+}
+
+#motifs_textarea
+{
+	white-space: nowrap;
+}
+
+#output_div
+{
+	font-family: consolas, 'Inconsolata';
+	
+}
+
+a:link {text-decoration:none; color:#F05E24; border-bottom:1px dotted;}
+a:visited {text-decoration:none; color:#F05E24;}
+a:hover {text-decoration:none;color:#F05E24; border-bottom:1px solid;}
+a:active {text-decoration:none;color:#F05E24;}

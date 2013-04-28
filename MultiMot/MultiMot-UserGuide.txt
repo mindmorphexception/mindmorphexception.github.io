@@ -1,0 +1,39 @@
+MultiMot: an online motif finder for multirelational graphs
+Authors: Iulia Comsa, Crina Grosan
+April 2013
+User's Guide
+
+1. MOTIVATION
+
+The purpose of this software is to find motifs in multirelational graphs. Its main application is in bioinformatics, where vast amounts of data can be best represented in the form of multirelational networks.
+
+2. REQUIREMENTS
+
+MultiMot should be used with the Chrome browser (version 26 as of now). The has also been successfully tested in Firefox (version 20) and Internet Explorer (version 10). However, due to minor bugs in the latter two browsers, the recommended browser for running MultiMot is Chrome.
+
+3. USAGE
+
+	3a. INPUT
+	
+You can either enter the graph directly in the textarea or upload a text file not larger than 10 MB which will be automatically loaded in the textarea. The graph is given as triplets of the form {node1, node2, edgelabel}, with elements and triplets separated by whitespaces. Both the nodes and the edge label are alphanumeric strings (THEY MUST NOT CONTAIN SPACES). An example graph is loaded by default in the graph textarea. 
+
+In template matching mode, each template is speciﬁed by the number of triplets describing it, followed by triplets of the same form as for the graph.
+
+	3b. SUBGRAPH SAMPLING MODE
+	
+The subgraph sampling method is an adaptation for multirelational graphs of the algorithm by Kashtan et al. (2004), which estimates the frequency of subgraphs of size N using k subgraphs randomly selected from the graph. It is useful when enumerating all subgraph is not practical due to the size of the graph. The method is implemented for directed subgraphs and takes into account the edge labels. In order to build each selected subgraph, an edge is ﬁrst randomly selected and the two nodes it connects are added to the list that describes the current subgraph. Then, a new random edge is selected from the list of edges connected to at least one of the nodes in the current subgraph, and the list is updated. The process continues as long as the number of nodes does not exceed the desired subgraph size n. As the graph is multirelational, multiple edges can be selected between the same nodes.
+
+In order to estimate subgraph frequencies, the probability P of selecting each subgraph is calculated while the subgraph is built. The starting value of P is the probability of selecting the initial edge out of the M edges of the graph (1/M). Then, each time an edge is picked, P is multiplied by the probability of selecting that edge from the set of E edges adjacent to at least one of the nodes in the current list (1/E). After a subgraph is built, its weight 1/P is added to the total score corresponding to the selected subgraph type. After k subgraphs have been selected, the scores are normalized using the sum of all scores in order to obtain the estimated subgraph concentration. 
+
+The program prints the graph types, their concentration, their count (the proportion of times that each subgraph has been
+selected, for comparison with the concentration) and all the sampled nodes of the graph which form a subgraph of that type.
+
+	3c. TEMPLATE MATCHING MODE
+	
+In template matching mode, the user can specify one or more graph templates to look for. For each template, the program will perform an exhaustive search in order to ﬁnd all matching subgraphs and will display them as an ordered set of
+nodes. Template matching will work for both directed and non-directed graphs, as speciﬁed by the user. Moreover, the user may choose to ignore the edge value, in which case the algorithm will look for subgraphs that match the number of
+edges in the template (i.e. every two matched nodes will be connected by at least the number of edges speciﬁed in the template), regardless of the edge label.
+
+4. LICENSE
+
+You are free to use, adapt and share this software without making commercial use of it. By doing so, you must attribute the work to the original authors, but not in a way that suggests that they endorse you for the use of their work. You must not use this software for commercial purposes.
