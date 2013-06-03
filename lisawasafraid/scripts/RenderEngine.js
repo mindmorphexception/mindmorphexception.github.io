@@ -54,7 +54,7 @@ RenderEngineClass = Class.extend(
 		roomsimg.src = this.roomssrc;
 		
 		this.context.textBaseline="top";
-		this.context.font = "26px 'Quintessential'";
+		this.context.font = "26px 'Dancing Script'";
 		
 		this.storyOpacity = 0;
 		
@@ -110,7 +110,7 @@ RenderEngineClass = Class.extend(
 			this.mistakeOpacity = 1;
 		}
 		this.context.fillStyle = "#FF64CD"; 
-		this.context.font = "22px 'Quintessential'";
+		this.context.font = "22px 'Dancing Script'";
 		this.context.globalAlpha = this.mistakeOpacity;
 		var text = "";
 		if(gEngine.mistakes == 2) text = "Attempts left: 2";
@@ -148,7 +148,7 @@ RenderEngineClass = Class.extend(
 		this.context.fillText("Attempts left: " + gEngine.mistakes,350,520);
 		*/
 		
-		this.context.font = "26px 'Quintessential'";
+		this.context.font = "26px 'Dancing Script'";
 		
 		/* if there is text */
 		if(this.textToDraw != null) 
