@@ -54,7 +54,7 @@ RenderEngineClass = Class.extend(
 		roomsimg.src = this.roomssrc;
 		
 		this.context.textBaseline="top";
-		this.context.font = "26px 'Dancing Script'";
+		this.context.font = "26px 'Quintessential'";
 		
 		this.storyOpacity = 0;
 		
