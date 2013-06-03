@@ -1,0 +1,87 @@
+#main_canvas
+{
+	position:absolute;
+	margin:0 auto;
+	margin-top:0px;
+	width:98%;
+	height:75%;
+	border:0px solid gray;
+	display:none;
+}
+
+.starry_cursor
+{
+	
+}
+
+body
+{
+	background-color:#000000;
+	
+}
+
+a:link {text-decoration:none; color:inherit; border-bottom:1px dotted;}
+a:visited {text-decoration:none; color:inherit;}
+a:hover {text-decoration:none;color:inherit; border-bottom:1px solid;}
+a:active {text-decoration:none;color:inherit;}
+
+#audio_elem
+{
+	position:absolute;
+	left:50%;
+	margin-left:-150px;
+	width: 300px;
+	
+	bottom: 0px;
+}
+
+.info
+{
+	text-align:center;
+	color:#554560;
+	font-family: 'Tangerine',"Book Antiqua", serif;
+	font-size: 250%;
+	font-weight:700;
+	position:absolute;
+	width: 90%;
+	left:5%;
+	top: 82%;
+	display:none;
+}
+
+.intro
+{
+	text-align:center;
+	color:#554560;
+	font-family: 'Dancing script',"Book Antiqua", serif;
+	font-size: 300%;
+	font-weight:normal;
+	position:absolute;
+	width: 90%;
+	left:5%;
+	top: 35%;
+	display:none;
+}
+
+.credits
+{
+	text-align:center;
+	color:#554560;
+	font-family: "Bookman Old Style", Verdana;
+	font-size: 80%;
+	display:none;
+	position:absolute;
+	width: 40%;
+	top: 95%;
+	
+}
+
+#copyright
+{
+	left:0%;
+}
+
+#song
+{
+	right:0%;
+}
