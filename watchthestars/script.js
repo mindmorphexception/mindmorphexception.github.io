@@ -8,14 +8,14 @@ var draw_timer = null;
 function drawStar(ctx,c)
 {	
 	var img = new Image();
-	img.src = "http://iulia.hostz.ro/img/star64.png";
+	img.src = "img/star64.png";
 	
 	var img_red = new Image();
-	img_red.src = "http://iulia.hostz.ro/img/star64_1.png";
+	img_red.src = "img/star64_1.png";
 	var img_green = new Image();
-	img_green.src = "http://iulia.hostz.ro/img/star64_2.png";
+	img_green.src = "img/star64_2.png";
 	var img_blue = new Image();
-	img_blue.src = "http://iulia.hostz.ro/img/star64_3.png";
+	img_blue.src = "img/star64_3.png";
 	
 	
 	
