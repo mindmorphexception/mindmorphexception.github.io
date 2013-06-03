@@ -23,8 +23,8 @@ RenderEngineClass = Class.extend(
 	
 	render_unit: 50,
 	
-	storyModeOpacity: 0.85,
-	storyOpacity: 0.85,
+	storyModeOpacity: 0.95,
+	storyOpacity: 0.95,
 	scoreOpacity: 0,
 	scoreTargetOpacity: 0,
 	
