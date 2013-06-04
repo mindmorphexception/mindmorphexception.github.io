@@ -175,7 +175,10 @@ GameEngineClass = Class.extend(
 				{						
 					this.needsInput = true;		// for impatient users - allow click before full fade in
 					if(gInputEngine.clicked && gInputEngine.isinroom(this.story[this.stage].sequences[this.seq].room-1)) // if the user clicked on the correct text
+					{
+						this.needsInput = false;
 						this.seq_fading_out = true;			// fade out seq after full fade in
+					}
 				}
 				if(opacity == 1)	// if we're finished fading in the text
 				{
@@ -184,7 +187,7 @@ GameEngineClass = Class.extend(
 			}
 			else if(this.seq_fading_out)
 			{
-				
+				this.needsInput = false;
 				this.crt_time = this.crt_time - this.game_unit;	//increase crt timer
 				var opacity = this.crt_time / 1000;		
 				this.story[this.stage].sequences[this.seq].opacity = opacity;	// decrease text opacity
