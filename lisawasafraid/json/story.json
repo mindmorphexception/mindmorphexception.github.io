@@ -189,8 +189,8 @@
             "sequences": [
                 {
                     "text": [
-                        "She loved",
-                        "writing stories."
+                        "She loved to",
+                        "write stories."
                     ],
                     "room": 1
                 },
@@ -536,7 +536,7 @@
                 {
                     "text": [
                         "When she finally got better,",
-                        "Lisa knew only one thing."
+                        "Lisa had only one wish."
                     ],
                     "room": 4
                 },
@@ -757,7 +757,7 @@
                 {
                     "text": [
                         "It was getting dark",
-                        "and she forgot",
+                        "and she had forgotten",
                         "where the light switch was."
                     ],
                     "room": 5
@@ -793,14 +793,15 @@
                         "But then she",
                         "understood."
                     ],
-                    "room": 6
+                    "room": 4
                 },
                 {
                     "text": [
-                        "And she closed her",
-                        "old, wrinkled eyes."
+                        "And she closed",
+						"her old, wrinkled",
+                        "eyes."
                     ],
-                    "room": 4
+                    "room": 2
                 },
                 {
                     "text": [
@@ -812,13 +813,7 @@
                 {
                     "text": [
                         "The Dreamer was",
-                        "ready to wake up."
-                    ],
-                    "room": 1
-                },
-                {
-                    "text": [
-                        "The end"
+                        "ready to wake up"
                     ],
                     "room": 4
                 }
