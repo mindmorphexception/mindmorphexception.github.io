@@ -42,7 +42,7 @@
                         "but it was not the dark",
                         "that she was afraid of."
                     ],
-                    "room": 4
+                    "room": 5
                 },
                 {
                     "text": [
@@ -57,7 +57,7 @@
                         "Evanescent,",
                         "like a snowflake..."
                     ],
-                    "room": 5
+                    "room": 4
                 }
             ],
             "object": "snow-flake.png"
@@ -752,7 +752,7 @@
                     "text": [
                         "Lisa was afraid."
                     ],
-                    "room": 6
+                    "room": 4
                 },
                 {
                     "text": [
@@ -790,8 +790,7 @@
                 },
                 {
                     "text": [
-                        "But then she",
-                        "understood."
+                        "But then she understood."
                     ],
                     "room": 4
                 },
@@ -813,7 +812,7 @@
                 {
                     "text": [
                         "The Dreamer was",
-                        "ready to wake up"
+                        "ready to wake up..."
                     ],
                     "room": 4
                 }
