@@ -177,6 +177,7 @@ GameEngineClass = Class.extend(
 					if(gInputEngine.clicked && gInputEngine.isinroom(this.story[this.stage].sequences[this.seq].room-1)) // if the user clicked on the correct text
 					{
 						this.needsInput = false;
+						gInputEngine.unclick();
 						this.seq_fading_out = true;			// fade out seq after full fade in
 					}
 				}
