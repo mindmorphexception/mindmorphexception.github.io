@@ -23,7 +23,7 @@ GameEngineClass = Class.extend(
 	needsInput: true,
 	
 	targetProbability: 0.5,
-	nrObjects: 20,
+	nrObjects: 25,
 	
 	roomOpened: null,
 	lastRoomOpened: null,
@@ -480,16 +480,22 @@ GameEngineClass = Class.extend(
 		{
 			if(this.crtObjects[j].fadingOut) { this.crtObjects.splice(j,1); continue; }
 			var x,y;
+			var tries = 0;
 			do	/* pick some coordinates that don't collide with the other objects */
 			{
 				x = Math.floor( this.rooms[this.roomOpened].left + Math.random() * (this.rooms[this.roomOpened].right - this.rooms[this.roomOpened].left - this.objSizeX));
 				y = Math.floor( this.rooms[this.roomOpened].high + Math.random() * (this.rooms[this.roomOpened].low - this.rooms[this.roomOpened].high - this.objSizeY));
-			} while (this.collides(x,y,j));
-						
-			this.crtObjects[j].x = x;
-			this.crtObjects[j].y = y;
-			this.crtObjects[j].opacity = 0;
-			++j;
+				++tries;
+			} while (this.collides(x,y,j) && tries < 100);
+			
+			if(tries == 100) { j = 0; console.log("reached 100 tries!");
+			else
+			{
+				this.crtObjects[j].x = x;
+				this.crtObjects[j].y = y;
+				this.crtObjects[j].opacity = 0;
+				++j;
+			}
 		}
 				
 		gRenderEngine.objToDraw = this.crtObjects;
