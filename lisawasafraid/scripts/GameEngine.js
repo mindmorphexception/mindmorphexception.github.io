@@ -151,6 +151,7 @@ GameEngineClass = Class.extend(
 		
 		if(!this.play_stage)	// -------------------- if we're in text drawing stage ------------------------------------
 		{
+			console.log("seq fading out: " + this.seq_fading_out);
 			if(this.seq_fading_in)	// if we're fading in a sequence now
 			{
 				this.crt_time = this.crt_time + this.game_unit;	//increase crt timer
@@ -210,6 +211,7 @@ GameEngineClass = Class.extend(
 				if(opacity == 0)	// if we're finished fading in the text
 				{
 					this.seq_fading_out = false;			// no more fading out
+					console.log('seq fading out = false');
 					gRenderEngine.textToDraw = null;		// remove the text to draw from renderer
 					if(this.story[this.stage].sequences[this.seq].text[0].indexOf("Chapter") != -1) { this.checkpoint_stage = this.stage; this.checkpoint_seq = this.seq; console.log("checkpoint established"); }
 					this.seq++;								// move to next sequence 
