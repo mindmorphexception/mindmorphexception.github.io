@@ -23,7 +23,7 @@ GameEngineClass = Class.extend(
 	needsInput: true,
 	
 	targetProbability: 0.5,
-	nrObjects: 25,
+	nrObjects: 0,
 	
 	roomOpened: null,
 	lastRoomOpened: null,
