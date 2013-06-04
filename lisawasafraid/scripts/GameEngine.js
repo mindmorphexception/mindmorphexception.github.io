@@ -480,7 +480,7 @@ GameEngineClass = Class.extend(
 		{
 			if(this.crtObjects[j].fadingOut) { this.crtObjects.splice(j,1); continue; }
 			var x,y;
-			do	/* pick some coordinates that don't colide with the other objects */
+			do	/* pick some coordinates that don't collide with the other objects */
 			{
 				x = Math.floor( this.rooms[this.roomOpened].left + Math.random() * (this.rooms[this.roomOpened].right - this.rooms[this.roomOpened].left - this.objSizeX));
 				y = Math.floor( this.rooms[this.roomOpened].high + Math.random() * (this.rooms[this.roomOpened].low - this.rooms[this.roomOpened].high - this.objSizeY));
@@ -508,6 +508,7 @@ GameEngineClass = Class.extend(
 		for(var i = 0; i < this.crtObjects.length; ++i)
 		{	
 			var o = this.crtObjects[i];
+			console.log(o.x + " " + o.y);
 			var xbetween = ((x <= o.x + this.objSizeX) && (o.x <= x + this.objSizeX));
 			var ybetween = ((y <= o.y + this.objSizeY) && (o.y <= y + this.objSizeY));
 			if(xbetween && ybetween) return true;
