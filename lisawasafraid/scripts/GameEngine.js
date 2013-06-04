@@ -488,7 +488,7 @@ GameEngineClass = Class.extend(
 				++tries;
 			} while (this.collides(x,y,j) && tries < 100);
 			
-			if(tries == 100) { j = 0; console.log("reached 100 tries!");
+			if(tries == 100) { j = 0; console.log("reached 100 tries!"); }
 			else
 			{
 				this.crtObjects[j].x = x;
