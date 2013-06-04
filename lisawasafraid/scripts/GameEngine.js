@@ -484,7 +484,7 @@ GameEngineClass = Class.extend(
 			{
 				x = Math.floor( this.rooms[this.roomOpened].left + Math.random() * (this.rooms[this.roomOpened].right - this.rooms[this.roomOpened].left - this.objSizeX));
 				y = Math.floor( this.rooms[this.roomOpened].high + Math.random() * (this.rooms[this.roomOpened].low - this.rooms[this.roomOpened].high - this.objSizeY));
-			} while (this.collides(x,y));
+			} while (this.collides(x,y,j));
 						
 			this.crtObjects[j].x = x;
 			this.crtObjects[j].y = y;
@@ -503,9 +503,9 @@ GameEngineClass = Class.extend(
 		return null;
 	},
 	
-	collides: function(x,y)	// check if an obj placed at x,y collides with any of the already picked objects
+	collides: function(x,y,index)	// check if an obj placed at x,y collides with any of the already picked objects
 	{
-		for(var i = 0; i < this.crtObjects.length; ++i)
+		for(var i = 0; i < index; ++i)
 		{	
 			var o = this.crtObjects[i];
 			console.log(o.x + " " + o.y);
