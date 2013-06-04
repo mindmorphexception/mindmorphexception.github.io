@@ -38,9 +38,9 @@
             "sequences": [
                 {
                     "text": [
-                        "Lisa was only five years old,",
-                        "but it was not the dark",
-                        "that she was afraid of."
+                        "Lisa was only five years",
+                        "old, but it was not the",
+                        "dark that she was feared."
                     ],
                     "room": 5
                 },
@@ -57,7 +57,7 @@
                         "Evanescent,",
                         "like a snowflake..."
                     ],
-                    "room": 4
+                    "room": 3
                 }
             ],
             "object": "snow-flake.png"
