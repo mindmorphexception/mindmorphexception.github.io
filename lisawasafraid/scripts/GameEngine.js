@@ -505,10 +505,11 @@ GameEngineClass = Class.extend(
 	
 	collides: function(x,y,index)	// check if an obj placed at x,y collides with any of the already picked objects
 	{
+		console.log("----");
 		for(var i = 0; i < index; ++i)
 		{	
 			var o = this.crtObjects[i];
-			console.log(o.x + " " + o.y);
+			console.log(i + ": " + o.x + " " + o.y);
 			var xbetween = ((x <= o.x + this.objSizeX) && (o.x <= x + this.objSizeX));
 			var ybetween = ((y <= o.y + this.objSizeY) && (o.y <= y + this.objSizeY));
 			if(xbetween && ybetween) return true;
