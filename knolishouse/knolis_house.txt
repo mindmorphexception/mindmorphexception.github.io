@@ -1,0 +1,16 @@
+Knolis House: An interdisciplinary mystery RPG created for awesome players.
+	by Iulia M Comsa
+
+			CHOOSE YOUR ROLE
+
+The Philosopher
+	Have you ever wondered about the meaning of life? I'm afraid I can't help you, but this role might give you some tools to help yourself.
+	
+The Cognitive Neuroscientist
+	Ever wanted to be up-to-date on current research about the human brain, but never found the time and motivation for it? Then this role is for you.
+	
+The Mythologist
+	Do you think the perfect meal is ambrosia and nectar? Is your ideal home on the top of a cliff? Have you ever heard of Zamolxis? If you answered "no" to all of these questions, play this role to find out what you're missing on!
+
+The General Knowledgeable Person - unlocked after all three roles above have been played
+	Congratulations! With all the knowledge you have acquired by now, I'm sure you will impress your friends, family, colleagues, your next date if you can get one, your pillow of tears otherwise, and so on. But can you impress the inhabitants of Knolis House too?
