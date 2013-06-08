@@ -81,7 +81,7 @@ GameEngineClass = Class.extend(
 				
 		console.log('loading story');
 		/* load story from json */
-		parsed = this.loadJSON("story");
+		parsed = this.loadJSON("teststory");
 		this.story = parsed["stages"];
 		
 		this.init();
