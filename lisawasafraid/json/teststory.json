@@ -28,19 +28,25 @@
 						"her old, wrinkled",
                         "eyes."
                     ],
-                    "room": 2
+                    "room": 1
                 },
                 {
                     "text": [
                         "Lisa was not afraid",
                         "anymore."
                     ],
-                    "room": 6
+                    "room": 5
                 },
                 {
                     "text": [
                         "The Dreamer was",
-                        "ready to wake up..."
+                        "ready to wake up."
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "The end"
                     ],
                     "room": 4
                 }
