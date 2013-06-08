@@ -20,7 +20,7 @@
                     "text": [
                         "But then she understood."
                     ],
-                    "room": 4
+                    "room": 6
                 },
                 {
                     "text": [
@@ -28,7 +28,7 @@
 						"her old, wrinkled",
                         "eyes."
                     ],
-                    "room": 1
+                    "room": 4
                 },
                 {
                     "text": [
@@ -41,12 +41,6 @@
                     "text": [
                         "The Dreamer was",
                         "ready to wake up."
-                    ],
-                    "room": 6
-                },
-                {
-                    "text": [
-                        "The end"
                     ],
                     "room": 4
                 }

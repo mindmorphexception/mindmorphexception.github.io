@@ -88,7 +88,7 @@ RenderEngineClass = Class.extend(
 		}
 		else if(gEngine.gameOver)
 		{
-			if(this.storyOpacity > 0.01) { var o = this.storyOpacity - (this.render_unit/3500); this.storyOpacity = o > 0.01 ? o : 0.01; }
+			if(this.storyOpacity > 0.01) { var o = this.storyOpacity - (this.render_unit/2500); this.storyOpacity = o > 0.01 ? o : 0.01; }
 		}
 		else
 		{
