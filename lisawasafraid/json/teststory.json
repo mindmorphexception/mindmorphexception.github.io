@@ -1,55 +1,48 @@
 {
     "stages": [
-        {
+		{
             "sequences": [
                 {
                     "text": [
-                        "Sequence 1-1",
-                        "Sequence 1-2"
+                        "Lisa went to sleep."
+                    ],
+                    "room": 2
+                },
+                {
+                    "text": [
+                        "It was dark now",
+                        "and she didn't remember",
+                        "anything anymore."
                     ],
                     "room": 5
                 },
                 {
                     "text": [
-                        "Chapter X: Find a desklamp"
-                    ],
-                    "room": 4
-                }
-            ],
-            "object": "desk-lamp.png"
-        },
-        {
-            "sequences": [
-                {
-                    "text": [
-                        "Dududu 2-1"
+                        "But then she understood."
                     ],
                     "room": 4
                 },
                 {
                     "text": [
-                        "Now find",
-                        "a snowflake"
+                        "And she closed",
+						"her old, wrinkled",
+                        "eyes."
+                    ],
+                    "room": 2
+                },
+                {
+                    "text": [
+                        "Lisa was not afraid",
+                        "anymore."
                     ],
                     "room": 6
-                }
-            ],
-            "object": "snow-flake.png"
-        },
-        {
-            "sequences": [
-                {
-                    "text": [
-                        "Guess what"
-                    ],
-                    "room": 1
                 },
                 {
                     "text": [
-                        "This is",
-                        "the last line"
+                        "The Dreamer was",
+                        "ready to wake up..."
                     ],
-                    "room": 5
+                    "room": 4
                 }
             ],
             "object": ""
