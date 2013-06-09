@@ -1,0 +1,58 @@
+{
+    "stages": [
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Sequence 1-1",
+                        "Sequence 1-2"
+                    ],
+                    "room": 5
+                },
+                {
+                    "text": [
+                        "Chapter X: Find a desklamp"
+                    ],
+                    "room": 4
+                }
+            ],
+            "object": "desk-lamp.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Dududu 2-1"
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "Now find",
+                        "a snowflake"
+                    ],
+                    "room": 6
+                }
+            ],
+            "object": "snow-flake.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
+                        "Guess what"
+                    ],
+                    "room": 1
+                },
+                {
+                    "text": [
+                        "This is",
+                        "the last line"
+                    ],
+                    "room": 5
+                }
+            ],
+            "object": ""
+        }
+    ]
+}
