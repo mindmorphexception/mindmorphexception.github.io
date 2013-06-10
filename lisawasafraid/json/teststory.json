@@ -4,7 +4,7 @@
             "sequences": [
                 {
                     "text": [
-                        "1Lisa went to sleep."
+                        "_Lisa went to sleep."
                     ],
                     "room": 2
                 },
@@ -35,13 +35,6 @@
                         "anymore."
                     ],
                     "room": 5
-                },
-                {
-                    "text": [
-                        "The Dreamer was",
-                        "ready to wake up..."
-                    ],
-                    "room": 4
                 },
                 {
                     "text": [
