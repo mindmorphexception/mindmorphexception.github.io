@@ -4,6 +4,79 @@
             "sequences": [
                 {
                     "text": [
+                        "Chapter 6:",
+                        "The Dreamer"
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "Then she forgot whose",
+                        "call she was waiting for."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "She forgot why",
+                        "she was alone."
+                    ],
+                    "room": 2
+                },
+                {
+                    "text": [
+                        "She forgot what the flower",
+                        "in the pot was made of.",
+                        "It had started withering..."
+                    ],
+                    "room": 4
+                }
+            ],
+            "object": "flower-pot.png"
+        },
+        {"sequences": [
+                {
+                    "text": [
+                        "Then she remembered",
+                        "she wanted to go East."
+                    ],
+                    "room": 6
+                },
+                {
+                    "text": [
+                        "But she couldn't",
+                        "remember why."
+                    ],
+                    "room": 1
+                },
+                {
+                    "text": [
+                        "Lisa was afraid."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "It was getting dark",
+                        "and she had forgotten",
+                        "where the light switch was."
+                    ],
+                    "room": 5
+                },
+                {
+                    "text": [
+                        "Then someone turned",
+                        "off the lamp..."
+                    ],
+                    "room": 4
+                }
+            ],
+            "object": "desk-lamp.png"
+        },
+        {
+            "sequences": [
+                {
+                    "text": [
                         "Lisa went to sleep."
                     ],
                     "room": 2
