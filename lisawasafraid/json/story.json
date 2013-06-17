@@ -811,8 +811,13 @@
                 {
                     "text": [
                         "The Dreamer was",
-                        "ready to wake up.",
-						" - The end -"
+                        "ready to wake up."
+                    ],
+                    "room": 4
+                },
+                {
+                    "text": [
+                        "The end"
                     ],
                     "room": 4
                 }
