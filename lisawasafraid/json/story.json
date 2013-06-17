@@ -479,9 +479,9 @@
                 },
                 {
                     "text": [
-                        "Who was the Dreamer, who",
+                        "Who was the Dreamer, whom",
                         "Lisa had long ago forgot, and",
-                        "that the pain had brought back?"
+                        "whom the pain had brought back?"
                     ],
                     "room": 4
                 },
@@ -564,8 +564,8 @@
                 {
                     "text": [
                         "Lisa took her kidney stones",
-                        "and planted them in the garden",
-                        "and they grew into a tree..."
+                        "and planted them in the garden.",
+                        "They grew into a tree..."
                     ],
                     "room": 4
                 }
@@ -797,7 +797,7 @@
                 {
                     "text": [
                         "And she closed her old,",
-						"wrinkled eyes"
+						"wrinkled eyes."
                     ],
                     "room": 4
                 },
@@ -811,7 +811,8 @@
                 {
                     "text": [
                         "The Dreamer was",
-                        "ready to wake up..."
+                        "ready to wake up.",
+						" - The end -"
                     ],
                     "room": 4
                 }
