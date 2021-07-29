@@ -100,6 +100,8 @@
 			
 			function init()
 			{
+				document.getElementById("loading_div").innerHTML = "Loading...";
+
 				/*setInterval(function() {compensate_for_chromes_ignorance()},100);
 				var a = document.getElementById("audio");
 				console.log(a.duration);
@@ -123,6 +125,7 @@
 			
 			function startGame()
 			{
+				document.getElementById("audio").play();
 				document.getElementById("loading_div").style.display = "none";
 				setInterval(function() { gEngine.update(); }, gEngine.game_unit); 
 				setInterval(function() { gRenderEngine.render(); }, gRenderEngine.render_unit);
@@ -134,13 +137,13 @@
 		
 	</head>
 	
-	<body onload="init()">
+	<body>
 		<div id="top_div">
 			<div id="sound_div"> 
 				<img id="sound_img" alt="sound" src="img/sound_on.png" onclick="switch_sound()">
 			</div>
-			<div id="loading_div">
-				Loading...
+			<div id="loading_div" onclick="init()">
+				Click to start
 			</div>
 		</div>
 		<div id="game_canvas">
@@ -148,7 +151,7 @@
 		</div>
 		
 		<div id="credits_div">
-			"Lisa was afraid": A puzzle-flavoured short story by <a href="http://steamcommunity.com/id/astronomind?l=en" target="_blank">Iulia M. Comşa</a> <br><br>
+			"Lisa was afraid": A puzzle-flavoured short story by <a href="https://sites.google.com/view/iuliacomsa/" target="_blank">Iulia M. Comşa</a> <br><br>
 
 			<!-- I got these buttons from simplesharebuttons.com -->
 			<div id="share-buttons">
@@ -194,10 +197,9 @@
 			
 		</div>
 		
-		<audio id="audio" autoplay loop>
+		<audio id="audio" loop>
 			<source src="snd/ComfortableMystery4.mp3" type="audio/mpeg">
 			<source src="snd/ComfortableMystery4.ogg" type="audio/ogg">
-			
 			<!-- User dude, how do you want to enjoy my discretely psychotic little game if you don't even have a browser that plays music? -->
 		</audio>
 	</body>
