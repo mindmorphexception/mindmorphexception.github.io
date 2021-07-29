@@ -92,26 +92,34 @@ function changetext()
 	}
 }
 
-function start()
-{
+function intro() {
+	document.getElementById("main_title").style.cursor = "pointer";
+
 	// you can't see
 	setTimeout( function() { $("#eyes_div").fadeIn(6000); }, 1000);
 	setTimeout( function() { $("#eyes_div").fadeOut(6000); }, 6000);
 	
 	// main title
 	setTimeout( function() { $("#main_title").fadeIn(3000); }, 14000);
-	setTimeout( function() { $("#main_title").fadeOut(3000); }, 19000);
-	
+}
+
+
+function start()
+{
+	document.getElementById('audio_elem').play();
+
+	setTimeout( function() { $("#main_title").fadeOut(3000); }, 0);
+
 	// fade in canvas and let the night begin
 	clearTimeout(draw_timer); 
-	draw_timer = setTimeout( function() { draw(); }, 23000);
+	draw_timer = setTimeout( function() { draw(); }, 4000);
 	
 	// text rotation
 	crt_text = 0;
 	setTimeout(function () 
 	{
-		setInterval(function() { changetext(); },23750);
-	},24000);
+		setInterval(function() { changetext(); }, 23750);
+	}, 5000);
 	
 	// cursor
 	setTimeout(function()
@@ -124,7 +132,7 @@ function start()
 	{
 		$("#copyright").fadeIn(4000);
 		$("#song").fadeIn(4000);
-	}, 195000);
+	}, 5000);
 }
 
 function draw()	//hopefully no one resizes the window in the first few seconds during the intro...because I'm too lazy now to deal with that... oh boy, I could have dealt with it in the time it took to write this sentence
